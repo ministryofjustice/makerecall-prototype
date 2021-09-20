@@ -1,8 +1,7 @@
-# MoJ Prototype Kit Template
+# Making Recall Decisions
 
-Create a [Gov.UK Prototype Kit] website, hosted on the [MoJ Cloud Platform].
-
-In addition to the protype kit v9.11.2, this repository contains:
+## Prototype Site
+https://makerecall-prototype.apps.live-1.cloud-platform.service.justice.gov.uk/
 
 ### Files to build a docker image to run the prototype site
 
