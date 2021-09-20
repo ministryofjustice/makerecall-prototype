@@ -1,0 +1,29 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'risk' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/{{ CRN }}">Risk and needs</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'strengths' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/strengths.html">Current circumstances</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'behavioural' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/behavioural.html">Recent contacts</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

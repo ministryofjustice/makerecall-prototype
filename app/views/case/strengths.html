@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'strengths' %}
+{% include "case/_case-nav.html" %}
+        
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set situation %}
+  
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: { text: 'Last accommodation recorded' },
+        value: { text: 'Rental accommodation - private rental
+Date recorded: 4 September 2021' }
+      },
+    {
+        key: { html: 'Last employment recorded' },
+        value: { html: 'Unemployed (not on benefit) 
+Date recorded: 4 September 2021' }
+      }, 
+    {
+        key: { html: 'Relationship status' },
+        value: { html: 'Single
+Date recorded: 4 September 2021' }
+      }
+    ]
+  }) }}  
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Personal circumstances',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: situation
+}) }}
+
+{% set education %}
+  
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: { text: 'Education level recorded' },
+        value: { text: 'Other - No qualification 
+Date recorded: 4 September 2021' }
+      },
+    {
+        key: { html: 'Education level recorded' },
+        value: { html: 'Numeracy - No qualification 
+Date recorded: 4 September 2021' }
+      }, 
+    {
+        key: { html: 'Education level recorded' },
+        value: { html: 'Literacy - No qualification 
+Date recorded: 4 September 2021' }
+      }
+    ]
+  }) }}  
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Education',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: education
+}) }}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+href: "../decision",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+}) }}
+
+{% endblock %}
+

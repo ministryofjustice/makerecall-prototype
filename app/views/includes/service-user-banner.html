@@ -1,0 +1,16 @@
+<section class="key-details-bar" aria-label="Key details">
+  <div class="key-details-bar__key-details">
+    <div style="display: inline-block">
+      <div class="key-details-bar__top-block">
+        <span class="govuk-visually-hidden">Name:</span>
+        <span class="key-details-bar__name govuk-!-margin-right-6">{{ case.personalDetails.name }}</span>
+          <span class="govuk-body key-details-bar_divider"><strong>CRN:</strong> {{ case.CRN }}</span>
+          <span
+          class="govuk-body"><strong>PNC:</strong> {{ case.PNC }}</span>
+      </div>
+      <div class="key-details-bar__bottom-block">
+        <span class="govuk-body"><strong>Date of birth:</strong> 	{{ case.personalDetails.dateOfBirth | dateWithYear }} ({{ yearsSince(case.personalDetails.dateOfBirth) }} years old)</span>
+      </div>
+    </div>
+  </div>
+</section>

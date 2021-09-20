@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+ <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-xl"><abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: A000000</span>
+  Charles Edwin
+</h1>
+
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Check you have read the whole summary</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">
+{%- from "moj/components/task-list/macro.njk" import mojTaskList -%}
+
+{{ mojTaskList({
+  sections: [
+    {
+      heading: {
+        text: 'Check the risk profile'
+      },
+      items: [{
+        text: 'Are they eligible for recall',
+        href: '../person',
+        complete: true
+      }, {
+        text: 'Check their risk and needs',
+        href: '../case',
+        complete: true
+      }, {
+        text: 'Check their current circumstances',
+        href: '../case/strengths',
+        complete: true
+      }, {
+        text: 'Check their recent contact log entries',
+        href: '../case/behavioural',
+        complete: true
+      }]
+    },
+    {
+     heading: {
+        text: 'Check Recall Policy Framework'
+      },
+      items: [{
+        text: 'Compliance and engagement on licence',
+        href: '#'
+      }, {
+        text: 'Review Recall Guidance',
+        href: '#'
+      }]
+    }
+  ]
+}) }}
+       <h3 class="govuk-heading-s">Additional Resources</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" href="">Compliance and engagement on licence</a></li>
+            <li><a class="govuk-link" href="#">Recall, Review and Re-Release of Recalled Prisoners Policy Framework</a></li>
+        </ul>
+    </div>
+    
+    </div>
+</div>
+{% endblock %}
+
+
+
