@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {% include "includes/govuk-header.html" %}
+  {% include "includes/index-masthead.html" %}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

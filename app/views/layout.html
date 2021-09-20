@@ -9,6 +9,7 @@
 {% from "govuk/components/button/macro.njk"              import govukButton %}
 {% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
 {% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
 {% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
 {% from "govuk/components/details/macro.njk"             import govukDetails %}
 {% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
@@ -30,6 +31,11 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
+<!--Components from Managing Supervisions -->
+{% from "_components/warning-banner/macro.njk"           import appWarningBanner %}
+{% from "_components/risk-flag/macro.njk"                import appRiskFlag %}
+{% from "_components/summary-card/macro.njk"             import appSummaryCard %}
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
@@ -39,17 +45,13 @@
 {% endblock %}
 
 {% block header %}
+  {% include "includes/moj-header.html" %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+  {% block keyDetails %}{% endblock %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
 
 {% if useAutoStoreData %}
   {% block footer %}
