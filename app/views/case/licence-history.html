@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'Personal details' %}
+{% set title = 'Licence History' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
@@ -12,52 +12,7 @@
 {% include "case/_case-nav.html" %}
 
 
-<div class="govuk-width-container">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-{% set keyDetails %}
 
-
-    {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: 'Gender' },
-        value: { html: 'Male' }
-      },
-    {
-        key: { html: 'Date of birth' },
-        value: { html: '28 July 1980 (Age 41)' }
-      },
-    {
-        key: { html: 'Current address' },
-        value: { html: '123 Any Street, Abingdon OX14 2DR' }
-      },
-    {
-        key: { html: 'Alias' },
-        value: { html: 'None Known' }
-      },
-    {
-        key: { text: 'Offender manager' },
-        value: { text: 'Jane Smith - HAR PS1, NPS London' }
-      }
-    ]
-  }) }}
-
-
-
-{% endset %}
-
-{{ appSummaryCard({
-  titleText: 'Personal Details',
-  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: keyDetails
-}) }}
-    </div>
-    <div class="govuk-grid-column-one-third">
-    <img src="../../public/images/MAPPA-score.jpg" width="100%" />
-    </div>
-    </div>
-</div>
 
 <h2 class="govuk-heading-l">Licence History</h2>
 <div class="moj-timeline">
