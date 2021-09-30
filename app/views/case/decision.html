@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m"><abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: 237861287361 &nbsp; | &nbsp; Date of birth: 24 July 1980</span>
+  Charles Edwin
+</h1>
+
+<p class="govuk-body">You can buy:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>apples</li>
+  <li>oranges</li>
+  <li>pears</li>
+</ul>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Log decision",
+  href: "log-decision"
+}) }}
+
+
+       <h3 class="govuk-heading-s">Additional Resources</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" href="">Compliance and engagement on licence</a></li>
+            <li><a class="govuk-link" href="#">Recall, Review and Re-Release of Recalled Prisoners Policy Framework</a></li>
+        </ul>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

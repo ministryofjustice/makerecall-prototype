@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'risk' %}
+{% include "case/_case-nav.html" %}
+        
+{% from "govuk/components/table/macro.njk" import govukTable %}
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+       <img src="../../public/images/ROSH-score.jpg" width="100%" />
+  </div>
+     <div class="govuk-grid-column-two-thirds">
+       <h2 class="govuk-heading-m">Nature of Risk</h2>
+         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or needing to buy crack cocaine he risks violently robbing members of the public for any items they have that he can then sell on. </p>
+         
+         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+         html: '<p>Date of last OASys Assessment - 01 September 2020</p><p><a href="#">View OASys</a></p>'
+}) }}
+  </div>
+ 
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <h4 class="govuk-heading-m">Score History</h4>
+      <img src="../../public/images/scores-history.jpg" width="100%" />
+    </div>      
+      <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          
+      <h3 class="govuk-heading-s">RSR Score - 3.7</h3>
+       <img src="../../public/images/rsr-riskscore.jpg" width="100%" />
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "About this RSR score",
+  html: "<p>Last updated: 12 July 2018</p>
+          <p>The RSR is taken from OASys.</p>"
+}) }}
+  </div>
+          </div>
+          <div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">OGRS Score - 58%</h3>
+        <img src="../../public/images/ogrs3-riskscore.jpg" width="100%" />
+  </div>
+    <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">OGP Score - 33</h3>
+        <img src="../../public/images/ogp-riskscore.jpg" width="100%" />
+  </div>
+              
+  </div>
+          <hr class="govuk-section-break govuk-section-break--m">
+              <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">OVP Score - 18</h3>
+        <img src="../../public/images/osr-riskscore.jpg" width="100%" />
+  </div>
+                  
+  </div>
+  </div>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{% set keyDetails %}
+
+    
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: { text: 'Risk of suicide' },
+        value: { html: 'Yes' }
+      },
+    {
+        key: { html: 'Risk of self-harm' },
+        value: { html: 'Yes' }
+      }, 
+    {
+        key: { html: 'Coping in custody / hostel setting' },
+        value: { html: 'Yes' }
+      }, 
+    {
+        key: { html: 'Vulnerability' },
+        value: { html: 'Yes' }
+      }, 
+    {
+        key: { html: 'Who is at risk' },
+        value: { html: '
+<ol class="govuk-list govuk-list--none govuk-list--spaced">
+  <li>Public - high. Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
+    <li>Known adult - low</li>
+    <li>Staff - medium. Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating. </li>
+    <li>Self - medium. Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </li>
+    <li>Children - medium. While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets. 
+</li></ol>
+'} 
+},
+    {
+        key: { html: 'When is the risk likely to be greatest' },
+        value: { text: 'When he has been talking to gang members in his neighbourhood and when he is low on money.' }
+      }  
+    ]
+  }) }}  
+
+
+  
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Risk Profile',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: keyDetails
+}) }}
+{% set protectiveFactors %}
+
+    
+    {{ govukSummaryList({
+    rows: [ 
+    {
+        key: { html: 'What circumstances are likely to increase the risk?' },
+        value: { html: '
+<ul class="govuk-list govuk-list--none">
+    <li>Increased drug use</li>
+    <li>Lack of employment</li>
+    <li>Poor relationship situation</li>
+    <li>Financial vulnerability</li>
+    <li>Association with drug dealers/gang members</li>
+</ul>
+' }
+      },
+{
+        key: { html: 'What circumstances are likely to decrease the risk?' },
+        value: { html: '
+<ul class="govuk-list govuk-list--none">
+    <li>Drug testing</li>
+    <li>Rehab programmes</li>
+    <li>Stable relationships including cohabitation</li>
+    <li>Stable employment and financial security</li>
+    <li>Sense of positive purpose to prevent relapse into crack cocaine use</li>
+</ul>
+' }
+      }
+    ]
+  }) }}  
+
+
+  
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Risk and protective factors',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: protectiveFactors
+}) }}
+{{ govukButton({
+  text: "Continue",
+href: "../decision",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+}) }}
+{% endblock %}
+

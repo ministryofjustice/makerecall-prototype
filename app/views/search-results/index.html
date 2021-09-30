@@ -39,7 +39,7 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">Search results</h2>
-    
+
 {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
 {{ govukTable({
@@ -60,6 +60,24 @@
       }
     },
     {
+      text: "Date of birth",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "Offender Manager",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "Location",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
       text: "Sentence type",
       attributes: {
         "aria-sort": "none"
@@ -75,77 +93,76 @@
   rows: [
     [
       {
-          html: '<a href="/person">Charles Edwin</a>'
+          html: '<p class="govuk-body-s"><a href="/case">Charles Edwin</a></p>'
       },
       {
-        text: "A00000"
+        html: '<p class="govuk-body-s">A00000</p>'
       },
       {
-        text: "ORA Adult Custody (not PSS) (3 Years)" 
+        html: '<p class="govuk-body-s">05/01/1980</p>'
       },
       {
-        html: '<span class="govuk-tag govuk-tag--red">High</span>'
+        html: '<p class="govuk-body-s">Jim Hall</p>'
+      },
+      {
+        html: '<p class="govuk-body-s">Moorland (HMP & YOI)</p>'
+      },
+      {
+        html: '<p class="govuk-body-s">ORA Adult Custody (not PSS) (3 Years)</p>'
+      },
+      {
+        html: '<p class="govuk-body-s"><span class="govuk-tag govuk-tag--red govuk-body-s">High</span></p>'
       }
     ],
     [
       {
-        html: '<a href="/person">Charles Edwinn</a>'
+          html: '<p class="govuk-body-s"><a href="/case">Charles Edwin</a></p>'
       },
       {
-        text: "A00091"
+        html: '<p class="govuk-body-s">A00000</p>'
       },
       {
-        text: "Adult custody < 12m (14 days)" 
+        html: '<p class="govuk-body-s">05/01/1980</p>'
       },
       {
-        html: '<span class="govuk-tag govuk-tag--yellow">Medium</span>'
+        html: '<p class="govuk-body-s">Jim Hall</p>'
+      },
+      {
+        html: '<p class="govuk-body-s">Moorland (HMP & YOI)</p>'
+      },
+      {
+        html: '<p class="govuk-body-s">ORA Adult Custody (not PSS) (3 Years)</p>'
+      },
+      {
+        html: '<p class="govuk-body-s"><span class="govuk-tag govuk-tag--red govuk-body-s">High</span></p>'
       }
     ],
     [
       {
-        html: '<a href="/person">Frank Edwin</a>'
+          html: '<p class="govuk-body-s"><a href="/case">Charles Edwin</a></p>'
       },
       {
-        text: "A00002"
+        html: '<p class="govuk-body-s">A00000</p>'
       },
       {
-        text: "ORA Adult Custody (inc PSS) (4 months)" 
+        html: '<p class="govuk-body-s">05/01/1980</p>'
       },
       {
-        html: '<span class="govuk-tag govuk-tag--yellow">Medium</span>'
-      }
-    ],
-    [
-      {
-        html: '<a href="/person">Jon Edwin</a>'
+        html: '<p class="govuk-body-s">Jim Hall</p>'
       },
       {
-        text: "A00055"
+        html: '<p class="govuk-body-s">Moorland (HMP & YOI)</p>'
       },
       {
-        text: "ORA Adult Custody (inc PSS) (16 weeks)" 
+        html: '<p class="govuk-body-s">ORA Adult Custody (not PSS) (3 Years)</p>'
       },
       {
-        html: '<span class="govuk-tag govuk-tag--red">High</span>'
-      }
-    ],
-    [
-      {
-         html: '<a href="/person">Chuck Edwin</a>'
-      },
-      {
-        text: "A00012"
-      },
-      {
-        text: "Community rehabilitation order (12 months)" 
-      },
-      {
-         html: '<span class="govuk-tag govuk-tag--green">Low</span>'
+        html: '<p class="govuk-body-s"><span class="govuk-tag govuk-tag--red govuk-body-s">High</span></p>'
       }
     ]
   ]
 }) }}
-          
+
             </div>
     </div>
 
@@ -154,6 +171,3 @@
 
 
 {% endblock %}
-
-
-

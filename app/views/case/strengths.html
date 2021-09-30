@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'Personal details' %}
+{% set title = 'Compliance' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
@@ -10,11 +10,11 @@
 {% include "case/_case-service-user-banner.html" %}
 {% set currentNavSection = 'strengths' %}
 {% include "case/_case-nav.html" %}
-        
+
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set situation %}
-  
+
     {{ govukSummaryList({
     rows: [
       {
@@ -24,45 +24,45 @@ Date recorded: 4 September 2021' }
       },
     {
         key: { html: 'Last employment recorded' },
-        value: { html: 'Unemployed (not on benefit) 
+        value: { html: 'Unemployed (not on benefit)
 Date recorded: 4 September 2021' }
-      }, 
+      },
     {
         key: { html: 'Relationship status' },
         value: { html: 'Single
 Date recorded: 4 September 2021' }
       }
     ]
-  }) }}  
+  }) }}
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Personal circumstances',
+  titleText: 'Compliance',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: situation
 }) }}
 
 {% set education %}
-  
+
     {{ govukSummaryList({
     rows: [
       {
         key: { text: 'Education level recorded' },
-        value: { text: 'Other - No qualification 
+        value: { text: 'Other - No qualification
 Date recorded: 4 September 2021' }
       },
     {
         key: { html: 'Education level recorded' },
-        value: { html: 'Numeracy - No qualification 
+        value: { html: 'Numeracy - No qualification
 Date recorded: 4 September 2021' }
-      }, 
+      },
     {
         key: { html: 'Education level recorded' },
-        value: { html: 'Literacy - No qualification 
+        value: { html: 'Literacy - No qualification
 Date recorded: 4 September 2021' }
       }
     ]
-  }) }}  
+  }) }}
 {% endset %}
 
 {{ appSummaryCard({
@@ -79,4 +79,3 @@ href: "../decision",
 }) }}
 
 {% endblock %}
-
