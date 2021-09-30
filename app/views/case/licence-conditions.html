@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% set title = 'Licence Conditions' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'licence-conditions' %}
+{% include "case/_case-nav.html" %}
+
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+     <h2 class="govuk-heading-m">Licence Conditions</h2>
+
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+{{ govukTable({
+attributes: {
+ 'data-module': 'moj-sortable-table'
+},
+head: [
+ {
+   text: "Type",
+   attributes: {
+     "aria-sort": "ascending"
+   }
+ },
+ {
+   text: "Description",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "Active Flag",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "Start Date",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "End Date",
+   attributes: {
+     "aria-sort": "none"
+   }
+ }
+],
+rows: [
+ [
+   {
+       html: '<p class="govuk-body-s"><a href="/case">Curfew Arrangement</a></p>'
+   },
+   {
+     html: '<p class="govuk-body-s">(a) Confine yourself to an address approved by your supervising officer between the hours of [TIME] and [TIME] daily unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a [WEEKLY / MONTHLY / ETC] basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s"><a href="/case">Freedom of movement</a></p>'
+   },
+   {
+     html: '<p class="govuk-body-s">(a) Not to enter the area of [CLEARLY SPECIFIED AREA], as defined by the attached map without the prior approval of your supervising officer.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">Not Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">12 July 2019</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">12 July 2020</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s"><a href="/case">Drug Testing Conditions</a></p>'
+   },
+   {
+     html: '<p class="govuk-body-s">(a) Attend [INSERT NAME AND ADDRESS], as reasonably required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">M30 Sep 2022</p>'
+   }
+ ]
+]
+}) }}
+
+         </div>
+ </div>
+
+</main>
+</div>
+
+
+{% endblock %}
