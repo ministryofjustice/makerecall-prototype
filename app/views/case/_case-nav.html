@@ -4,17 +4,39 @@
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'licence-history' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/licence-history.html">History</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'offence' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/offence.html">Offence</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
             {% if currentNavSection == 'risk' %}
             aria-current="page"
             {% endif %}
-            href="/case/{{ CRN }}">Risk and needs</a>
+            href="/case">Risk and needs</a>
         </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'licence-conditions' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/licence-conditions.html">Conditions</a>
+        </li>
+
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
             {% if currentNavSection == 'strengths' %}
             aria-current="page"
             {% endif %}
-            href="/case/strengths.html">Current circumstances</a>
+            href="/case/strengths.html">Compliance</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
@@ -23,6 +45,7 @@
             {% endif %}
             href="/case/behavioural.html">Recent contacts</a>
         </li>
+
       </ul>
     </nav>
   </div>

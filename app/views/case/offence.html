@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'offence' %}
+{% include "case/_case-nav.html" %}
+
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+{% set keyDetails %}
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Index Offence"
+      },
+      value: {
+        text: "Robbery and assaults with intent to rob"
+      }
+    },
+{
+      key: {
+        text: "Details of index offence"
+      },
+      value: {
+html: "<p>On 20 April 2018 at 10pm Mr Edwin boarded a 73 bus in Stoke Newington. He went to the top of the bus where he saw Mr Smith sitting at the back of the bus. There were 2 other witnesses at the front of the bus.</p>
+<p>
+    Mr Edwin grabbed Mr Smith by the collar and shouted 'give me your phone and your wallet'. Mr Smith loudly told him to 'f**k off'. Mr Edwin hit Mr Smith in the face, breaking his nose and causing him to bleed, and saying 'Give me your phone and wallet or I will hit you again'. Mr Smith gave him his wallet and phone Mr Edwin pushed him into his seat. Mr Edwin ran off the bus at the next stop and ran off. </p>
+<p>
+He was known to police and so the CCTV imagery helped identify him. Police arrested him 2 days later, on the 22 April 2018. On being tested Mr Edwin had crack cocaine in his system.</p>"
+      }
+    },
+    {
+      key: {
+        text: "Additional Offence"
+      },
+      value: {
+        text: "Assault"
+      }
+    },
+    {
+      key: {
+        text: "What the offence involved"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Any violence or threat of violence - coercion</li><li>Excessive use of violence - sadistic violence</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Other characteristics"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Were there any direct victim(s) eg contact targeting</li><li>Were the victim(s) stranger(s) to the offender</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Impact on Victim"
+      },
+      value: {
+        text: "Mr Smith suffered a broken nose and required hospital treatment. He has since been very afraid to go outside and especially take public transport. This has affected his ability to find and keep a job: he is currently unemployed."
+      }
+    },
+    {
+      key: {
+        text: "Why did it happen?"
+      },
+      value: {
+        text: "Mr Edwin said that at the time of the offence he was addicted to crack cocaine and was also in debt to his drug dealer, who he said belonged to a dangerous gang. He was frightened and worried about not being able to buy more crack cocaine. He had recently split up with his long term partner which added to his feeling of stress and led to him using an increased amount of crack cocaine. He said that before boarding the bus he was feeling desperate, which makes him then feel angry. He had used his last hit of crack cocaine just before the offence. "
+      }
+    },
+    {
+      key: {
+        text: "Evidenced motivations"
+      },
+      value: {
+        text: "
+Financial motivation: Yes
+Addiction / perceived needs: Yes
+Emotional state of offender: Yes
+"
+      }
+    },
+    {
+      key: {
+        text: "Disinhibitors"
+      },
+      value: {
+        text: "Emotional state: Yes
+Drugs: Yes
+Traumatic life event (divorce, redundancy): Yes"
+      }
+    }
+  ]
+}) }}
+
+
+
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Offence Overview',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: keyDetails
+}) }}
+    </div>
+    </div>
+</div>
+
+{% endblock %}
