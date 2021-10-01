@@ -12,17 +12,19 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Service Name</h1>
+      <h1 class="govuk-heading-l">View a summary of risk</h1>
 
-      <p class="govuk-body">Use this service to:</p>
+      <p class="govuk-body">All of the information about a person on probation in this service comes from OASys and nDelius.
+        <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>See a summary of information about a person on probation from nDelius and OASys.</li>
-        <li>Share a view of a person on probation's risk with colleagues involved in recall decisions.</li>
-        <li>Check guidance and process around recalls</li>
+        <li>review information about a person on probation’s risk factors</li>
+        <li>see a summary of their contact log</li>
+        <li>assess if the threshold for recall has been met</li>
+        <li>decide what further action to take</li>
       </ul>
 
-     
+
 
       {{ govukButton({
         text: "Start now",
@@ -37,6 +39,6 @@
 
     </div>
 
-    
+
   </div>
 {% endblock %}
