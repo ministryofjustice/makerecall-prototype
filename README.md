@@ -2,6 +2,8 @@
 
 ## Prototype Site
 https://makerecall-prototype.apps.live-1.cloud-platform.service.justice.gov.uk/
+username: recall
+password: decisions
 
 ### Files to build a docker image to run the prototype site
 
