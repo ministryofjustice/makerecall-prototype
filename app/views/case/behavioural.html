@@ -1,8 +1,14 @@
 {% extends "layout.html" %}
-{% set title = 'Personal details' %}
+{% set title = 'Contact Log' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +22,7 @@
   <div class="govuk-grid-column-one">
       <h4 class="govuk-heading-m">Contact Log</h4>
       <img src="../../public/images/contact-log.jpg" width="100%" />
-    </div>      
+    </div>
   </div>
 </div>
 {{ govukButton({
@@ -25,4 +31,3 @@ href: "../decision",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
 }) }}
 {% endblock %}
-

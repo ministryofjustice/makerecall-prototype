@@ -3,6 +3,11 @@
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -15,6 +20,192 @@
 
 
 <h2 class="govuk-heading-l">Licence History</h2>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-three-quarters" style="background:#ececec;border-left:6px solid #1d70b8;padding-left:20px">
+<h3 class="govuk-heading-s">Licence X title</h3>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p>254 Days left on licence</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p>Order ORA Adult Custody</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+<p>Robbery and assaults with intent to rob</p>
+</div>
+</div>
+</div>
+
+
+<div class="moj-timeline">
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Released on licence</h2>
+
+      <p class="moj-timeline__byline">by Joanne Brophy</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">01 September 2021</time>
+    </p>
+
+
+    <div class="moj-timeline__description">
+
+      <p>Released to community </p>
+
+      <ul class="moj-timeline__documents">
+        <li class="moj-timeline__document-item">
+          <a class="moj-timeline__document-link" href="#">Licence 2389432EDWIN </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+   <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Recalled to custody</h2>
+
+      <p class="moj-timeline__byline">by Joanne Brophy</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">15/08/2021</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <p>Link to Recall Part A, description of the recall</p>
+    </div>
+       <div class="moj-timeline__description">
+      <ul class="moj-timeline__documents">
+        <li class="moj-timeline__document-item">
+          <a class="moj-timeline__document-link" href="#">Recall Part A</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+   <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Drug test above limit</h2>
+
+      <p class="moj-timeline__byline">by Charles Hill</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">14/08/2021</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <p>This was the 25th drug test. Cocaine was found in their system</p>
+    </div>
+
+  </div>
+    <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Warning letter sent</h2>
+
+      <p class="moj-timeline__byline">by Frank Underwood</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">01 March 2021</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <p>Warning letter sent to residence due to failed drug test. Cocaine was found in their system</p>
+    </div>
+
+  </div>
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Drug test above limit</h2>
+
+      <p class="moj-timeline__byline">by Frank Underwood</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">01 March 2021</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <p>This was the 13th drug test conducted on licence. Cocaine was found in their system</p>
+    </div>
+
+  </div>
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Released on licence</h2>
+
+      <p class="moj-timeline__byline"></p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">01 February 2021</time>
+    </p>
+
+    <div class="moj-timeline__description">First release on probation</div>
+      <div class="moj-timeline__description">
+      <ul class="moj-timeline__documents">
+        <li class="moj-timeline__document-item">
+          <a class="moj-timeline__document-link" href="#">Licence 298127EDWIN </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Starts custodial sentence</h2>
+
+      <p class="moj-timeline__byline">by Frank Underwood</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-06T09:12:00.000Z">01 September 2020</time>
+    </p>
+
+  </div>
+
+
+
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full" style="background:#ececec;">
+<h3 class="govuk-heading-s">Licence X title</h3>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p>254 Days left on licence</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p>Order ORA Adult Custody</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+<p>Robbery and assaults with intent to rob</p>
+</div>
+</div>
+</div>
+
+
 <div class="moj-timeline">
   <div class="moj-timeline__item">
 

@@ -3,8 +3,12 @@
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
 {% endblock %}
-
 {% block content %}
 
 {% include "case/_case-service-user-banner.html" %}
