@@ -23,7 +23,11 @@
 
     {{ govukSummaryList({
     rows: [
-      {
+    {
+      key: { text: 'Why are you considering a recall?' },
+      value: { html: 'Possible breach of licence condition: be of good behaviour and not behave in a way which undermines the purpose of the licence period
+<br>Possible increase in risk: Increased drug use ' }
+    },  {
         key: { text: 'Gender' },
         value: { html: 'Male' }
       },
@@ -91,6 +95,19 @@ harm"
       }
     },
     {
+      key: {
+        text: "Offending history"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>5 April 2014: robbery</li>
+<p>Mugged a 13 year old boy for his smart phone and wallet</p>
+<li> June 2016: theft</li>
+<p>Stole a laptop computer from a table outside a cafe.<p>
+<li>10 December 2018: affray</li>
+<p>Fought in a pub and tested positive for cocaine</p></ul>'
+      }
+    },
+        {
       key: {
         text: "Characteristics of the index offence"
       },

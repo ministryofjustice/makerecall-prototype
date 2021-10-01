@@ -17,22 +17,35 @@
   Charles Edwin
 </h1>
 
-<p class="govuk-body">You can buy:</p>
+<p class="govuk-body"></p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>apples</li>
-  <li>oranges</li>
-  <li>pears</li>
+<p>You may need more detail on this case which you can find in OASys and nDelius.</p>
+<h2>Check their eligibility for recall</h2>
+	<li>Are you certain of their identity?</li>
+	<li>Is their licence current?</li>
+	<li>Have they breached at least one of their <href>licence conditions?</li>
+<h2>Check their risk factors</h2>
+	<li>What are their risk scores?</li>
+	<li>Who is at risk?</li>
+	<li>How great is the risk?</li>
+<h2>Check their current circumstances</h2>
+	<li>How imminent is the risk?</li>
+	<li>Can it be managed safely in the community?</li>
+	<li>Is it appropriate to consider alternatives to recall in this case?</li>
+<h2>Check their recent contact log entries</h2>
+	<li>How is their compliance with licence conditions?</li>
+	<li>Have they been in contact with other agencies?</li>
 </ul>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Log decision",
+  text: "Record your recommendation",
   href: "log-decision"
 }) }}
 
 
-       <h3 class="govuk-heading-s">Additional Resources</h3>
+       <h3 class="govuk-heading-s">Additional resources</h3>
         <ul class="govuk-list govuk-list--bullet">
           <li><a class="govuk-link" href="">Compliance and engagement on licence</a></li>
             <li><a class="govuk-link" href="#">Recall, Review and Re-Release of Recalled Prisoners Policy Framework</a></li>
