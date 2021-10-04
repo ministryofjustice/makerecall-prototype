@@ -23,11 +23,12 @@
 {%- from "moj/components/search/macro.njk" import mojSearch -%}
 
 {{ mojSearch({
-  action: '#',
+  action: '/case/behavioural-drugs',
   method: 'post',
   input: {
     id: 'search',
-    name: 'search'
+    name: 'search',
+    placeholder: 'asd'
   },
   label: {
     text: 'Search Contact Log',
@@ -80,7 +81,8 @@
           items: [
             {
               value: "drugs",
-              text: "Drug Use"
+              text: "Drug Use",
+              href: 'behavioural-drugs'
             },
             {
               value: "aggresion",
