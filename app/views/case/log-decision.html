@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% set title = 'Log decision' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "decision"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m"><abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: 237861287361 &nbsp; | &nbsp; Date of birth: 24 July 1980</span>
+  Charles Edwin
+</h1>
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Your recommendation will be saved to the contact log in nDelius for CRN: A0000",
+  iconFallbackText: "Warning"
+}) }}
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "What is your recommendation in this case?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Explain whether the threshold for recall been met and how. Is it appropriate to consider alteratives to recall in this case?"
+  }
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Submit",
+  href: "success"
+}) }}
+
+{% endblock %}

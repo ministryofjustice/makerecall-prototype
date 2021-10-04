@@ -3,172 +3,156 @@
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
 {% endblock %}
-
 {% block content %}
 
 {% include "case/_case-service-user-banner.html" %}
-{% set currentNavSection = 'risk' %}
+{% set currentNavSection = 'offence' %}
 {% include "case/_case-nav.html" %}
-        
-{% from "govuk/components/table/macro.njk" import govukTable %}
+
 <div class="govuk-width-container">
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-       <img src="../../public/images/ROSH-score.jpg" width="100%" />
-  </div>
-     <div class="govuk-grid-column-two-thirds">
-       <h2 class="govuk-heading-m">Nature of Risk</h2>
-         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or needing to buy crack cocaine he risks violently robbing members of the public for any items they have that he can then sell on. </p>
-         
-         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-{{ govukInsetText({
-         html: '<p>Date of last OASys Assessment - 01 September 2020</p><p><a href="#">View OASys</a></p>'
-}) }}
-  </div>
- 
-  </div>
-</div>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<div class="govuk-width-container">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-      <h4 class="govuk-heading-m">Score History</h4>
-      <img src="../../public/images/scores-history.jpg" width="100%" />
-    </div>      
-      <div class="govuk-grid-column-two-thirds">
-          <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-          
-      <h3 class="govuk-heading-s">RSR Score - 3.7</h3>
-       <img src="../../public/images/rsr-riskscore.jpg" width="100%" />
-          {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-{{ govukDetails({
-  summaryText: "About this RSR score",
-  html: "<p>Last updated: 12 July 2018</p>
-          <p>The RSR is taken from OASys.</p>"
-}) }}
-  </div>
-          </div>
-          <div class="govuk-grid-row">
-     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGRS Score - 58%</h3>
-        <img src="../../public/images/ogrs3-riskscore.jpg" width="100%" />
-  </div>
-    <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGP Score - 33</h3>
-        <img src="../../public/images/ogp-riskscore.jpg" width="100%" />
-  </div>
-              
-  </div>
-          <hr class="govuk-section-break govuk-section-break--m">
-              <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OVP Score - 18</h3>
-        <img src="../../public/images/osr-riskscore.jpg" width="100%" />
-  </div>
-                  
-  </div>
-  </div>
-  </div>
-</div>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-column-two-thirds">
 {% set keyDetails %}
 
-    
+
     {{ govukSummaryList({
     rows: [
-      {
-        key: { text: 'Risk of suicide' },
-        value: { html: 'Yes' }
+    {
+      key: { text: 'Why are you considering a recall?' },
+      value: { html: 'Possible breach of licence condition: be of good behaviour and not behave in a way which undermines the purpose of the licence period
+<br>Possible increase in risk: Increased drug use ' }
+    },  {
+        key: { text: 'Gender' },
+        value: { html: 'Male' }
       },
     {
-        key: { html: 'Risk of self-harm' },
-        value: { html: 'Yes' }
-      }, 
+        key: { html: 'Current address' },
+        value: { html: '123 Any Street, Abingdon OX14 2DR' }
+      },
     {
-        key: { html: 'Coping in custody / hostel setting' },
-        value: { html: 'Yes' }
-      }, 
-    {
-        key: { html: 'Vulnerability' },
-        value: { html: 'Yes' }
-      }, 
-    {
-        key: { html: 'Who is at risk' },
-        value: { html: '
-<ol class="govuk-list govuk-list--none govuk-list--spaced">
-  <li>Public - high. Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
-    <li>Known adult - low</li>
-    <li>Staff - medium. Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating. </li>
-    <li>Self - medium. Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </li>
-    <li>Children - medium. While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets. 
-</li></ol>
-'} 
-},
-    {
-        key: { html: 'When is the risk likely to be greatest' },
-        value: { text: 'When he has been talking to gang members in his neighbourhood and when he is low on money.' }
-      }  
+        key: { text: 'Offender manager' },
+        value: { text: 'Jane Smith - HAR PS1, NPS London' }
+      }
     ]
-  }) }}  
+  }) }}
 
 
-  
+
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk Profile',
+  titleText: 'Personal details',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: keyDetails
 }) }}
-{% set protectiveFactors %}
+    </div>
+    <div class="govuk-grid-column-one-third">
+    <img src="../../public/images/MAPPA-score.jpg" width="100%" />
+    </div>
+    </div>
+</div>
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+{% set keyDetails %}
 
-    
-    {{ govukSummaryList({
-    rows: [ 
+
+{{ govukSummaryList({
+  rows: [
     {
-        key: { html: 'What circumstances are likely to increase the risk?' },
-        value: { html: '
-<ul class="govuk-list govuk-list--none">
-    <li>Increased drug use</li>
-    <li>Lack of employment</li>
-    <li>Poor relationship situation</li>
-    <li>Financial vulnerability</li>
-    <li>Association with drug dealers/gang members</li>
-</ul>
-' }
+      key: {
+        text: "Index offence"
       },
-{
-        key: { html: 'What circumstances are likely to decrease the risk?' },
-        value: { html: '
-<ul class="govuk-list govuk-list--none">
-    <li>Drug testing</li>
-    <li>Rehab programmes</li>
-    <li>Stable relationships including cohabitation</li>
-    <li>Stable employment and financial security</li>
-    <li>Sense of positive purpose to prevent relapse into crack cocaine use</li>
-</ul>
-' }
+      value: {
+        text: "Robbery (other than armed robbery)"
       }
-    ]
-  }) }}  
+    },
+{
+      key: {
+        text: "Description of the index offence"
+      },
+      value: {
+html: "<p>On 20 April 2018 at 10pm Mr Edwin boarded a 73 bus in Stoke Newington. He went to the top of the bus where he saw Mr Smith sitting at the back of the bus. There were 2 other witnesses at the front of the bus.</p>
+<p>
+    Mr Edwin grabbed Mr Smith by the collar and shouted 'give me your phone and your wallet'. Mr Smith loudly told him to 'f**k off'. Mr Edwin hit Mr Smith in the face, breaking his nose and causing him to bleed, and saying 'Give me your phone and wallet or I will hit you again'. Mr Smith gave him his wallet and phone Mr Edwin pushed him into his seat. Mr Edwin ran off the bus at the next stop and ran off. </p>
+<p>
+He was known to police and so the CCTV imagery helped identify him. Police arrested him 2 days later, on the 22 April 2018. On being tested Mr Edwin had crack cocaine in his system.</p>"
+      }
+    },
+    {
+      key: {
+        text: "Additional offence"
+      },
+      value: {
+        text: "Assault occasioning actual bodily
+harm"
+      }
+    },
+    {
+      key: {
+        text: "Offending history"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>5 April 2014: robbery</li>
+<p>Mugged a 13 year old boy for his smart phone and wallet</p>
+<li> June 2016: theft</li>
+<p>Stole a laptop computer from a table outside a cafe.<p>
+<li>10 December 2018: affray</li>
+<p>Fought in a pub and tested positive for cocaine</p></ul>'
+      }
+    },
+        {
+      key: {
+        text: "Characteristics of the index offence"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Violence or threat of violence or coercion</li><li>Excessive use of violence or sadistic violence</li><li>The victim or victims were strangers to the offender</li></ul>'
+      }
+    },
+      {
+      key: {
+        text: "Victim information"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Age: 20</li><li>Gender: male</li><li>Race or ethnicity: white, British</li><li>Relationship between the victim and perpetrator: unknown to each other</li></ul>'
+      }
+    },
+      {
+      key: {
+        text: "Evidenced motivations"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Financial</li><li>Addiction or perceived needs</li><li>Emotional state of the offender</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Disinhibitors"
+      },
+      value: {
+        text: "Emotional state, drugs, traumatic life event"
+      }
+    }
+  ]
+}) }}
 
 
-  
+
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk and protective factors',
+  titleText: 'Offence overview',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: protectiveFactors
+  html: keyDetails
 }) }}
-{{ govukButton({
-  text: "Continue",
-href: "../decision",
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-}) }}
-{% endblock %}
+    </div>
+    </div>
+</div>
 
+{% endblock %}
