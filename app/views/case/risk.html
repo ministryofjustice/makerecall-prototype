@@ -22,13 +22,13 @@
        <img src="../../public/images/ROSH-score.jpg" width="100%" />
   </div>
      <div class="govuk-grid-column-two-thirds">
-       <h2 class="govuk-heading-m">Nature of Risk</h2>
-         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or needing to buy crack cocaine he risks violently robbing members of the public for any items they have that he can then sell on. </p>
+       <h2 class="govuk-heading-m">Risk of serious harm summary</h2>
+         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or his drug misuse issues are not controlled the risk of violently robbing members of the public for any items they have that he can then sell on is high. </p>
 
          {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {{ govukInsetText({
-         html: '<p>Date of last OASys Assessment - 01 September 2020</p><p><a href="#">View OASys</a></p>'
+         html: '<p>Date of last OASys assessment: 1 September 2020</p><p><a href="#">View OASys</a></p>'
 }) }}
   </div>
 
@@ -38,14 +38,14 @@
 <div class="govuk-width-container">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-      <h4 class="govuk-heading-m">Score History</h4>
+      <h4 class="govuk-heading-m">Score history</h4>
       <img src="../../public/images/scores-history.jpg" width="100%" />
     </div>
       <div class="govuk-grid-column-two-thirds">
           <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-      <h3 class="govuk-heading-s">RSR Score - 3.7</h3>
+      <h3 class="govuk-heading-s">Risk of serious recidivism (RSR) score - 3.7</h3>
        <img src="../../public/images/rsr-riskscore.jpg" width="100%" />
           {% from "govuk/components/details/macro.njk" import govukDetails %}
 
@@ -58,20 +58,23 @@
           </div>
           <div class="govuk-grid-row">
      <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGRS Score - 58%</h3>
+        <h3 class="govuk-heading-s">Offender group reconviction scale (OGRS) score: 58%</h3>
         <img src="../../public/images/ogrs3-riskscore.jpg" width="100%" />
+        <p>Medium spans 30% to 59%</p>
   </div>
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGP Score - 33</h3>
+        <h3 class="govuk-heading-s">OASys general reoffending predictor (OGP) score: 29%</h3>
         <img src="../../public/images/ogp-riskscore.jpg" width="100%" />
+        <p>Low spans 0% to 29%</p>
   </div>
 
   </div>
           <hr class="govuk-section-break govuk-section-break--m">
               <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OVP Score - 18</h3>
+        <h3 class="govuk-heading-s">OASys violence predictor (OVP): 75%</h3>
         <img src="../../public/images/osr-riskscore.jpg" width="100%" />
+        <p>Medium spans 60% to 79%</p>
   </div>
 
   </div>
@@ -80,40 +83,22 @@
 </div>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 {% set keyDetails %}
-
-
     {{ govukSummaryList({
     rows: [
-      {
-        key: { text: 'Risk of suicide' },
-        value: { html: 'Yes' }
-      },
     {
-        key: { html: 'Risk of self-harm' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Coping in custody / hostel setting' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Vulnerability' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Who is at risk' },
+        key: { text: 'Who is at risk' },
         value: { html: '
 <ol class="govuk-list govuk-list--none govuk-list--spaced">
-  <li>Public - high. Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
-    <li>Known adult - low</li>
-    <li>Staff - medium. Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating. </li>
-    <li>Self - medium. Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </li>
-    <li>Children - medium. While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets.
-</li></ol>
+  <li>Public: high.</li> Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
+    <p><li>Known adult: low</li></p>
+    <li>Staff: medium.</li> Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating.
+    <p><li>Self: medium.</li> Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </p>
+    <p><li>Children: medium.</li> While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets.</p>
+</ol>
 '}
 },
     {
-        key: { html: 'When is the risk likely to be greatest' },
+        key: { text: 'When is the risk likely to be greatest' },
         value: { text: 'When he has been talking to gang members in his neighbourhood and when he is low on money.' }
       }
     ]
@@ -124,7 +109,7 @@
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk Profile',
+  titleText: 'Risk of serious harm details',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: keyDetails
 }) }}
@@ -134,27 +119,83 @@
     {{ govukSummaryList({
     rows: [
     {
-        key: { html: 'What circumstances are likely to increase the risk?' },
+        key: { text: 'Key information' },
         value: { html: '
-<ul class="govuk-list govuk-list--none">
-    <li>Increased drug use</li>
-    <li>Lack of employment</li>
-    <li>Poor relationship situation</li>
-    <li>Financial vulnerability</li>
-    <li>Association with drug dealers/gang members</li>
-</ul>
-' }
+    <p>Mr Edwin is currently managed in the community on licence having been convicted of robbery and assualts with intent to rob. He has a high risk of harm to the public which is driven by his long-seated drug addiction.</p><p>His substance misuse issues started at age 14 when he started using cannabis. He moved on to using heroin and crack cocaine which he developed an addiction to.</p>
+        ' }
       },
+      {
+          key: { text: 'Other information' },
+          value: { html: "
+      <p>A recent doctor's report has highlighted the possibility that Mr Edwin could suffer from a personality disorder and a specialist assessment might help him here. He was previously recalled to custody on 15 August 2021 and then released again on September 1st 2021.</p>
+            " }
+        },
+        {
+            key: { html: 'Supervision' },
+            value: { html: '
+          <p>Probation is the main agency supporting Mr Edwin.</p>
+        <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          More detail
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>He has other sources of support:</p>
+      </div>
+    </details>
+        '
+          }
+        },
+          {
+              key: { html: 'Monitoring and control' },
+              value: { html: '
+              <p>Mr Edwin is under licence until 31 August 2022.</p> <p>View his <a href="licence-conditions">licence conditions</a>.</p>
+                    '}
+                  },
+      {
+          key: { html: 'Interventions and treatment' },
+          value: { html: '
+      <p>1) Offender manager will sentence plan with Mr Edwin to prepare for entry into community</p>
+      <p>2) AP will support Mr Edwin through any rehab, drug testing, intense programmes / therapy and room searches.</p>
+      <p>3) OM to deliver one to one work in supervision sessions consistently.</p>
+      <p>4) OM to immediately undertake enforcement procedures should he fail to comply.</p>
+      <p>5) Mr Edwin will have to partake in programmes aimed at addressing his thinking & behaviour as well as mental health and substance misuse issues.</p>
+            ' }
+        },
+        {
+            key: { html: 'Victim safety planning' },
+            value: { html: '
+          <p>It is unlikely Mr Edwin will seek out Mr Smith as there is no evidenced pattern of punitive behaviour on releae from custody.</p>
+                ' }
+          },
 {
-        key: { html: 'What circumstances are likely to decrease the risk?' },
+        key: { html: 'Contingency planning' },
         value: { html: '
-<ul class="govuk-list govuk-list--none">
-    <li>Drug testing</li>
-    <li>Rehab programmes</li>
-    <li>Stable relationships including cohabitation</li>
-    <li>Stable employment and financial security</li>
-    <li>Sense of positive purpose to prevent relapse into crack cocaine use</li>
-</ul>
+    <p>If there is poor compliance / non engagement with licence, warning letters and an increase in reporting will be actioned.</p>
+    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More detail
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.
+
+- Mr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.
+
+- If Mr Edwin connects back with people in his old estate associated with gangs (who have previously been associated with an increase in risk), then OM should consider issuing a warning letter, additional licence conditions, or recall in certain scenarios.
+
+- If Mr Edwin fails to follow licence conditions or neglects to follow intervention requirements, recall to custody should be considered.
+
+- If Mr Edwin does not make progress on undersatnding his drug misuse and impact on other people, his interventions should be reviewed to find the right approach that works for him, with sentence plan amended. If Mr Edwin still does not respond to sentence plan, suggest a warning and then ultimately recall.
+
+- If Mr Edwin is unable to secure stable employment, recommend reviewing interventions and sentence management plan to identify better pathways to emploiyment.
+
+- If Mr Edwin continues to struggle with his financiasl situation, I recommend interventions focused on a) budget management and b) finding a job.  Citizen Advice Bureau and CGL can help here.
+
+    </div>
+    </details>
 ' }
       }
     ]
@@ -165,7 +206,7 @@
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk and protective factors',
+  titleText: 'Risk management plan',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: protectiveFactors
 }) }}
