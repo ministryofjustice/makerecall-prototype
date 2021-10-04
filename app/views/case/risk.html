@@ -58,12 +58,12 @@
           </div>
           <div class="govuk-grid-row">
      <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">Offender Group Reconviction Scale (OGRS) score: 58%</h3>
+        <h3 class="govuk-heading-s">Offender group reconviction scale (OGRS) score: 58%</h3>
         <img src="../../public/images/ogrs3-riskscore.jpg" width="100%" />
         <p>Medium spans 30% to 59%</p>
   </div>
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OASys general reoffending Predictor (OGP) score: 29%</h3>
+        <h3 class="govuk-heading-s">OASys general reoffending predictor (OGP) score: 29%</h3>
         <img src="../../public/images/ogp-riskscore.jpg" width="100%" />
         <p>Low spans 0% to 29%</p>
   </div>
@@ -123,57 +123,43 @@
     {{ govukSummaryList({
     rows: [
     {
-        key: { html: 'Supervision' },
+        key: { html: 'Key information' },
         value: { html: '
-<ul class="govuk-list govuk-list--none">
-    <p>Probation is the main agency supporting Mr Edwin.</p>
-    <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      More detail
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-  <p>He has other sources of support:</p>
-  <li>Mental health services</li>
-  <li>CGL</li>
-  <li>Sentence Plan / objectives</li>
-  <li>Family and partner</li>
-  <li>OM</li>
-
-  <p>1) John Jones</p>
-  <p>Probation Officer - North London LDU</p>
-  <p>To provide support in the community and custody. Administer OB programme 1-1 and make relevant referrals.</p>
-
-  <p>2) SHIP Housing</p>
-  <p>1 Upper Street</p>
-  <p>London</p>
-  <p>N1</p>
-  <p>To provide housing support.</p>
-
-  <p>3) Jane Smith (CGL)</p>
-  <p>North London CGL</p>
-  <p>This is to offer support with Rehab and other drug issues.</p>
-
-  <p>4) MAPPA: Category 2 Level 1 - if there is evidence to support risk escalating,  Mr Edwin should be assessed as a level 2 case.</p>
-
-  <p>5) Community / Custody Mental health service - Forensic Mental Health Practitioner (TBC). This should be used to support Mr Edwin with mental health issues, monitor any medication and suggest a safety plan for his self-harm risk. Suggest helping Mr Edwin with a full psychological report to diagnose and offer treatment.</p>
-
-  <p>6) PD services - to support Mr Edwin in community. Suggest full psychological assessment and possible treatments/interventions for PD traits.</p>
-
-  <p>7) NPS Central Referral Scheme - Mr Edwin to enter AP after release so that behaviour can be monitored 24/7 if on site, including curfew, drug tests, room searched.</p>
-
-  <p>8) Met Police</p>
-  Deal with any recalls and problems
-  </div>
-</details>
-    ' }
+    <p>Mr Edwin is currently managed in the community on licence having been convicted of robbery and assualts with intent to rob. He has a high risk of harm to the public which is driven by his long-seated drug addiction.</p><p>His substance misuse issues started at age 14 when he started using cannabis. He moved on to using heroin and crack cocaine which he developed an addiction to.</p>
+        ' }
       },
+      {
+          key: { html: 'Other information' },
+          value: { html: '
+      <p>A recent doctor's report has highlighted the possibility that Mr Edwin could suffer from a personality disorder and a specialist assessment might help him here. He was previously recalled to custody on 15 August 2021 and then released again on September 1st 2021.</p>
+            ' }
+        },
+        {
+            key: { html: 'Supervision' },
+            value: { html: '
+          <p>Probation is the main agency supporting Mr Edwin.</p>
+        <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          More detail
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>He has other sources of support:</p>
+      </div>
+    </details>
+        '
+          },
+          {
+              key: { html: 'Monitoring and control' },
+              value: { html: '
+              <p>Mr Edwin is under licence until 31 August 2022.</p> <p>View his <a href="licence-conditions">licence conditions</a>.</p>
+                    ' }
+            },
       {
           key: { html: 'Interventions and treatment' },
           value: { html: '
-  <ul class="govuk-list govuk-list--none">
-      <p>1. Offender manager will sentence plan with Mr Edwin to prepare for entry into community</p>
+      <p>1) Offender manager will sentence plan with Mr Edwin to prepare for entry into community</p>
       <p>2) AP will support Mr Edwin through any rehab, drug testing, intense programmes / therapy and room searches.</p>
       <p>3) OM to deliver one to one work in supervision sessions consistently.</p>
       <p>4) OM to immediately undertake enforcement procedures should he fail to comply.</p>
@@ -183,14 +169,12 @@
         {
             key: { html: 'Victim safety planning' },
             value: { html: '
-    <ul class="govuk-list govuk-list--none">
-        <p>It is unlikely Mr Edwin will seek out Mr Smith as there is no evidenced pattern of punitive behaviour on releae from custody.</p>
+          <p>It is unlikely Mr Edwin will seek out Mr Smith as there is no evidenced pattern of punitive behaviour on releae from custody.</p>
                 ' }
           },
 {
         key: { html: 'Contingency planning' },
         value: { html: '
-<ul class="govuk-list govuk-list--none">
     <p>If there is poor compliance / non engagement with licence, warning letters and an increase in reporting will be actioned.</p>
     <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -199,7 +183,20 @@
     </span>
     </summary>
     <div class="govuk-details__text">
-    We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+    If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.
+
+- Mr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.
+
+- If Mr Edwin connects back with people in his old estate associated with gangs (who have previously been associated with an increase in risk), then OM should consider issuing a warning letter, additional licence conditions, or recall in certain scenarios.
+
+- If Mr Edwin fails to follow licence conditions or neglects to follow intervention requirements, recall to custody should be considered.
+
+- If Mr Edwin does not make progress on undersatnding his drug misuse and impact on other people, his interventions should be reviewed to find the right approach that works for him, with sentence plan amended. If Mr Edwin still does not respond to sentence plan, suggest a warning and then ultimately recall.
+
+- If Mr Edwin is unable to secure stable employment, recommend reviewing interventions and sentence management plan to identify better pathways to emploiyment.
+
+- If Mr Edwin continues to struggle with his financiasl situation, I recommend interventions focused on a) budget management and b) finding a job.  Citizen Advice Bureau and CGL can help here.
+
     </div>
     </details>
 ' }
