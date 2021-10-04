@@ -22,13 +22,13 @@
        <img src="../../public/images/ROSH-score.jpg" width="100%" />
   </div>
      <div class="govuk-grid-column-two-thirds">
-       <h2 class="govuk-heading-m">Nature of Risk</h2>
-         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or needing to buy crack cocaine he risks violently robbing members of the public for any items they have that he can then sell on. </p>
+       <h2 class="govuk-heading-m">Risk of serious harm summary</h2>
+         <p class="govuk-body-m">Mr Edwin poses a risk to members of the public who he perceives as having expensive phones or cash. If he is stressed or his drug misuse issues are not controlled the risk of violently robbing members of the public for any items they have that he can then sell on is high. </p>
 
          {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {{ govukInsetText({
-         html: '<p>Date of last OASys Assessment - 01 September 2020</p><p><a href="#">View OASys</a></p>'
+         html: '<p>Date of last OASys assessment: 1 September 2020</p><p><a href="#">View OASys</a></p>'
 }) }}
   </div>
 
@@ -38,14 +38,14 @@
 <div class="govuk-width-container">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-      <h4 class="govuk-heading-m">Score History</h4>
+      <h4 class="govuk-heading-m">Score history</h4>
       <img src="../../public/images/scores-history.jpg" width="100%" />
     </div>
       <div class="govuk-grid-column-two-thirds">
           <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-      <h3 class="govuk-heading-s">RSR Score - 3.7</h3>
+      <h3 class="govuk-heading-s">Risk of serious recidivism (RSR) score - 3.7</h3>
        <img src="../../public/images/rsr-riskscore.jpg" width="100%" />
           {% from "govuk/components/details/macro.njk" import govukDetails %}
 
@@ -58,20 +58,23 @@
           </div>
           <div class="govuk-grid-row">
      <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGRS Score - 58%</h3>
+        <h3 class="govuk-heading-s">Offender Group Reconviction Scale (OGRS) score: 58%</h3>
         <img src="../../public/images/ogrs3-riskscore.jpg" width="100%" />
+        <p>Medium spans 30% to 59%</p>
   </div>
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OGP Score - 33</h3>
+        <h3 class="govuk-heading-s">OASys general reoffending Predictor (OGP) score: 29%</h3>
         <img src="../../public/images/ogp-riskscore.jpg" width="100%" />
+        <p>Low spans 0% to 29%</p>
   </div>
 
   </div>
           <hr class="govuk-section-break govuk-section-break--m">
               <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">OVP Score - 18</h3>
+        <h3 class="govuk-heading-s">OASys violence predictor (OVP): 75%</h3>
         <img src="../../public/images/osr-riskscore.jpg" width="100%" />
+        <p>Medium spans 60% to 79%</p>
   </div>
 
   </div>
@@ -85,31 +88,17 @@
     {{ govukSummaryList({
     rows: [
       {
-        key: { text: 'Risk of suicide' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Risk of self-harm' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Coping in custody / hostel setting' },
-        value: { html: 'Yes' }
-      },
-    {
-        key: { html: 'Vulnerability' },
-        value: { html: 'Yes' }
       },
     {
         key: { html: 'Who is at risk' },
         value: { html: '
 <ol class="govuk-list govuk-list--none govuk-list--spaced">
-  <li>Public - high. Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
-    <li>Known adult - low</li>
-    <li>Staff - medium. Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating. </li>
-    <li>Self - medium. Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </li>
-    <li>Children - medium. While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets.
-</li></ol>
+  <li>Public: high.</li> Mr Edwin has multiple convictions for opportunistic violent muggings. He uses violence to intimate members of the public into giving up their posessions and cash, which he can sell on to feed his crack cocaine addiction. His risk to the public is therefore high</li>
+    <p><li>Known adult: low</li></p>
+    <li>Staff: medium.</li> Mr Edwin can become agitated when questioned and while there has not yet been an incident involving staff he can appear intimidating.
+    <p><li>Self: medium.</li> Mr Edwin associates with known gang members to sell what he acquires through violent robberies and this could escalate into a violent incident involving him. </p>
+    <p><li>Children: medium.</li> While Mr Edwin does not specifically target children for robberies he could possibly see them as useful opportunitistic targets.</p>
+</ol>
 '}
 },
     {
@@ -124,7 +113,7 @@
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk Profile',
+  titleText: 'Risk of serious harm details',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: keyDetails
 }) }}
@@ -134,27 +123,85 @@
     {{ govukSummaryList({
     rows: [
     {
-        key: { html: 'What circumstances are likely to increase the risk?' },
+        key: { html: 'Supervision' },
         value: { html: '
 <ul class="govuk-list govuk-list--none">
-    <li>Increased drug use</li>
-    <li>Lack of employment</li>
-    <li>Poor relationship situation</li>
-    <li>Financial vulnerability</li>
-    <li>Association with drug dealers/gang members</li>
-</ul>
-' }
+    <p>Probation is the main agency supporting Mr Edwin.</p>
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More detail
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>He has other sources of support:</p>
+  <li>Mental health services</li>
+  <li>CGL</li>
+  <li>Sentence Plan / objectives</li>
+  <li>Family and partner</li>
+  <li>OM</li>
+
+  <p>1) John Jones</p>
+  <p>Probation Officer - North London LDU</p>
+  <p>To provide support in the community and custody. Administer OB programme 1-1 and make relevant referrals.</p>
+
+  <p>2) SHIP Housing</p>
+  <p>1 Upper Street</p>
+  <p>London</p>
+  <p>N1</p>
+  <p>To provide housing support.</p>
+
+  <p>3) Jane Smith (CGL)</p>
+  <p>North London CGL</p>
+  <p>This is to offer support with Rehab and other drug issues.</p>
+
+  <p>4) MAPPA: Category 2 Level 1 - if there is evidence to support risk escalating,  Mr Edwin should be assessed as a level 2 case.</p>
+
+  <p>5) Community / Custody Mental health service - Forensic Mental Health Practitioner (TBC). This should be used to support Mr Edwin with mental health issues, monitor any medication and suggest a safety plan for his self-harm risk. Suggest helping Mr Edwin with a full psychological report to diagnose and offer treatment.</p>
+
+  <p>6) PD services - to support Mr Edwin in community. Suggest full psychological assessment and possible treatments/interventions for PD traits.</p>
+
+  <p>7) NPS Central Referral Scheme - Mr Edwin to enter AP after release so that behaviour can be monitored 24/7 if on site, including curfew, drug tests, room searched.</p>
+
+  <p>8) Met Police</p>
+  Deal with any recalls and problems
+  </div>
+</details>
+    ' }
       },
+      {
+          key: { html: 'Interventions and treatment' },
+          value: { html: '
+  <ul class="govuk-list govuk-list--none">
+      <p>1. Offender manager will sentence plan with Mr Edwin to prepare for entry into community</p>
+      <p>2) AP will support Mr Edwin through any rehab, drug testing, intense programmes / therapy and room searches.</p>
+      <p>3) OM to deliver one to one work in supervision sessions consistently.</p>
+      <p>4) OM to immediately undertake enforcement procedures should he fail to comply.</p>
+      <p>5) Mr Edwin will have to partake in programmes aimed at addressing his thinking & behaviour as well as mental health and substance misuse issues.</p>
+            ' }
+        },
+        {
+            key: { html: 'Victim safety planning' },
+            value: { html: '
+    <ul class="govuk-list govuk-list--none">
+        <p>It is unlikely Mr Edwin will seek out Mr Smith as there is no evidenced pattern of punitive behaviour on releae from custody.</p>
+                ' }
+          },
 {
-        key: { html: 'What circumstances are likely to decrease the risk?' },
+        key: { html: 'Contingency planning' },
         value: { html: '
 <ul class="govuk-list govuk-list--none">
-    <li>Drug testing</li>
-    <li>Rehab programmes</li>
-    <li>Stable relationships including cohabitation</li>
-    <li>Stable employment and financial security</li>
-    <li>Sense of positive purpose to prevent relapse into crack cocaine use</li>
-</ul>
+    <p>If there is poor compliance / non engagement with licence, warning letters and an increase in reporting will be actioned.</p>
+    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More detail
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+    </div>
+    </details>
 ' }
       }
     ]
@@ -165,7 +212,7 @@
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Risk and protective factors',
+  titleText: 'Risk management plan',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: protectiveFactors
 }) }}
