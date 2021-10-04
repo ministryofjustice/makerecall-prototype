@@ -17,70 +17,53 @@
 {% include "case/_case-nav.html" %}
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
-
-{% set situation %}
-
-    {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: 'Last accommodation recorded' },
-        value: { text: 'Rental accommodation - private rental
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Last employment recorded' },
-        value: { html: 'Unemployed (not on benefit)
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Relationship status' },
-        value: { html: 'Single
-Date recorded: 4 September 2021' }
-      }
-    ]
-  }) }}
-{% endset %}
-
-{{ appSummaryCard({
-  titleText: 'Compliance',
-  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: situation
-}) }}
-
-{% set education %}
-
-    {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: 'Education level recorded' },
-        value: { text: 'Other - No qualification
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Education level recorded' },
-        value: { html: 'Numeracy - No qualification
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Education level recorded' },
-        value: { html: 'Literacy - No qualification
-Date recorded: 4 September 2021' }
-      }
-    ]
-  }) }}
-{% endset %}
-
-{{ appSummaryCard({
-  titleText: 'Education',
-  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: education
-}) }}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Continue",
-href: "../decision",
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-}) }}
-
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Dynamic risks and compliance</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Risk factor</th>
+      <th scope="col" class="govuk-table__header govuk-table__header">Recent events</th>
+            </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Risk management plan<p>Offender manager to deliver one-to-one work in supervision sessions consistently.</p></td>
+      <td class="govuk-table__cell govuk-table__cell"><p>Supervision sessions logged average every 12 days in last <a href="behaviour">1 month</a></p>
+        <p>Supervision sessions logged average every 6 days between <a href="behaviour">Jan and Aug 2021</a>.</p>
+<p>2 acceptable absences in last 1 month</p></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Risk management plan <p>Mr Edwin to complete programmes aimed at addressing his thinking & behaviour as well as mental health and substance misuse issues.</p></td>
+      <td class="govuk-table__cell govuk-table__cell"><p>Thinking skills program: booked not started</p>
+<p>Mental health program: completed</p>
+<p>Substance misuse program: in progress</p></td>
+          </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Risk management plan <p>Offender Manager will sentence plan with Mr Edwin to prepare for entry into community with MAPPA</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Sentence plan not found</td>
+          </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Standard licence condition <p>Not to commit any offence</p></td>
+      <td class="govuk-table__cell govuk-table__cell"><p>No offence found under current licence.</p>
+<p>Search contact log(s) using the keyword <a href="behavioural">police</a></p></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Standard licence condition <p>Keep in touch with the supervising officer in accordance with instructions given by the supervising officer</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Supervision sessions logged average every 12 days in last <a href="behavioural-drugs">1 month</a>; average every 6 days between <a href="behavioural-drugs">Jan and Aug 2021.</a>
+2 acceptable absences in last 1 month</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Standard licence condition <p>Receive visits from the supervising officer in accordance with instructions given by the supervising officer.</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Last contact log reporting <a href="behavioural-drugs">home visit</a> dated 12 August 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Standard licence condition <p>Reside permanently at an address approved by the supervising officer and obtain the prior permission of the supervising officer for any stay of one or more nights at a different address.</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Contact logs found around <a href="behavioural-drugs">accomodation</a> in last 6 months</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Standard licence condition <p>Not undertake work, or a particular type of work, unless it is approved by the supervising officer and notify the supervising officer in advance of any proposal to undertake work or a particular type of work.</p></td>
+      <td class="govuk-table__cell govuk-table__cell">No contact logs found around <a href="behavioural-drugs">employment</a> in last 6 months</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}
