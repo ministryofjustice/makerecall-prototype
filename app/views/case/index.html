@@ -23,7 +23,11 @@
 
     {{ govukSummaryList({
     rows: [
-      {
+    {
+      key: { text: 'Why are you considering a recall?' },
+      value: { html: 'Possible breach of licence condition: be of good behaviour and not behave in a way which undermines the purpose of the licence period
+<br>Possible increase in risk: Increased drug use ' }
+    },  {
         key: { text: 'Gender' },
         value: { html: 'Male' }
       },
@@ -43,7 +47,7 @@
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Personal Details',
+  titleText: 'Personal details',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: keyDetails
 }) }}
@@ -63,15 +67,15 @@
   rows: [
     {
       key: {
-        text: "Index Offence"
+        text: "Index offence"
       },
       value: {
-        text: "Robbery and assaults with intent to rob"
+        text: "Robbery (other than armed robbery)"
       }
     },
 {
       key: {
-        text: "Details of index offence"
+        text: "Description of the index offence"
       },
       value: {
 html: "<p>On 20 April 2018 at 10pm Mr Edwin boarded a 73 bus in Stoke Newington. He went to the top of the bus where he saw Mr Smith sitting at the back of the bus. There were 2 other witnesses at the front of the bus.</p>
@@ -83,54 +87,48 @@ He was known to police and so the CCTV imagery helped identify him. Police arres
     },
     {
       key: {
-        text: "Additional Offence"
+        text: "Additional offence"
       },
       value: {
-        text: "Assault"
+        text: "Assault occasioning actual bodily
+harm"
       }
     },
     {
       key: {
-        text: "What the offence involved"
+        text: "Offending history"
       },
       value: {
-        html: '<ul class="govuk-list govuk-list--none"><li>Any violence or threat of violence - coercion</li><li>Excessive use of violence - sadistic violence</li></ul>'
+        html: '<ul class="govuk-list govuk-list--none"><li>5 April 2014: robbery</li>
+<p>Mugged a 13 year old boy for his smart phone and wallet</p>
+<li> June 2016: theft</li>
+<p>Stole a laptop computer from a table outside a cafe.<p>
+<li>10 December 2018: affray</li>
+<p>Fought in a pub and tested positive for cocaine</p></ul>'
       }
     },
-    {
+        {
       key: {
-        text: "Other characteristics"
+        text: "Characteristics of the index offence"
       },
       value: {
-        html: '<ul class="govuk-list govuk-list--none"><li>Were there any direct victim(s) eg contact targeting</li><li>Were the victim(s) stranger(s) to the offender</li></ul>'
+        html: '<ul class="govuk-list govuk-list--none"><li>Violence or threat of violence or coercion</li><li>Excessive use of violence or sadistic violence</li><li>The victim or victims were strangers to the offender</li></ul>'
       }
     },
-    {
+      {
       key: {
-        text: "Impact on Victim"
+        text: "Victim information"
       },
       value: {
-        text: "Mr Smith suffered a broken nose and required hospital treatment. He has since been very afraid to go outside and especially take public transport. This has affected his ability to find and keep a job: he is currently unemployed."
+        html: '<ul class="govuk-list govuk-list--none"><li>Age: 20</li><li>Gender: male</li><li>Race or ethnicity: white, British</li><li>Relationship between the victim and perpetrator: unknown to each other</li></ul>'
       }
     },
-    {
-      key: {
-        text: "Why did it happen?"
-      },
-      value: {
-        text: "Mr Edwin said that at the time of the offence he was addicted to crack cocaine and was also in debt to his drug dealer, who he said belonged to a dangerous gang. He was frightened and worried about not being able to buy more crack cocaine. He had recently split up with his long term partner which added to his feeling of stress and led to him using an increased amount of crack cocaine. He said that before boarding the bus he was feeling desperate, which makes him then feel angry. He had used his last hit of crack cocaine just before the offence. "
-      }
-    },
-    {
+      {
       key: {
         text: "Evidenced motivations"
       },
       value: {
-        text: "
-Financial motivation: Yes
-Addiction / perceived needs: Yes
-Emotional state of offender: Yes
-"
+        html: '<ul class="govuk-list govuk-list--none"><li>Financial</li><li>Addiction or perceived needs</li><li>Emotional state of the offender</li></ul>'
       }
     },
     {
@@ -138,9 +136,7 @@ Emotional state of offender: Yes
         text: "Disinhibitors"
       },
       value: {
-        text: "Emotional state: Yes
-Drugs: Yes
-Traumatic life event (divorce, redundancy): Yes"
+        text: "Emotional state, drugs, traumatic life event"
       }
     }
   ]
@@ -151,7 +147,7 @@ Traumatic life event (divorce, redundancy): Yes"
 {% endset %}
 
 {{ appSummaryCard({
-  titleText: 'Offence Overview',
+  titleText: 'Offence overview',
   classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
   html: keyDetails
 }) }}
