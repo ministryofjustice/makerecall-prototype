@@ -17,67 +17,45 @@
 {% include "case/_case-nav.html" %}
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
-
-{% set situation %}
-
-    {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: 'Last accommodation recorded' },
-        value: { text: 'Rental accommodation - private rental
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Last employment recorded' },
-        value: { html: 'Unemployed (not on benefit)
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Relationship status' },
-        value: { html: 'Single
-Date recorded: 4 September 2021' }
-      }
-    ]
-  }) }}
-{% endset %}
-
-{{ appSummaryCard({
-  titleText: 'Compliance',
-  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: situation
-}) }}
-
-{% set education %}
-
-    {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: 'Education level recorded' },
-        value: { text: 'Other - No qualification
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Education level recorded' },
-        value: { html: 'Numeracy - No qualification
-Date recorded: 4 September 2021' }
-      },
-    {
-        key: { html: 'Education level recorded' },
-        value: { html: 'Literacy - No qualification
-Date recorded: 4 September 2021' }
-      }
-    ]
-  }) }}
-{% endset %}
-
-{{ appSummaryCard({
-  titleText: 'Education',
-  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
-  html: education
-}) }}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Dynamic risks and compliance</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Risk factor</th>
+      <th scope="col" class="govuk-table__header govuk-table__header">Recent events</th>
+        <th scope="col" class="govuk-table__header govuk-table__header">Dates</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Licence condition<p>Be of good behaviour</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Met Police offce Annie Taylor called to say that Charles had been arrested for petty theft - he stole a sandwich from highbury and islington waitrose but was stopped by security. Not drug tested yet but heard that he looked 'wired'</td>
+      <td class="govuk-table__cell govuk-table__cell">29 Sept 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Licence condition <p>Give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body.</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Complied with drug test, tested negative</td>
+      <td class="govuk-table__cell govuk-table__cell">23 Sept 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Risk management plan <p>Attend substance misuse programme</a></p></td>
+      <td class="govuk-table__cell govuk-table__cell">Attended 100% of meetings</td>
+      <td class="govuk-table__cell govuk-table__cell">8 Aug to 15 Sept 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Licence condition <p>Receive visits from the supervising officer in accordance with instructions given by the supervising officer.</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Supervision sessions logged average every 12 days in last 1 month; average every 6 days Jan-2021 to Aug-2021.
+2 acceptable abcences in last 1 month</td>
+      <td class="govuk-table__cell govuk-table__cell">31 Aug 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">Risk management plan <p>Emotional wellbeing</p><p>Financial stability</p></td>
+      <td class="govuk-table__cell govuk-table__cell">Spoke to Charles in his regular visit. Said that he was feeling worried because he was suffering withdrawal. Said that he was worried that he needed drugs but didn't have the money to buy them. Explained to Charles that he had to abide by his licence or he would be recalled</td>
+      <td class="govuk-table__cell govuk-table__cell">13 Aug 2021</td>
+    </tr>
+  </tbody>
+</table>
+  {{ govukButton({
   text: "Continue",
 href: "../decision",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
