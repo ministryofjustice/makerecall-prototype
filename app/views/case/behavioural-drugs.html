@@ -14,7 +14,7 @@
 {% include "case/_case-service-user-banner.html" %}
 {% set currentNavSection = 'behavioural' %}
 {% include "case/_case-nav.html" %}
-
+<h2 class="govuk-heading-m">Contact log</h2>
 <div class="govuk-width-container">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -23,12 +23,12 @@
 {%- from "moj/components/search/macro.njk" import mojSearch -%}
 
 {{ mojSearch({
-  action: '#',
+  action: '/case/behavioural-drugs',
   method: 'post',
   input: {
     id: 'search',
     name: 'search',
-    text: 'asd'
+    placeholder: 'asd'
   },
   label: {
     text: 'Search Contact Log',
@@ -52,7 +52,9 @@
   namePrefix: "passport-issued",
   fieldset: {
     legend: {
-      text: "From"
+      text: "Date range ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
     }
   }
 }) }}
@@ -63,7 +65,7 @@
   namePrefix: "passport-issued",
   fieldset: {
     legend: {
-      text: "To"
+      text: "From"
     }
   }
 }) }}
@@ -73,7 +75,7 @@
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
-              text: "Themes",
+              text: "Tags",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -81,7 +83,8 @@
           items: [
             {
               value: "drugs",
-              text: "Drug Use",
+              text: "Drugs",
+              href: 'behavioural-drugs',
               checked: true
             },
             {
@@ -90,56 +93,45 @@
               checked: true
             },
             {
-              value: "image",
-              text: "Alcohol"
-            },
-            {
-              value: "slide",
-              text: "Accommodation"
-            },
-            {
-              value: "text",
-              text: "Attendance"
-            }
-          ]
-        }) }}
-        {{ govukCheckboxes({
-          idPrefix: "content-type",
-          name: "content-type",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Keywords",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "drugs",
-              text: "Drug Use"
-            },
-            {
               value: "aggresion",
-              text: "Aggresion"
+              text: "Tested negative"
             },
             {
               value: "image",
-              text: "Alcohol"
+              text: "Cocaine"
             },
             {
               value: "slide",
-              text: "Accommodation"
+              text: "Theft"
             },
             {
               value: "text",
-              text: "Attendance"
+              text: "Mental health"
+            },
+            {
+              value: "text",
+              text: "Financial"
+            },
+            {
+              value: "text",
+              text: "Travel"
+            }
+            ,
+            {
+              value: "text",
+              text: "Alcohol"
             }
           ]
         }) }}
 
       </div>
       <div class="govuk-grid-column-two-thirds">
+<p class="govuk-body" style="font-weight:bold;">4 of 4 Results</p>
+<div class="pills" style="background-color: #f3f2f1;display:block;padding:20px;"><p class="govuk-body">Related to <span style="border: 1px solid #505a5f;
+    border-radius: 5px;display:inline-block;">Drugs</span><span style="margin-left:20px;border: 1px solid #505a5f;
+        border-radius: 5px;display:inline-block;">Substance</span></p></div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
         {% from "govuk/components/select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
@@ -161,12 +153,13 @@
   ]
 }) }}
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one">
-<div style="padding:20px;background-color:#ccc;"><h3 class="govuk-heading-s">Drugs  X</h3></div>
+          <div class="govuk-grid-column-full">
+
             <div class="card">
               <div class="card-wrapper">
-            <h3 class='govuk-heading-m'><a href="#">Test results 23/09/2021</a></h3>
-            <p class="govuk-body govuk-!-font-size-16">Drug tests for class A drugs - complied</p>
+                <span class="govuk-caption-m">23/09/2021</span>
+            <h3 class='govuk-heading-m'><a href="#">AP - Drug Test</a></h3>
+            <p class="govuk-body govuk-!-font-size-16">Attended - Complied - Complied with drug test, tested negative</p>
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
                 <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
@@ -177,56 +170,90 @@
 }) }}{{ govukTag({
   text: "Drugs"
 }) }}{{ govukTag({
-  text: "Test"
+  text: "Tested negative"
 }) }}
             </div>
             </div>
             </div>
             </div>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <div class="card">
-              <div class="card-wrapper">
-            <h3 class='govuk-heading-m'><a href="#">Test results 21/09/2021</a></h3>
-            <p class="govuk-body govuk-!-font-size-16">Alcohol test results - complied</p>
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
-                </div>
-                <div class="govuk-grid-column-one-half">
-{{ govukTag({
-  text: "Substance"
-}) }}{{ govukTag({
-  text: "Drugs"
-}) }}{{ govukTag({
-  text: "Test"
-}) }}
-            </div>
-            </div>
-            </div>
-            </div>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <div class="card">
-              <div class="card-wrapper">
-            <h3 class='govuk-heading-m'><a href="#">Test results 19/09/2021</a></h3>
-            <p class="govuk-body govuk-!-font-size-16">Drug tests for class A drugs - borderline, complied</p>
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
-                </div>
-                <div class="govuk-grid-column-one-half">
-{{ govukTag({
-  text: "Substance"
-}) }}{{ govukTag({
-  text: "Drugs"
-}) }}{{ govukTag({
-  text: "Test"
-}) }}
-            </div>
-            </div>
-            </div>
-            </div>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <div class="card">
+                          <div class="card-wrapper">
+                            <span class="govuk-caption-m">21/09/2021</span>
+                        <h3 class='govuk-heading-m'><a href="#">AP - Drug Test</a></h3>
+                        <p class="govuk-body govuk-!-font-size-16">Attended - Complied - Complied with drug test, tested negative</p>
+                        <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-half">
+                            <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                              {{ govukTag({
+                                text: "Substance"
+                              }) }}{{ govukTag({
+                                text: "Drugs"
+                              }) }}{{ govukTag({
+                                text: "Tested negative"
+                              }) }}
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                                    <div class="card">
+                                      <div class="card-wrapper">
+                                        <span class="govuk-caption-m">19/09/2021</span>
+                                    <h3 class='govuk-heading-m'><a href="#">AP - Drug Test</a></h3>
+                                    <p class="govuk-body govuk-!-font-size-16">Test - Not Clean / Not Acceptable / Unsuitable - Positive for crack cocaine</p>
+                                    <div class="govuk-grid-row">
+                                      <div class="govuk-grid-column-one-half">
+                                        <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half">
+                        {{ govukTag({
+                          text: "Substance"
+                        }) }}{{ govukTag({
+                          text: "Drugs"
+                        }) }}{{ govukTag({
+                          text: "Cocaine"
+                        }) }}
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                                                <div class="card">
+                                                  <div class="card-wrapper">
+                                                    <span class="govuk-caption-m">14/09/2021</span>
+                                                <h3 class='govuk-heading-m'><a href="#">AP - Alcohol Test</a></h3>
+                                                <p class="govuk-body govuk-!-font-size-16">Test - Clean / Acceptable / Suitable - 0UG/100ML</p>
+                                                <div class="govuk-grid-row">
+                                                  <div class="govuk-grid-column-one-half">
+                                                    <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                                                    </div>
+                                                    <div class="govuk-grid-column-one-half">
+                                    {{ govukTag({
+                                      text: "Substance"
+                                    }) }}{{ govukTag({
+                                      text: "Alcohol"
+                                    }) }}{{ govukTag({
+                                      text: "Tested Negative"
+                                    }) }}
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+                                        </div>
 
           </div>
+
         </div>
       </div>
     </div>
