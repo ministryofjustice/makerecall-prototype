@@ -1,0 +1,237 @@
+{% extends "layout.html" %}
+{% set title = 'Contact Log' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
+{% endblock %}
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'behavioural' %}
+{% include "case/_case-nav.html" %}
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+{{ mojSearch({
+  action: '#',
+  method: 'post',
+  input: {
+    id: 'search',
+    name: 'search',
+    text: 'asd'
+  },
+  label: {
+    text: 'Search Contact Log',
+    classes: 'govuk-!-font-weight-bold'
+  },
+  button: {
+    text: 'Search'
+  }
+}) }}
+</div>
+<div class="govuk-grid-column-one-third"></div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "From"
+    }
+  }
+}) }}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "To"
+    }
+  }
+}) }}
+        {{ govukCheckboxes({
+          idPrefix: "content-type",
+          name: "content-type",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Themes",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "drugs",
+              text: "Drug Use",
+              checked: true
+            },
+            {
+              value: "aggresion",
+              text: "Substance",
+              checked: true
+            },
+            {
+              value: "image",
+              text: "Alcohol"
+            },
+            {
+              value: "slide",
+              text: "Accommodation"
+            },
+            {
+              value: "text",
+              text: "Attendance"
+            }
+          ]
+        }) }}
+        {{ govukCheckboxes({
+          idPrefix: "content-type",
+          name: "content-type",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Keywords",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "drugs",
+              text: "Drug Use"
+            },
+            {
+              value: "aggresion",
+              text: "Aggresion"
+            },
+            {
+              value: "image",
+              text: "Alcohol"
+            },
+            {
+              value: "slide",
+              text: "Accommodation"
+            },
+            {
+              value: "text",
+              text: "Attendance"
+            }
+          ]
+        }) }}
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Sort by"
+  },
+  items: [
+    {
+      value: "published",
+      text: "Relevance"
+    },
+    {
+      value: "updated",
+      text: "Recently updated",
+      selected: true
+    }
+  ]
+}) }}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one">
+<div style="padding:20px;background-color:#ccc;"><h3 class="govuk-heading-s">Drugs  X</h3></div>
+            <div class="card">
+              <div class="card-wrapper">
+            <h3 class='govuk-heading-m'><a href="#">Test results 23/09/2021</a></h3>
+            <p class="govuk-body govuk-!-font-size-16">Drug tests for class A drugs - complied</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                </div>
+                <div class="govuk-grid-column-one-half">
+{{ govukTag({
+  text: "Substance"
+}) }}{{ govukTag({
+  text: "Drugs"
+}) }}{{ govukTag({
+  text: "Test"
+}) }}
+            </div>
+            </div>
+            </div>
+            </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <div class="card">
+              <div class="card-wrapper">
+            <h3 class='govuk-heading-m'><a href="#">Test results 21/09/2021</a></h3>
+            <p class="govuk-body govuk-!-font-size-16">Alcohol test results - complied</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                </div>
+                <div class="govuk-grid-column-one-half">
+{{ govukTag({
+  text: "Substance"
+}) }}{{ govukTag({
+  text: "Drugs"
+}) }}{{ govukTag({
+  text: "Test"
+}) }}
+            </div>
+            </div>
+            </div>
+            </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <div class="card">
+              <div class="card-wrapper">
+            <h3 class='govuk-heading-m'><a href="#">Test results 19/09/2021</a></h3>
+            <p class="govuk-body govuk-!-font-size-16">Drug tests for class A drugs - borderline, complied</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                </div>
+                <div class="govuk-grid-column-one-half">
+{{ govukTag({
+  text: "Substance"
+}) }}{{ govukTag({
+  text: "Drugs"
+}) }}{{ govukTag({
+  text: "Test"
+}) }}
+            </div>
+            </div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
