@@ -4,13 +4,11 @@
 
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
 {{ govukBackLink({
   text: "Back",
   href: "../search-results"
 }) }}
 {% endblock %}
-
 {% block content %}
 
 {% include "case/_case-service-user-banner.html" %}
@@ -20,14 +18,241 @@
 <div class="govuk-width-container">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one">
-      <h4 class="govuk-heading-m">Contact Log</h4>
-      <img src="../../public/images/contact-log.jpg" width="100%" />
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+{{ mojSearch({
+  action: '#',
+  method: 'post',
+  input: {
+    id: 'search',
+    name: 'search'
+  },
+  label: {
+    text: 'Search Contact Log',
+    classes: 'govuk-!-font-weight-bold'
+  },
+  button: {
+    text: 'Search'
+  }
+}) }}
+</div>
+<div class="govuk-grid-column-one-third"></div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "From"
+    }
+  }
+}) }}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "To"
+    }
+  }
+}) }}
+        {{ govukCheckboxes({
+          idPrefix: "content-type",
+          name: "content-type",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Themes",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "drugs",
+              text: "Drug Use"
+            },
+            {
+              value: "aggresion",
+              text: "Aggresion"
+            },
+            {
+              value: "image",
+              text: "Alcohol"
+            },
+            {
+              value: "slide",
+              text: "Accommodation"
+            },
+            {
+              value: "text",
+              text: "Attendance"
+            }
+          ]
+        }) }}
+        {{ govukCheckboxes({
+          idPrefix: "content-type",
+          name: "content-type",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Keywords",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "drugs",
+              text: "Drug Use"
+            },
+            {
+              value: "aggresion",
+              text: "Aggresion"
+            },
+            {
+              value: "image",
+              text: "Alcohol"
+            },
+            {
+              value: "slide",
+              text: "Accommodation"
+            },
+            {
+              value: "text",
+              text: "Attendance"
+            }
+          ]
+        }) }}
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Sort by"
+  },
+  items: [
+    {
+      value: "published",
+      text: "Relevance"
+    },
+    {
+      value: "updated",
+      text: "Recently updated",
+      selected: true
+    }
+  ]
+}) }}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one">
+
+            <div class="card">
+              <div class="card-wrapper">
+            <h3 class='govuk-heading-m'><a href="#">Planned Office Visit (NS)</a></h3>
+            <p class="govuk-body govuk-!-font-size-16">Spoke to Charles in his regular visit. Said that he was feeling worried because he was suffering withdrawal - 'I can't stop thinking about crack cocaine'. Said that he was worried that he needed drugs but didn't have the money to buy them.... 'what if I have to mug someone'? I explained to Charles that he had to abide by his licence or he would be recalled</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                </div>
+                <div class="govuk-grid-column-one-half">
+{{ govukTag({
+  text: "Substance"
+}) }}{{ govukTag({
+  text: "Drugs"
+}) }}{{ govukTag({
+  text: "Test"
+}) }}
+            </div>
+            </div>
+            </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <div class="card">
+                          <div class="card-wrapper">
+                        <h3 class='govuk-heading-m'><a href="#">Arrest Incident</a></h3>
+                        <p class="govuk-body govuk-!-font-size-16">Met Police offce Annie Taylor called to say that Charles had been arrested for petty theft - he stole a sandwich from highbury and islington waitrose but was stopped by security. Not drug tested yet but heard that he looked 'wired'</p>
+                        <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-half">
+                            <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+            {{ govukTag({
+              text: "Substance"
+            }) }}{{ govukTag({
+              text: "Drugs"
+            }) }}{{ govukTag({
+              text: "Test"
+            }) }}
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                                    <div class="card">
+                                      <div class="card-wrapper">
+                                    <h3 class='govuk-heading-m'><a href="#">Planned Office Visit (NS)</a></h3>
+                                    <p class="govuk-body govuk-!-font-size-16">Spoke to Charles in his regular visit. Said that he was feeling worried because he was suffering withdrawal - 'I can't stop thinking about crack cocaine'. Said that he was worried that he needed drugs but didn't have the money to buy them.... 'what if I have to mug someone'? I explained to Charles that he had to abide by his licence or he would be recalled</p>
+                                    <div class="govuk-grid-row">
+                                      <div class="govuk-grid-column-one-half">
+                                        <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half">
+                        {{ govukTag({
+                          text: "Substance"
+                        }) }}{{ govukTag({
+                          text: "Drugs"
+                        }) }}{{ govukTag({
+                          text: "Test"
+                        }) }}
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                                                <div class="card">
+                                                  <div class="card-wrapper">
+                                                <h3 class='govuk-heading-m'><a href="#">Planned Office Visit (NS)</a></h3>
+                                                <p class="govuk-body govuk-!-font-size-16">Spoke to Charles in his regular visit. Said that he was feeling worried because he was suffering withdrawal - 'I can't stop thinking about crack cocaine'. Said that he was worried that he needed drugs but didn't have the money to buy them.... 'what if I have to mug someone'? I explained to Charles that he had to abide by his licence or he would be recalled</p>
+                                                <div class="govuk-grid-row">
+                                                  <div class="govuk-grid-column-one-half">
+                                                    <a href="#" class="govuk-link add-to-lesson">View in Delius</a>
+                                                    </div>
+                                                    <div class="govuk-grid-column-one-half">
+                                    {{ govukTag({
+                                      text: "Substance"
+                                    }) }}{{ govukTag({
+                                      text: "Drugs"
+                                    }) }}{{ govukTag({
+                                      text: "Test"
+                                    }) }}
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
-{{ govukButton({
-  text: "Continue",
-href: "../decision",
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-}) }}
+
 {% endblock %}
