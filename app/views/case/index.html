@@ -24,20 +24,20 @@
     {{ govukSummaryList({
     rows: [
     {
-      key: { text: 'Why are you considering a recall?' },
-      value: { html: 'Possible breach of licence condition: be of good behaviour and not behave in a way which undermines the purpose of the licence period
-<br>Possible increase in risk: Increased drug use ' }
-    },  {
-        key: { text: 'Gender' },
-        value: { html: 'Male' }
-      },
+      key: { text: 'Trigger reason' },
+      value: { html: 'Increasing drug use ' }
+    },  
     {
         key: { html: 'Current address' },
-        value: { html: '123 Any Street, Abingdon OX14 2DR' }
+        value: { html: '123 Any Street, London NE12 2DR' }
+      },
+      {
+        key: { text: 'Offender manager' },
+        value: { html: 'Jane Smith - HAR PS1, NPS London <br>Telephone: 020 7123 4456 <br> Email: <a href="url">Jane.Smith@HMPPS.gov.uk</a>' }
       },
     {
-        key: { text: 'Offender manager' },
-        value: { text: 'Jane Smith - HAR PS1, NPS London' }
+        key: { text: 'Substance misuse support worker' },
+        value: { html: 'Jack Brown - Camden specialist drug services <br>Telephone: 020 3417 2212 <br> Email: <a href="url">jackbrown@camden.org.uk</a>' }
       }
     ]
   }) }}
@@ -53,6 +53,7 @@
 }) }}
     </div>
     <div class="govuk-grid-column-one-third">
+      <p>nDelius risk flags</p>
     <img src="../../public/images/risk-flags.png" width="100%" />
     </div>
     </div>
