@@ -14,7 +14,7 @@
 {% block content %}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-  <span class="govuk-caption-m"><abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: 237861287361 &nbsp; | &nbsp; Date of birth: 24 July 1980 &nbsp; | &nbsp; Gender: Male</span>
+  <span class="govuk-caption-m"><abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: 237861287361 &nbsp; | &nbsp; Date of birth: 24 July 1980 (age 41)&nbsp; | &nbsp; Gender: Male</span>
   Charles Edwin
 </h1>
 
@@ -33,10 +33,16 @@
     isPageHeading: true
   },
   hint: {
-    text: "Describe your reasons for this recommendation. Your notes will be saved as an entry in the contact log in nDelius for CRN: 237861287361."
+    text: "Describe your reasons for this recommendation."
   }
 }) }}
-
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+  Your notes will be saved as an entry in the contact log in nDelius for CRN: 237861287361.
+  </strong>
+</div>
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
