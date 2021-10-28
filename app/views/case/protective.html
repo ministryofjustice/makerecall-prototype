@@ -7,7 +7,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "../case"
+  href: "timing"
 }) }}
 {% endblock %}
 
@@ -20,21 +20,27 @@
 <p class="govuk-body"></p>
 <ul class="govuk-list govuk-list--bullet">
 <span>Work through this checklist before you record your recommendation for this case.</span>
-<h2>Do you have enough information?</h2>
-  <li>Have you done any checks with the police or other agencies?</li>
-	<li>Are the changes similar to patterns of offending behaviour in the past?</li>
-  <li>Do you have concerns about any impact on their victims?</li>
-	<li>Have you spoken to the lead agencies on the risk management plan to see if they share your concerns?</li>
-  <li>Can the lead agencies provide more support or other provisions?</li>
 
-<br>          Have you checked the <a href="risk.html">risk scores?</a>
+<h2>Have you thought about protective factors and alternatives to recall?</h2>
+<li>What protective factors are in place and what has worked in the past?</li>
+<li>Would recalling  Charles Edwin have a negative affect any of the protective factors?</li>
+<li>Has Charles Edwin been screened into the Offender Personality Disorder (OPD) Pathway and a case formulation completed?</li>
+<li>Has there been a consultation with the specialist probation officer and psychologist?</li>
+<li>What contingencies are in place on the risk management plan? Can you start any of them now?</li>
+<li>Does the contingency plan state what behaviour would meet the threshold for an out of hours recall?</li>
+<li>Can the out of hours head of function make a defensible decision when the offender manager is not available?</li>
+<li>If you are a probation officer, have you had a reflective discussion with your senior probation officer about your options?</li>
+
+
+<br>          Have you checked the <a href="risk.html">risk management plan?</a>
+
 </ul>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Next",
-  href: "circumstances"
+  text: "Record your recommendation",
+  href: "log-decision"
 }) }}
 
 
