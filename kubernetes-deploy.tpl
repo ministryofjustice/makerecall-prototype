@@ -54,9 +54,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - ${PROTOTYPE_NAME}.apps.live-1.cloud-platform.service.justice.gov.uk
+    - ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-  - host: ${PROTOTYPE_NAME}.apps.live-1.cloud-platform.service.justice.gov.uk
+  - host: ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /
