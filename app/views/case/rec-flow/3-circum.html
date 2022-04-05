@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Review the circumstances
+        </h1>
+        
+        <p class="govuk-body">Think about Charles Edwin’s personal circumstances, including:
+        </p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>apples</li>
+  <li>oranges</li>
+  <li>pears</li>
+</ul>
+
+        <form action="3-next" method="post" novalidate>
+     <!--suicide selfharm question-->     
+          {% set yesRationale %}
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "changed-name",
+            name: "changed-name",
+            fieldset: {
+              legend: {
+                text: "Would recalling him increase this risk?"
+              }
+            },
+            
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "self-harm",
+            name: "self-harm",
+            fieldset: {
+              legend: {
+                text: "Is Charles Edwin at risk of suicide or self-harm?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+           
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+          <!--other agnecy question-->
+          {% set yesRationale %}
+          {{ govukTextarea({
+            id: "sfguard",
+            name: "sfguard",
+            
+            classes: "govuk-textarea",
+            label: {
+              text: "Describe your safeguarding concerns:"
+            }
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "sfguard-concerns",
+            name: "sfguard-concerns",
+            fieldset: {
+              legend: {
+                text: "Do you have adult or child safeguarding concerns?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+           
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+<!--psychological concern question-->
+          {% set yesRationale %}
+          {{ govukTextarea({
+            id: "psy",
+            name: "psy",
+            
+            classes: "govuk-textarea",
+            label: {
+              text: "Did you discuss psychological reasons for Charles Edwin’s behaviour?"
+            }
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "psy-concerns",
+            name: "psy-concerns",
+            fieldset: {
+              legend: {
+                text: "Have you spoken to a specialist probation officer or psychologist about Charles Edwin?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+           
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
