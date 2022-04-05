@@ -1,7 +1,7 @@
 # Making Recall Decisions
 
 ## Prototype Site
-https://makerecall-prototype.apps.live-1.cloud-platform.service.justice.gov.uk/
+https://makerecall-prototype.apps.live.cloud-platform.service.justice.gov.uk/
 username: recall
 password: decisions
 
