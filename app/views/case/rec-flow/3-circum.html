@@ -6,10 +6,11 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukBackLink({
   text: "Back",
-  href: "../case"
+  href: "../../case"
 }) }}
 {% endblock %}
 
@@ -22,47 +23,132 @@
         </h1>
         
         <p class="govuk-body">Think about Charles Edwin’s personal circumstances, including:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how long he has been in the community
+            </li>
+            <li>how compliant he has been during this time
+            </li>
+          </ul>
         </p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>apples</li>
-  <li>oranges</li>
-  <li>pears</li>
-</ul>
+        <p class="govuk-body">
+        Then answer the questions. Consider whether you need to be flexible in your approach. 
+        </p>
 
         <form action="3-next" method="post" novalidate>
-     <!--suicide selfharm question-->     
+
+
+
+          {% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set otherRationale %}
+{{ govukTextarea({
+  id: "other-Rationale",
+  name: "other-Rationale",
+ 
+  classes: "govuk-textarea",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "trigger",
+  name: "trigger",
+  fieldset: {
+    legend: {
+      text: "What has made you consider recall?",
+
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "vbehave",
+      text: "Violent behaviour"
+    },
+    {
+      value: "missed-curfew",
+      text: "Missed curfew"
+    },
+    {
+      value: "arrest",
+      text: "Arrest"
+    },
+    {
+      value: "appointment",
+      text: "Missed appointment(s)"
+    },
+    {
+      value: "re-offend",
+      text: "Re-offending"
+    },
+    {
+      value: "index-behave",
+      text: "Behaviour linked to the index offence
+      "
+    },
+    {
+      value: "other",
+      text: "Other
+      ",
+      conditional: {
+        html: otherRationale
+      }
+    }
+  ]
+}) }}
+
+          <!--trigger question-->
           {% set yesRationale %}
-          {{ govukRadios({
-            classes: "govuk-radios--inline",
-            idPrefix: "changed-name",
-            name: "changed-name",
-            fieldset: {
-              legend: {
-                text: "Would recalling him increase this risk?"
-              }
-            },
+          {{ govukTextarea({
+            id: "trigger-rationale",
+            name: "trigger-rationale",
             
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
+            classes: "govuk-textarea",
+            label: {
+              text: "Details of reason"
+            }
           }) }}
           {% endset -%}
           
           {{ govukRadios({
-            idPrefix: "self-harm",
-            name: "self-harm",
+            idPrefix: "trigger-reason",
+            name: "trigger-reason",
             fieldset: {
               legend: {
-                text: "Is Charles Edwin at risk of suicide or self-harm?",
+                text: "Do you know what caused this?",
                 classes: "govuk-fieldset__legend--m"
               }
+            },
+            hint: {
+              text: "For example, if there is a genuine reason for a missed appointment.
+              "
             },
            
             items: [
@@ -81,83 +167,61 @@
             ]
           }) }}
 
-          <!--other agnecy question-->
-          {% set yesRationale %}
-          {{ govukTextarea({
-            id: "sfguard",
-            name: "sfguard",
-            
-            classes: "govuk-textarea",
-            label: {
-              text: "Describe your safeguarding concerns:"
-            }
-          }) }}
-          {% endset -%}
-          
-          {{ govukRadios({
-            idPrefix: "sfguard-concerns",
-            name: "sfguard-concerns",
-            fieldset: {
-              legend: {
-                text: "Do you have adult or child safeguarding concerns?",
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-           
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                conditional: {
-                  html: yesRationale
-                }
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-              
-            ]
-          }) }}
+ <!--end date question-->     
+ {% set yesRationale %}
+ {{ govukRadios({
+   classes: "govuk-radios--inline",
+   idPrefix: "changed-name",
+   name: "changed-name",
+   fieldset: {
+     legend: {
+       text: "Would recalling him increase the risk?"
+     }
+   },
+   hint: {
+    text: "For example, if Charles Edwin is then released without support."
+  },
+   
+   items: [
+     {
+       value: "yes",
+       text: "Yes"
+     },
+     {
+       value: "no",
+       text: "No"
+     }
+   ]
+ }) }}
+ {% endset -%}
+ 
+ {{ govukRadios({
+   idPrefix: "end-date",
+   name: "end-date",
+   fieldset: {
+     legend: {
+       text: "Is Charles Edwin approaching his sentence end date?",
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+  
+   items: [
+     {
+       value: "yes",
+       text: "Yes",
+       conditional: {
+         html: yesRationale
+       }
+     },
+     {
+       value: "no",
+       text: "No"
+     }
+     
+   ]
+ }) }}
 
-<!--psychological concern question-->
-          {% set yesRationale %}
-          {{ govukTextarea({
-            id: "psy",
-            name: "psy",
-            
-            classes: "govuk-textarea",
-            label: {
-              text: "Did you discuss psychological reasons for Charles Edwin’s behaviour?"
-            }
-          }) }}
-          {% endset -%}
-          
-          {{ govukRadios({
-            idPrefix: "psy-concerns",
-            name: "psy-concerns",
-            fieldset: {
-              legend: {
-                text: "Have you spoken to a specialist probation officer or psychologist about Charles Edwin?",
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-           
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                conditional: {
-                  html: yesRationale
-                }
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-              
-            ]
-          }) }}
+  
 
 
           <button class="govuk-button" data-module="govuk-button">
