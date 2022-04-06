@@ -244,14 +244,98 @@
   
 
         <h2 class="govuk-heading-m">Review protective factors</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Suicide and self harm"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Safeguarding concerns"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Psychologist or specialist"
+              },
+              value: {
+                html: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }) }}
+
         <h2 class="govuk-heading-m">Consider alternatives to recall</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Alternative(s)"
+              },
+              value: {
+                text: "Referral to approved premises     Warning letter sent"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            }
+            
+            
+            
+          ]
+        }) }}
 
-
-        <form action="/form-handler" method="post" novalidate>
+        <form action="7-confirm" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <div class="govuk-button-group">
           {{ govukButton({
-            text: "Accept and send"
+            text: "Send"
           }) }}
           <a class="govuk-link" href="/case">Save for later</a>
         </div>

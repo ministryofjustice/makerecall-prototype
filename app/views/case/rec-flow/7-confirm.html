@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+
+        
+        
+        
+              {{ govukPanel({
+                titleText: "Recommendation saved",
+                html: "Charles Edwin<br><strong>HDJ2123F</strong>"
+              }) }}
+        
+        
+              <h2 class="govuk-heading-m">What happens next</h2>
+        
+              <p class="govuk-body">
+                Your recommendation has been recorded in nDelius.              </p>
+              <p class="govuk-body">
+                Your answers will be used to complete either a:
+                <ul class="govuk-list govuk-list--bullet" >
+                <li>Part A form</li> 
+                <li>decision not to recall letter</li>
+              </ul>
+              </p>
+
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
