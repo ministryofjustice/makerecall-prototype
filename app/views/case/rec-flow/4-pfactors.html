@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Review protective factors
+        </h1>
+        
+        <p class="govuk-body">
+          Think about protective factors that are in place or could be used. Then work through these questions.  
+        </p>
+      
+        <form action="5-altrecal" method="post" novalidate>
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="p-factors">
+              What protective factors are in place?
+              </label>
+            </h2>
+            <!-- <div id="more-detail-hint" class="govuk-hint">
+              Do not include personal or financial information, like your National Insurance number or credit card details.
+            </div> -->
+            <textarea class="govuk-textarea" id="p-factors" name="p-factors" rows="8" aria-describedby="p-factors"></textarea>
+          </div>
+
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="past-success">
+              What has worked in the past?
+              </label>
+            </h2>
+            <!-- <div id="more-detail-hint" class="govuk-hint">
+              Do not include personal or financial information, like your National Insurance number or credit card details.
+            </div> -->
+            <textarea class="govuk-textarea" id="past-success" name="past-success" rows="8" aria-describedby="past-success"></textarea>
+          </div>
+
+
+<!--negative impact question-->
+{% set yesRationale %}
+{{ govukTextarea({
+  id: "trigger-rationale",
+  name: "trigger-rationale",
+  
+  classes: "govuk-textarea",
+  label: {
+    text: "What is the impact?"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "neg-impact",
+  name: "neg-impact",
+  fieldset: {
+    legend: {
+      text: "Will recalling Charles Edwin have a negative impact on any protective factors?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+ 
+ 
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesRationale
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+
+
+
+<!--negative impact question-->
+{% set yesRationale %}
+{{ govukTextarea({
+  id: "support-examples",
+  name: "support-examples",
+  
+  classes: "govuk-textarea",
+  label: {
+    text: "Give details:"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "support-net",
+  name: "support-net",
+  fieldset: {
+    legend: {
+      text: "Can you ask family or other support networks for help?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+ 
+ 
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesRationale
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+
+<!--refer to support programme question-->
+{% set yesRationale %}
+{{ govukTextarea({
+  id: "support-examples",
+  name: "support-examples",
+  
+  classes: "govuk-textarea",
+  label: {
+    text: "Give details:"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "support-prog",
+  name: "support-prog",
+  fieldset: {
+    legend: {
+      text: "Can you refer Charles Edwin to a support programme?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, peer support, rehabilitation or mentoring"
+  },
+ 
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesRationale
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+
+            <a class="govuk-link" href="/case">Save for later</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

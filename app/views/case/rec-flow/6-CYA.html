@@ -1,0 +1,275 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Review your answers
+        </h1>
+        
+        <p class="govuk-body">
+          Check all the details are correct before sending.
+                </p>
+
+                <h2 class="govuk-heading-m">Assess the risk</h2>
+
+                <!--table of answers-->
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Immediate risk"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Who is at risk"
+              },
+              value: {
+                text: "The general public"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Increasing risk"
+              },
+              value: {
+                html: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Other agencies"
+              },
+              value: {
+                html: ''
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+  
+        <h2 class="govuk-heading-m">Assess vulnerability</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Suicide and self harm"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Safeguarding concerns"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Psychologist or specialist"
+              },
+              value: {
+                html: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Review circumstances</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Why considered for recall"
+              },
+              value: {
+                text: "Missed curfew"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Cause"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Considerd for recall before"
+              },
+              value: {
+                html: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Near sentence end date"
+              },
+              value: {
+                html: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+
+        <h2 class="govuk-heading-m">Review protective factors</h2>
+        <h2 class="govuk-heading-m">Consider alternatives to recall</h2>
+
+
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Accept and send"
+          }) }}
+          <a class="govuk-link" href="/case">Save for later</a>
+        </div>
+        </form>
+        
+         
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
