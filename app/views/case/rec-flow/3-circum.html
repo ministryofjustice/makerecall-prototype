@@ -38,32 +38,7 @@
 
 
 
-          {% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contact-by-email",
-  type: "email",
-  autocomplete: "email",
-  spellcheck: false,
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Email address"
-  }
-}) }}
-{% endset -%}
 
-{% set phoneHtml %}
-{{ govukInput({
-  id: "contact-by-phone",
-  name: "contact-by-phone",
-  type: "tel",
-  autocomplete: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Phone number"
-  }
-}) }}
-{% endset -%}
 
 {% set otherRationale %}
 {{ govukTextarea({
@@ -89,34 +64,33 @@
   },
   items: [
     {
-      value: "vbehave",
+      value: "Violent behaviour",
       text: "Violent behaviour"
     },
     {
-      value: "missed-curfew",
+      value: "Missed curfew",
       text: "Missed curfew"
     },
     {
-      value: "arrest",
+      value: "Arrest",
       text: "Arrest"
     },
     {
-      value: "appointment",
+      value: "Missed appointment(s)",
       text: "Missed appointment(s)"
     },
     {
-      value: "re-offend",
+      value: "Re-offending",
       text: "Re-offending"
     },
     {
-      value: "index-behave",
+      value: "Behaviour linked to the index offence",
       text: "Behaviour linked to the index offence
       "
     },
     {
-      value: "other",
-      text: "Other
-      ",
+      value: "",
+      text: "Other",
       conditional: {
         html: otherRationale
       }
@@ -153,19 +127,45 @@
            
             items: [
               {
-                value: "yes",
+                value: "Yes",
                 text: "Yes",
                 conditional: {
                   html: yesRationale
                 }
               },
               {
-                value: "no",
+                value: "No",
                 text: "No"
               }
               
             ]
           }) }}
+
+ <!--previous recall question-->
+ 
+ {{ govukRadios({
+   idPrefix: "prev-recall",
+   name: "prev-recall",
+   fieldset: {
+     legend: {
+       text: "Has Charles Edwin been considered for recall before?",
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+  
+   items: [
+     {
+       value: "Yes",
+       text: "Yes"
+     },
+     {
+       value: "No",
+       text: "No"
+     }
+     
+   ]
+ }) }}
+
 
  <!--end date question-->     
  {% set yesRationale %}
@@ -184,11 +184,11 @@
    
    items: [
      {
-       value: "yes",
+       value: "Yes",
        text: "Yes"
      },
      {
-       value: "no",
+       value: "No",
        text: "No"
      }
    ]
@@ -207,14 +207,14 @@
   
    items: [
      {
-       value: "yes",
+       value: "Yes",
        text: "Yes",
        conditional: {
          html: yesRationale
        }
      },
      {
-       value: "no",
+       value: "No",
        text: "No"
      }
      

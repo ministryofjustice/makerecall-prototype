@@ -31,3 +31,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // @import 'max-widths';
 @import 'govuk-page-masthead';
+
+// tweaks to gov summary table on CYA pattern to allow for more space for values in repsonse to quetsions
+.govuk-summary-list__key {
+  width:50%;
+}
+
+.govuk-summary-list__value {
+  width:30%;
+}

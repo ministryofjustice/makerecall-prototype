@@ -54,8 +54,8 @@
 <!--negative impact question-->
 {% set yesRationale %}
 {{ govukTextarea({
-  id: "trigger-rationale",
-  name: "trigger-rationale",
+  id: "neg-impact",
+  name: "neg-impact",
   
   classes: "govuk-textarea",
   label: {
@@ -77,14 +77,14 @@
  
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes",
       conditional: {
         html: yesRationale
       }
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
     
@@ -94,7 +94,7 @@
 
 
 
-<!--negative impact question-->
+<!--support question-->
 {% set yesRationale %}
 {{ govukTextarea({
   id: "support-examples",
@@ -120,14 +120,14 @@
  
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes",
       conditional: {
         html: yesRationale
       }
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
     
@@ -138,8 +138,8 @@
 <!--refer to support programme question-->
 {% set yesRationale %}
 {{ govukTextarea({
-  id: "support-examples",
-  name: "support-examples",
+  id: "support-prog",
+  name: "support-prog",
   
   classes: "govuk-textarea",
   label: {
@@ -163,14 +163,14 @@
  
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes",
       conditional: {
         html: yesRationale
       }
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
     

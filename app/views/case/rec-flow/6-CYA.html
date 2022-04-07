@@ -23,13 +23,13 @@
         <h1 class="govuk-heading-l">
           Review your answers
         </h1>
-        
+      
         <p class="govuk-body">
           Check all the details are correct before sending.
                 </p>
 
                 <h2 class="govuk-heading-m">Assess the risk</h2>
-
+               
                 <!--table of answers-->
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
@@ -39,7 +39,7 @@
                 text: "Immediate risk"
               },
               value: {
-                text: "Yes"
+                text: data['risk-imm']
               },
               actions: {
                 items: [
@@ -56,7 +56,7 @@
                 text: "Who is at risk"
               },
               value: {
-                text: "The general public"
+                text: data['risk-person']
               },
               actions: {
                 items: [
@@ -73,7 +73,24 @@
                 text: "Increasing risk"
               },
               value: {
-                html: ""
+                text: data['risk-inc']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Contigency plan checked"
+              },
+              value: {
+                text: data['cont-plan']
               },
               actions: {
                 items: [
@@ -90,7 +107,7 @@
                 text: "Other agencies"
               },
               value: {
-                html: ''
+                text: data['Other-ag']
               },
               actions: {
                 items: [
@@ -116,7 +133,7 @@
                 text: "Suicide and self harm"
               },
               value: {
-                text: "Yes"
+                text: data['self-harm']
               },
               actions: {
                 items: [
@@ -133,7 +150,7 @@
                 text: "Safeguarding concerns"
               },
               value: {
-                text: "No"
+                text: data['sfguard-concerns']
               },
               actions: {
                 items: [
@@ -150,7 +167,7 @@
                 text: "Psychologist or specialist"
               },
               value: {
-                html: "No"
+                text: data['psy-concerns']  
               },
               actions: {
                 items: [
@@ -176,7 +193,7 @@
                 text: "Why considered for recall"
               },
               value: {
-                text: "Missed curfew"
+                text: data['trigger'] 
               },
               actions: {
                 items: [
@@ -190,10 +207,10 @@
             },
             {
               key: {
-                text: "Cause"
+                text: "Know what caused this"
               },
               value: {
-                text: "No"
+                text: data['trigger-reason']
               },
               actions: {
                 items: [
@@ -207,10 +224,10 @@
             },
             {
               key: {
-                text: "Considerd for recall before"
+                text: "Considered for recall before"
               },
               value: {
-                html: "No"
+                text: data['prev-recall']
               },
               actions: {
                 items: [
@@ -227,7 +244,7 @@
                 text: "Near sentence end date"
               },
               value: {
-                html: "No"
+                text: data['end-date']
               },
               actions: {
                 items: [
@@ -242,7 +259,6 @@
           ]
         }) }}
   
-
         <h2 class="govuk-heading-m">Review protective factors</h2>
 
         {{ govukSummaryList({
@@ -250,11 +266,9 @@
           rows: [
             {
               key: {
-                text: "Suicide and self harm"
+                text: "Protective factors in place"
               },
-              value: {
-                text: "Yes"
-              },
+             
               actions: {
                 items: [
                   {
@@ -267,11 +281,9 @@
             },
             {
               key: {
-                text: "Safeguarding concerns"
+                text: "What has worked in the past"
               },
-              value: {
-                text: "No"
-              },
+              
               actions: {
                 items: [
                   {
@@ -284,10 +296,44 @@
             },
             {
               key: {
-                text: "Psychologist or specialist"
+                text: "Will recalling have a negative impact on protective factors"
               },
               value: {
-                html: "No"
+                text: data['neg-impact']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Ask for family or other support"
+              },
+              value: {
+                text: data['support-net']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Refer to support programme"
+              },
+              value: {
+                text: data['support-prog']
               },
               actions: {
                 items: [
@@ -313,7 +359,7 @@
                 text: "Alternative(s)"
               },
               value: {
-                text: "Referral to approved premises     Warning letter sent"
+                text: data['alt-recall']
               },
               actions: {
                 items: [

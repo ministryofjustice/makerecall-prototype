@@ -34,13 +34,13 @@
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-imm" name="risk-imm" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="risk-imm" name="risk-imm" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="risk-imm">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-imm-2" name="risk-imm" type="radio" value="no">
+                  <input class="govuk-radios__input" id="risk-imm-2" name="risk-imm" type="radio" value="No">
                   <label class="govuk-label govuk-radios__label" for="risk-imm-2">
                     No
                   </label>
@@ -61,25 +61,25 @@
               </p> -->
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                  <input class="govuk-checkboxes__input" id="countries" name="risk-person" type="checkbox" value="Charles Edwin">
                   <label class="govuk-label govuk-checkboxes__label" for="countries">
                     Charles Edwin
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+                  <input class="govuk-checkboxes__input" id="countries-2" name="risk-person" type="checkbox" value="Family">
                   <label class="govuk-label govuk-checkboxes__label" for="countries-2">
                     Charles Edwin's family
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+                  <input class="govuk-checkboxes__input" id="countries-3" name="risk-person" type="checkbox" value="Someone else">
                   <label class="govuk-label govuk-checkboxes__label" for="countries-3">
                     Someone else
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none">
+                  <input class="govuk-checkboxes__input" id="countries-5" name="risk-person" type="checkbox" value="Public">
                   <label class="govuk-label govuk-checkboxes__label" for="countries-5">
                     The general public
                   </label>
@@ -95,13 +95,13 @@
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-increase" name="risk-inc" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="risk-increase" name="risk-inc" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="risk-increase">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="risk-inc-2" name="risk-inc-2" type="radio" value="no">
+                  <input class="govuk-radios__input" id="risk-inc-2" name="risk-inc" type="radio" value="No">
                   <label class="govuk-label govuk-radios__label" for="risk-inc-2">
                     No
                   </label>
@@ -135,14 +135,14 @@
            
             items: [
               {
-                value: "yes",
+                value: "Yes",
                 text: "Yes",
                 conditional: {
                   html: yesRationale
                 }
               },
               {
-                value: "no",
+                value: "No",
                 text: "No"
               }
               
@@ -152,8 +152,8 @@
 <!--other agnecy question-->
           {% set yesRationale %}
           {{ govukTextarea({
-            id: "yes-Other-ag",
-            name: "yes-Other-ag",
+            id: "Other-ag",
+            name: "Other-ag",
             
             classes: "govuk-textarea",
             label: {
@@ -176,14 +176,14 @@
            
             items: [
               {
-                value: "yes",
+                value: "Yes",
                 text: "Yes",
                 conditional: {
                   html: yesRationale
                 }
               },
               {
-                value: "no",
+                value: "No",
                 text: "No"
               }
               
