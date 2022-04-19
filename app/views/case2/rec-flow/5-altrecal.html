@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Consider alternatives to recall
+        </h1>
+        
+        <p class="govuk-body">
+          Think about the alternatives to recall and answer these questions.
+                </p>
+      
+        <form action="6-CYA" method="post" novalidate>
+
+          
+          {% set otherWarningRationale %}
+          {{ govukTextarea({
+            id: "other-WarnRationale",
+            name: "other-WarnRationale",
+           
+            classes: "govuk-textarea",
+            label: {
+              text: "Details and dates of warnings:"
+            }
+          }) }}
+          {% endset -%}
+
+
+{% set otherRationale %}
+{{ govukTextarea({
+  id: "other-Rationale",
+  name: "other-Rationale",
+ 
+  classes: "govuk-textarea",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "alt-recall",
+  name: "alt-recall",
+  fieldset: {
+    legend: {
+      text: "What alternatives have you thought about?",
+
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Warnings",
+      text: "Warnings",
+      conditional: {
+        html: otherWarningRationale
+      }
+    },
+    {
+      value: "Increased frequency of reporting",
+      text: "Increased frequency of reporting",
+      conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "Extra licence conditions",
+      text: "Extra licence conditions",
+      conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "Referral to other teams",
+      text: "Referral to other teams (for example, IOM, MAPPA, Gangs Unit)", conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "Referral to partnership agencies",
+      text: "Referral to partnership agencies",
+      conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "Referral to approved premises",
+      text: "Referral to approved premises",
+      conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "Drug testing",
+      text: "Drug testing",
+      conditional: {
+        html: otherRationale
+      }
+    },
+    {
+      value: "",
+      text: "Other",
+      conditional: {
+        html: otherRationale
+      }
+    }
+  ]
+}) }}
+
+
+
+
+
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+
+            <a class="govuk-link" href="/case">Save for later</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

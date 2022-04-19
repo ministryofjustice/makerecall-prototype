@@ -1,0 +1,405 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Review your answers
+        </h1>
+      
+        <p class="govuk-body">
+          Check all the details are correct before sending.
+                </p>
+
+                <h2 class="govuk-heading-m">Assess the risk</h2>
+               
+                <!--table of answers-->
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Immediate risk"
+              },
+              value: {
+                text: data['risk-imm']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Who is at risk"
+              },
+              value: {
+                text: data['risk-person']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Increasing risk"
+              },
+              value: {
+                text: data['risk-inc']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Contigency plan checked"
+              },
+              value: {
+                text: data['cont-plan']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Other agencies"
+              },
+              value: {
+                text: data['Other-ag']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+  
+        <h2 class="govuk-heading-m">Assess vulnerability</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Suicide and self harm"
+              },
+              value: {
+                text: data['self-harm']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Safeguarding concerns"
+              },
+              value: {
+                text: data['sfguard-concerns']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Psychologist or specialist"
+              },
+              value: {
+                text: data['psy-concerns']  
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Review circumstances</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Why considered for recall"
+              },
+              value: {
+                text: data['trigger'] 
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Know what caused this"
+              },
+              value: {
+                text: data['trigger-reason']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Considered for recall before"
+              },
+              value: {
+                text: data['prev-recall']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Near sentence end date"
+              },
+              value: {
+                text: data['end-date']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+        <h2 class="govuk-heading-m">Review protective factors</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Protective factors in place"
+              },
+             
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "What has worked in the past"
+              },
+              
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "licence type"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Will recalling have a negative impact on protective factors"
+              },
+              value: {
+                text: data['neg-impact']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Ask for family or other support"
+              },
+              value: {
+                text: data['support-net']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Refer to support programme"
+              },
+              value: {
+                text: data['support-prog']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Consider alternatives to recall</h2>
+  
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Alternative(s)"
+              },
+              value: {
+                text: data['alt-recall']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "previous application number"
+                  }
+                ]
+              }
+            }
+            
+            
+            
+          ]
+        }) }}
+
+        <form action="7-confirm" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Send"
+          }) }}
+          <a class="govuk-link" href="/case">Save for later</a>
+        </div>
+        </form>
+        
+         
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

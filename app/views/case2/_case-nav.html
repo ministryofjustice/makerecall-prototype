@@ -1,0 +1,52 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'index' %}
+            aria-current="page"
+            {% endif %}
+            href="/case2">Overview</a>
+        </li>
+              <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'risk' %}
+            aria-current="page"
+            {% endif %}
+            href="/case2/risk.html">Risk</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'person' %}
+            aria-current="page"
+            {% endif %}
+            href="/case2/person.html">Person</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'licence-conditions' %}
+            aria-current="page"
+            {% endif %}
+            href="/case2/licence-conditions.html">Licence conditions</a>
+        </li>
+
+        <!-- <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'strengths' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/strengths.html">Compliance</a>
+        </li> 
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'behavioural' %}
+            aria-current="page"
+            {% endif %}
+            href="/case/behavioural.html">Contact log</a>
+        </li>-->
+
+      </ul>
+    </nav>
+  </div>
+</div>

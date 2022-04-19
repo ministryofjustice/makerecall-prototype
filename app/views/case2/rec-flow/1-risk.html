@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Assess the risk
+        </h1>
+
+        <p class="govuk-body">
+          Check the <a href="../risk.html" class="govuk-link">risk scores</a> and answer these questions.
+        </p>
+
+        <form action="2-vuln" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Is the risk immediate? 
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="risk-imm" name="risk-imm" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="risk-imm">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="risk-imm-2" name="risk-imm" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="risk-imm-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="risk-error">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Who is at risk?
+                </h1>
+              </legend>
+              <!-- <p id="risk-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select countries you will be travelling to, or select “No, I will not be travelling to any of these countries”
+              </p> -->
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries" name="risk-person" type="checkbox" value="Charles Edwin">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries">
+                    Charles Edwin
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-2" name="risk-person" type="checkbox" value="Family">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+                    Charles Edwin's family
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-3" name="risk-person" type="checkbox" value="Someone else">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+                    Someone else
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-5" name="risk-person" type="checkbox" value="Public">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                    The general public
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                If the behaviour continues, will it increase the risk? 
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="risk-increase" name="risk-inc" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="risk-increase">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="risk-inc-2" name="risk-inc" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="risk-inc-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+          
+          {% set yesRationale %}
+          {{ govukTextarea({
+            id: "yes-rationale",
+            name: "yes-rationale",
+            
+            classes: "govuk-textarea",
+            label: {
+              text: "List the ones you can start now:"
+            }
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "cont-plan",
+            name: "cont-plan",
+            fieldset: {
+              legend: {
+                text: "Have you checked the contingencies in the risk management plan?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+           
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+<!--other agnecy question-->
+          {% set yesRationale %}
+          {{ govukTextarea({
+            id: "Other-ag",
+            name: "Other-ag",
+            
+            classes: "govuk-textarea",
+            label: {
+              text: "List the agencies you’ve spoken to:"
+            }
+          }) }}
+          {% endset -%}
+          
+          
+          
+          {{ govukRadios({
+            idPrefix: "Other-ag",
+            name: "Other-ag",
+            fieldset: {
+              legend: {
+                text: "Have you spoken to the other agencies listed in the risk management plan?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+           
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          
+            <a class="govuk-link" href="/case">Save for later</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
+{% endblock %}
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'person' %}
+{% include "case/_case-nav.html" %}
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{% set keyDetails %}
+
+
+    {{ govukSummaryList({
+    rows: [
+    {
+      key: { text: 'Trigger reason' },
+      value: { html: 'Increasing drug use ' }
+    },
+    {
+        key: { html: 'Current address' },
+        value: { html: 'Approved premises, London NE12 2DR' }
+      },
+      {
+        key: { text: 'Offender manager' },
+        value: { html: 'Jane Smith - HAR PS1, NPS London <br>Telephone: 020 7123 4456 <br> Email: <a href="url">Jane.Smith@HMPPS.gov.uk</a>' }
+      },
+    {
+        key: { text: 'Substance misuse support worker' },
+        value: { html: 'Jack Brown - Camden specialist drug services <br>Telephone: 020 3417 2212 <br> Email: <a href="url">jackbrown@camden.org.uk</a>' }
+      }
+    ]
+  }) }}
+
+
+
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Personal details',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: keyDetails
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>NDelius risk flags</p>
+    <img src="../../public/images/risk-flags.png" width="100%" />
+    </div>
+    </div>
+</div>
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+{% set keyDetails %}
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Index offence"
+      },
+      value: {
+        text: "Robbery (other than armed robbery)"
+      }
+    },
+{
+      key: {
+        text: "Description of the index offence"
+      },
+      value: {
+html: "<p>On 20 April 2018 at 10pm Mr Edwin boarded a 73 bus in Stoke Newington. He went to the top of the bus where he saw Mr Smith sitting at the back of the bus. There were 2 other witnesses at the front of the bus.</p>
+<p>
+    Mr Edwin grabbed Mr Smith by the collar and shouted 'give me your phone and your wallet'. Mr Smith loudly told him to 'f**k off'. Mr Edwin hit Mr Smith in the face, breaking his nose and causing him to bleed, and saying 'Give me your phone and wallet or I will hit you again'. Mr Smith gave him his wallet and phone Mr Edwin pushed him into his seat. Mr Edwin ran off the bus at the next stop and ran off. </p>
+<p>
+He was known to police and so the CCTV imagery helped identify him. Police arrested him 2 days later, on the 22 April 2018. On being tested Mr Edwin had crack cocaine in his system.</p>"
+      }
+    },
+    {
+      key: {
+        text: "Additional offence"
+      },
+      value: {
+        text: "Assault occasioning actual bodily
+harm"
+      }
+    },
+    {
+      key: {
+        text: "Offending history"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>5 April 2014: robbery</li>
+<p>Mugged a 13 year old boy for his smart phone and wallet</p>
+<li> June 2016: theft</li>
+<p>Stole a laptop computer from a table outside a cafe.<p>
+<li>10 December 2018: affray</li>
+<p>Fought in a pub and tested positive for cocaine</p></ul>'
+      }
+    },
+        {
+      key: {
+        text: "Characteristics of the index offence"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Violence or threat of violence or coercion</li><li>Excessive use of violence or sadistic violence</li><li>The victim or victims were strangers to the offender</li></ul>'
+      }
+    },
+      {
+      key: {
+        text: "Victim information"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Age: 20</li><li>Gender: male</li><li>Race or ethnicity: white, British</li><li>Relationship between the victim and perpetrator: unknown to each other</li></ul>'
+      }
+    },
+      {
+      key: {
+        text: "Evidenced motivations"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Financial</li><li>Addiction or perceived needs</li><li>Emotional state of the offender</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Disinhibitors"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--none"><li>Emotional state</li><li>Drugs</li><li>Traumatic life event</li></ul>'
+      }
+    }
+  ]
+}) }}
+
+
+
+{% endset %}
+
+{{ appSummaryCard({
+  titleText: 'Offence overview',
+  classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+  html: keyDetails
+}) }}
+    </div>
+    </div>
+</div>
+
+{% endblock %}

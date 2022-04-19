@@ -1,0 +1,426 @@
+{% extends "layout.html" %}
+{% set title = 'Licence Conditions' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../search-results"
+}) }}
+{% endblock %}
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+{% set currentNavSection = 'licence-conditions' %}
+{% include "case/_case-nav.html" %}
+
+<h2 class="govuk-heading-m">Licence conditions</h2>
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+{{ govukTable({
+attributes: {
+ 'data-module': 'moj-sortable-table'
+},
+head: [
+ {
+   text: "Type",
+   attributes: {
+     "aria-sort": "ascending"
+   }
+ },
+ {
+   text: "Description",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "Compliance",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "Active flag",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "Start date",
+   attributes: {
+     "aria-sort": "none"
+   }
+ },
+ {
+   text: "End date",
+   attributes: {
+     "aria-sort": "none"
+   }
+ }
+],
+rows: [
+[
+  {
+      html: '<p class="govuk-body-s">Additional - participation in a programme</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">(a) Attend Place A, as reasonably required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+  },
+  {
+    html: '<p class="govuk-body-s">Active</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">30 Sep 2021</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">30 Sep 2022</p>'
+  }
+],
+[
+  {
+      html: '<p class="govuk-body-s">Additional - participation in a programme'
+  },
+  {
+    html: '<p class="govuk-body-s">(b) Not to take any action that could hamper or frustrate the drug testing process</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+  },
+  {
+    html: '<p class="govuk-body-s">Active</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">30 Sep 2021</p>'
+  },
+  {
+    html: '<p class="govuk-body-s">30 Sep 2022</p>'
+  }
+],
+[
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Be of good behaviour and not behave in a way which undermines the purpose of the licence period.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Not commit any offence</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sept 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sept 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Keep in touch with the supervising officer in accordance with instructions given by the supervising officer</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Receive visits from the supervising officer in accordance with instructions given by the supervising officer</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Reside permanently at an address approved by the supervising officer and obtain the prior permission of the supervising officer for any stay of one or more nights at a  different address; </p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Not undertake work, or a particular type of work, unless it is approved by the supervising officer and notify the supervising officer in advance of any proposal to undertake work or a particular type of work</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Standard'
+   },
+   {
+     html: '<p class="govuk-body-s">Not travel outside the United Kingdom, the Channel Islands or the Isle of Man except with the prior permission of your supervising officer or for the purposes of immigration deportation or removal.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - restriction of residency</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">(a) You must reside within GREATER LONDON while of no fixed abode, unless otherwise approved by your supervising officer.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Not active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2020</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Oct 2020</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - participation in a programme'
+   },
+     {
+     html: '<p class="govuk-body-s">(a) Attend all appointments arranged for you with a psychiatrist / psychologist / medical practitioner.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - participation in a programme'
+   },
+   {
+     html: '<p class="govuk-body-s">(c) Attend Camden specialist drug services, as directed, to address your dependency on, or propensity to misuse, a controlled drug</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+   ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - disclosure of information'
+   },
+   {
+     html: '<p class="govuk-body-s">(e) Provide your supervising officer with the details of any bank accounts to which you are a signatory and of any credit cards you possess. You must also notify your supervising officer when becoming a signatory to any new bank account or credit card, and provide the account/card details. This condition will be reviewed on a monthly basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - curfew arrangement'
+   },
+   {
+     html: '<p class="govuk-body-s">(a) Confine yourself to an address approved by your supervising officer between the hours of [TIME] and [TIME] daily unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a [WEEKLY / MONTHLY / ETC] basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Not active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2019</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Jan 2020</p>'
+   }
+ ],
+ [
+   ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - curfew arrangement'
+   },
+   {
+     html: '<p class="govuk-body-s">(b) Confine yourself to remain at [CURFEW ADDRESS] initially from [START OF CURFEW HOURS] until [END OF CURFEW HOURS] each day, and, thereafter, for such a period as may be reasonably notified to you by your supervising officer; and comply with such arrangements as may be reasonably put in place and notified to you by your supervising officer so as to allow for your whereabouts and your compliance with your curfew requirement be monitored [WHETHER BY ELECTRONIC MEANS INVOLVING YOUR WEARING AN ELECTRONIC TAG OR OTHERWISE]</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Not active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2019</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Jan 2020</p>'
+   }
+ ],
+ [
+   {
+       html: '<p class="govuk-body-s">Additional - freedom of movement'
+   },
+   {
+     html: '<p class="govuk-body-s">(b) Not to enter [NAME/TYPE OF PREMISES / ADDRESS / ROAD] without the prior approval of your supervising officer.</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">See <a href="behavioural-drugs">contact log entries</a> related to this condition'
+   },
+   {
+     html: '<p class="govuk-body-s">Active</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2021</p>'
+   },
+   {
+     html: '<p class="govuk-body-s">30 Sep 2022</p>'
+   }
+ ]
+]
+}) }}
+
+ </div>
+ </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../case"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Review the circumstances
+        </h1>
+        
+        <p class="govuk-body">Think about Charles Edwin’s personal circumstances, including:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>how long he has been in the community
+            </li>
+            <li>how compliant he has been during this time
+            </li>
+          </ul>
+        </p>
+        <p class="govuk-body">
+        Then answer the questions. Consider whether you need to be flexible in your approach. 
+        </p>
+
+        <form action="4-pfactors" method="post" novalidate>
+
+
+
+
+
+{% set otherRationale %}
+{{ govukTextarea({
+  id: "other-Rationale",
+  name: "other-Rationale",
+ 
+  classes: "govuk-textarea",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "trigger",
+  name: "trigger",
+  fieldset: {
+    legend: {
+      text: "What has made you consider recall?",
+
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Violent behaviour",
+      text: "Violent behaviour"
+    },
+    {
+      value: "Missed curfew",
+      text: "Missed curfew"
+    },
+    {
+      value: "Arrest",
+      text: "Arrest"
+    },
+    {
+      value: "Missed appointment(s)",
+      text: "Missed appointment(s)"
+    },
+    {
+      value: "Re-offending",
+      text: "Re-offending"
+    },
+    {
+      value: "Behaviour linked to the index offence",
+      text: "Behaviour linked to the index offence
+      "
+    },
+    {
+      value: "",
+      text: "Other",
+      conditional: {
+        html: otherRationale
+      }
+    }
+  ]
+}) }}
+
+          <!--trigger question-->
+          {% set yesRationale %}
+          {{ govukTextarea({
+            id: "trigger-rationale",
+            name: "trigger-rationale",
+            
+            classes: "govuk-textarea",
+            label: {
+              text: "Details of reason"
+            }
+          }) }}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "trigger-reason",
+            name: "trigger-reason",
+            fieldset: {
+              legend: {
+                text: "Do you know what caused this?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, if there is a genuine reason for a missed appointment.
+              "
+            },
+           
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesRationale
+                }
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+              
+            ]
+          }) }}
+
+ <!--previous recall question-->
+ 
+ {{ govukRadios({
+   idPrefix: "prev-recall",
+   name: "prev-recall",
+   fieldset: {
+     legend: {
+       text: "Has Charles Edwin been considered for recall before?",
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+  
+   items: [
+     {
+       value: "Yes",
+       text: "Yes"
+     },
+     {
+       value: "No",
+       text: "No"
+     }
+     
+   ]
+ }) }}
+
+
+ <!--end date question-->     
+ {% set yesRationale %}
+ {{ govukRadios({
+   classes: "govuk-radios--inline",
+   idPrefix: "changed-name",
+   name: "changed-name",
+   fieldset: {
+     legend: {
+       text: "Would recalling him increase the risk?"
+     }
+   },
+   hint: {
+    text: "For example, if Charles Edwin is then released without support."
+  },
+   
+   items: [
+     {
+       value: "Yes",
+       text: "Yes"
+     },
+     {
+       value: "No",
+       text: "No"
+     }
+   ]
+ }) }}
+ {% endset -%}
+ 
+ {{ govukRadios({
+   idPrefix: "end-date",
+   name: "end-date",
+   fieldset: {
+     legend: {
+       text: "Is Charles Edwin approaching his sentence end date?",
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+  
+   items: [
+     {
+       value: "Yes",
+       text: "Yes",
+       conditional: {
+         html: yesRationale
+       }
+     },
+     {
+       value: "No",
+       text: "No"
+     }
+     
+   ]
+ }) }}
+
+  
+
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+
+            <a class="govuk-link" href="/case">Save for later</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
