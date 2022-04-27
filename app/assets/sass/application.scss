@@ -15,9 +15,11 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
-@import "components/summary-card";
-
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+@import "components/summary-card";
+@import 'components/header-bar';
+
 .pagination a:hover{
 
       background-color: #f3f2f1;
