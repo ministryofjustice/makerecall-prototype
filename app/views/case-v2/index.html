@@ -1,4 +1,5 @@
 {% extends "../layout.html" %}
+{% set pathQuerystring = "?compact" if compact else "" %}
 
 {% block beforeContent %}
     {{ govukBackLink({
@@ -15,37 +16,38 @@
                 | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
             </div>
             <div class="govuk-heading-xl" data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
+
             {{ mojSubNavigation({
                 label: 'Case summary sections',
                 items: [
                     {
                         text: 'Overview',
-                        href: pageUrlBase + 'overview',
+                        href: pageUrlBase + 'overview' + pathQuerystring,
                         active: section.id == 'overview'
                     },
                     {
                         text: 'Risk',
-                        href: pageUrlBase + 'risk',
+                        href: pageUrlBase + 'risk' + pathQuerystring,
                         active: section.id == 'risk'
                     },
                     {
                         text: 'Personal details',
-                        href: pageUrlBase + 'personal-details',
+                        href: pageUrlBase + 'personal-details' + pathQuerystring,
                         active: section.id == 'personal-details'
                     },
                     {
                         text: 'Licence conditions',
-                        href: pageUrlBase + 'licence-conditions',
+                        href: pageUrlBase + 'licence-conditions' + pathQuerystring,
                         active: section.id == 'licence-conditions'
                     },
                     {
                         text: 'Licence history',
-                        href: pageUrlBase + 'licence-history',
+                        href: pageUrlBase + 'licence-history' + pathQuerystring,
                         active: section.id == 'licence-history'
                     },
                     {
                         text: 'Contact log',
-                        href: pageUrlBase + 'contact-log',
+                        href: pageUrlBase + 'contact-log' + pathQuerystring,
                         active: section.id == 'contact-log'
                     }
                 ]

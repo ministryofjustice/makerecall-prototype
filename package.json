@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node start.js",
+    "debug": "node --inspect=0.0.0.0 listen-on-port.js",
     "lint": "standard",
     "rapidtest": "jest --bail",
     "test": "npm run lint && gulp generate-assets && jest"

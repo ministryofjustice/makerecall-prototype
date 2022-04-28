@@ -1,0 +1,22 @@
+
+{% set contentHtml %}
+    <pre class='govuk-body'>{{ case.risk.whenRiskHighest }}</pre>
+{% endset %}
+
+{% set sectionHtml %}
+    {{ oasysHeading({ text: "OASys 10.5 What factors are likely to reduce the risk?"}) }}
+    {% if compact %}
+        {{ govukDetails({
+            summaryText: "View more detail",
+            html: contentHtml
+        }) }}
+    {% else %}
+        {{ contentHtml | safe }}
+    {% endif %}
+{% endset %}
+
+{{ appSummaryCard({
+    titleText: 'When the risk will be highest',
+    classes: 'govuk-!-margin-bottom-4 app-summary-card--large-title',
+    html: sectionHtml
+}) }}
