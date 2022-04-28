@@ -20,6 +20,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/summary-card";
 @import 'components/header-bar';
 @import 'components/dashboard-card';
+@import "risk/widgets";
+@import "risk/predictor-scores";
+@import "risk/timeline";
 
 @import "layout";
 

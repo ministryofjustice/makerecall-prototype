@@ -1,9 +1,33 @@
 <h1 class='govuk-heading-m govuk-visually-hidden'>Risk</h1>
 <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <div class="govuk-body">Last OASys update: November 2021</div>
+        {% include './sectionDetailsOfRisk.html' %}
+        {% include './sectionWhoIsAtRisk.html' %}
+        {% include './sectionCircumstancesIncreaseRisk.html' %}
+        <h2 class="govuk-heading-m score-header">
+            Risk of serious recidivism (RSR) score - {{ case.risk.predictorScores.current.RSR.score }}
+        </h2>
+        {{ predictorScore(case.risk.predictorScores.current.RSR) }}
+        <h2 class="govuk-heading-m score-header">
+            Offender group reconviction scale (OGRS) score - {{ case.risk.predictorScores.current.OGRS.score }}
+        </h2>
+        {{ predictorScore(case.risk.predictorScores.current.OGRS) }}
+        <h2 class="govuk-heading-m score-header">
+            OASys general reoffending predictor (OGP) score - {{ case.risk.predictorScores.current.OGP.score }}
+        </h2>
+        {{ predictorScore(case.risk.predictorScores.current.OGP) }}
+        <h2 class="govuk-heading-m score-header">
+            OASys violence predictor (OVP) - {{ case.risk.predictorScores.current.OVP.score }}
+        </h2>
+        {{ predictorScore(case.risk.predictorScores.current.OVP) }}
+    </div>
     <div class="govuk-grid-column-one-third-from-desktop">
         {{ roshWidget(case.risk.riskOfSeriousHarm) }}
-    </div>
-    <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h2 class='govuk-heading-m'>Risk of serious harm (RoSH) summary</h2>
+        <div class="govuk-body predictor-timeline__heading">
+            <h2 class="govuk-heading-m">Score history</h2>
+            <a id="predictor-timeline__toggle-all" href="#" class="govuk-link">Open all</a>
+        </div>
+        {{ predictorTimeline(case.risk.predictorScores.historical) }}
     </div>
 </div>

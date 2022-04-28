@@ -22,6 +22,9 @@
     }
   },
   "risk": {
+    "details": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
+    "whoIsAtRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
+    "circumstancesIncreaseRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
     "riskFlags": [
       {
         "label": "Victim contact",
@@ -36,6 +39,82 @@
         "colour": "purple"
       }
     ],
+    "predictorScores": {
+      "current": {
+        "RSR": {
+          "level": "HIGH",
+          "score": 11.34,
+          "type": "RSR"
+        },
+        "OGRS": {
+          "level": "LOW",
+          "score": 3.45,
+          "type": "RSR"
+        },
+        "OGP": {
+          "level": "MEDIUM",
+          "score": 5.3,
+          "type": "RSR"
+        },
+        "OVP": {
+          "level": "HIGH",
+          "score": 2.8,
+          "type": "RSR"
+        }
+      },
+      "historical": [
+        {
+          "date": "14 May 2019 at 12:00:00",
+          "scores": {
+            "RSR": {
+              "level": "HIGH",
+              "score": 11.34,
+              "type": "RSR"
+            },
+            "OGRS": {
+              "level": "LOW",
+              "score": 3.45,
+              "type": "RSR"
+            },
+            "OGP": {
+              "level": "MEDIUM",
+              "score": 5.3,
+              "type": "RSR"
+            },
+            "OVP": {
+              "level": "HIGH",
+              "score": 2.8,
+              "type": "RSR"
+            }
+          }
+        },
+        {
+          "date": "12 September 2018 at 12:00:00",
+          "scores": {
+            "RSR": {
+              "level": "HIGH",
+              "score": 8.6,
+              "type": "RSR"
+            },
+            "OGRS": {
+              "level": "LOW",
+              "score": 4.3,
+              "type": "RSR"
+            },
+            "OGP": {
+              "level": "MEDIUM",
+              "score": 6.2,
+              "type": "RSR"
+            },
+            "OVP": {
+              "level": "HIGH",
+              "score": 3.1,
+              "type": "RSR"
+            }
+          }
+        }
+      ]
+    },
     "riskOfSeriousHarm": {
       "overallRisk": "VERY_HIGH",
       "riskToChildren": "LOW",

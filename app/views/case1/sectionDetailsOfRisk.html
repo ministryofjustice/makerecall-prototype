@@ -1,0 +1,13 @@
+
+        {% set sectionHtml %}
+            {{ oasysHeading({ text: "OASys 10.2 What is the nature of the risk?"}) }}
+            <pre class='govuk-body'>
+                {{ case.risk.details }}
+            </pre>
+        {% endset %}
+
+        {{ appSummaryCard({
+            titleText: 'Details of the risk',
+            classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+            html: sectionHtml
+        }) }}

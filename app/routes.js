@@ -5,6 +5,7 @@ const caseResponse = require('./data/get-case-overview.json')
 // Add your routes here - above the module.exports line
 router.get('/case1/:sectionId', (req, res, next) => {
   res.locals.case = caseResponse
+  res.locals.pageUrlBase = '/case1/'
   res.locals.section = {
     id: req.params.sectionId
   }
