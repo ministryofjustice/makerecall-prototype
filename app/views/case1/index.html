@@ -1,0 +1,67 @@
+{% extends "../layout.html" %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: '/search'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-caption-l">CRN: <span data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span> | Date of
+                birth: <span data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span> (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
+                | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
+            </div>
+            <div class="govuk-heading-xl" data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
+            {{ mojSubNavigation({
+                label: 'Case summary sections',
+                items: [
+                    {
+                        text: 'Overview',
+                        href: pageUrlBase + 'overview',
+                        active: section.id == 'overview'
+                    },
+                    {
+                        text: 'Risk',
+                        href: pageUrlBase + 'risk',
+                        active: section.id == 'risk'
+                    },
+                    {
+                        text: 'Personal details',
+                        href: pageUrlBase + 'personal-details',
+                        active: section.id == 'personal-details'
+                    },
+                    {
+                        text: 'Licence conditions',
+                        href: pageUrlBase + 'licence-conditions',
+                        active: section.id == 'licence-conditions'
+                    },
+                    {
+                        text: 'Licence history',
+                        href: pageUrlBase + 'licence-history',
+                        active: section.id == 'licence-history'
+                    },
+                    {
+                        text: 'Contact log',
+                        href: pageUrlBase + 'contact-log',
+                        active: section.id == 'contact-log'
+                    }
+                ]
+            }) }}
+            {% if section.id =='overview' %}
+                {% include './caseOverview.html' %}
+            {% elseif section.id =='risk' %}
+                {% include './caseRisk.html' %}
+            {% elseif section.id =='licence-history' %}
+                {% include './caseLicenceHistory.html' %}
+            {% elseif section.id =='licence-conditions' %}
+                {% include './caseLicenceConditions.html' %}
+            {% elseif section.id =='contact-log' %}
+                {% include './caseContactLog.html' %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+
+        {% set sectionHtml %}
+            {{ oasysHeading({ text: "OASys 11.9 Contingency plan"}) }}
+            <pre class='govuk-body'>
+                {{ case.contingencyPlan.description }}
+            </pre>
+        {% endset %}
+
+        {{ appSummaryCard({
+            titleText: 'Contingency plan',
+            classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+            html: sectionHtml
+        }) }}

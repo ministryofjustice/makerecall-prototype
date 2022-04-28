@@ -19,6 +19,9 @@ $govuk-assets-path: '/govuk/assets/';
 
 @import "components/summary-card";
 @import 'components/header-bar';
+@import 'components/dashboard-card';
+
+@import "layout";
 
 .pagination a:hover{
 
@@ -33,17 +36,25 @@ $govuk-assets-path: '/govuk/assets/';
 
 // @import 'max-widths';
 @import 'govuk-page-masthead';
-
-// tweaks to gov summary table on CYA pattern to allow for more space for values in repsonse to quetsions
-.govuk-summary-list__key {
-  width:50%;
-}
-
-.govuk-summary-list__value {
-  width:30%;
-}
+//
+//// tweaks to gov summary table on CYA pattern to allow for more space for values in repsonse to quetsions
+//.govuk-summary-list__key {
+//  width:50%;
+//}
+//
+//.govuk-summary-list__value {
+//  width:30%;
+//}
 
 // align make recommendation button to right
 .MRD-rec-button {
   float:right;
+}
+
+.text-secondary {
+  color: $govuk-secondary-text-colour;
+}
+
+pre.govuk-body {
+  white-space: pre-line;
 }

@@ -1,0 +1,52 @@
+{% set indexOffenceHtml %}
+    <ul class='govuk-list'>
+        {% for offence in case.indexOffences %}
+            <li>{{ offence.description }}</li>
+        {% endfor %}
+    </ul>
+    {{ govukDetails({
+        summaryText: "View more detail",
+        text: "TBC..."
+    }) }}
+{% endset %}
+        {% set sectionHtml %}
+            <div class="govuk-!-padding-bottom-4 govuk-!-margin-bottom-2 govuk-section-break--visible govuk-!-padding-right-8 ">
+                <div class='flex flex--space-between'>
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Time left on licence</h3>
+                        <div class='stat-number'>{{ case.licence.daysRemaining.value }} days</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Time spent in the community</h3>
+                        <div class='stat-number'>{{ case.licence.daysSpentInCommunity.value }} days</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-card__title stat-card__title-narrow">Sentence length</h3>
+                        <div class='stat-number'>{{ case.sentence.length.value }} years</div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-!-margin-bottom-4 govuk-section-break--visible">
+                {{ govukSummaryList({
+                    rows: [
+                        {
+                            key: { html: 'Index offence' },
+                            value: { html: indexOffenceHtml }
+                        },
+                        {
+                            key: { html: 'Sentence type' },
+                            value: { html: case.sentence.type }
+                        }
+                    ]
+                }) }}
+            </div>
+            <div>
+                <a href="#" class="govuk-link">Download the licence letter</a>
+            </div>
+        {% endset %}
+
+        {{ appSummaryCard({
+            titleText: 'Licence',
+            classes: 'govuk-!-margin-bottom-4 app-summary-card--large-title',
+            html: sectionHtml
+        }) }}

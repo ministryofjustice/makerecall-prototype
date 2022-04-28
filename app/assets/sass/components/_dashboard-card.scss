@@ -1,0 +1,42 @@
+
+
+$unit: 15px;
+
+.stat-card {
+    margin-right: $unit;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    @media (min-width: 1024px) {
+        font-size: 24px;
+    }
+}
+
+.stat-unit {
+    font-size: 32px;
+    padding-left: 5px;
+}
+
+.stat-card__title {
+    color: $govuk-secondary-text-colour;
+    font-weight: normal;
+    font-family: "GDS Transport", arial, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-transform: lowercase;
+    max-width: 7em;
+    @media (min-width: 1024px) {
+        font-size: 1.125rem;
+    }
+}
+
+.stat-card__title-narrow {
+    max-width: 5em;
+}
