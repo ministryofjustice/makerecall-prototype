@@ -3,7 +3,7 @@
     "name": "Paula Smith",
     "dateOfBirth": "2000-11-09",
     "age": 21,
-    "gender": "Male",
+    "gender": "Female",
     "crn": "A12345"
   },
   "currentAddress": {
@@ -16,6 +16,15 @@
     "name": "Jenny Eclair",
     "phoneNumber": "07824637629",
     "email": "jenny@probation.com",
+    "probationTeam": {
+      "code": "N07",
+      "label": "NPS London"
+    }
+  },
+  "probationPractitioner": {
+    "name": "Jane Smith",
+    "phoneNumber": "0208363727",
+    "email": "jane@probation.com",
     "probationTeam": {
       "code": "N07",
       "label": "NPS London"
