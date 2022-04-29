@@ -9,7 +9,7 @@ router.get('/case-v3/:sectionId', (req, res, next) => {
   res.locals.section = {
     id: req.params.sectionId
   }
-  res.locals.compact = Boolean(typeof req.query.compact !== 'undefined')
+  res.locals.variant = req.query.v
   res.render('case-v3/index.html')
 })
 

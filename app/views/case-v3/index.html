@@ -1,5 +1,5 @@
 {% extends "../layout.html" %}
-{% set pathQuerystring = "?compact" if compact else "" %}
+{% set pathQuerystring = "?v=" + variant %}
 
 {% block beforeContent %}
     {{ govukBackLink({

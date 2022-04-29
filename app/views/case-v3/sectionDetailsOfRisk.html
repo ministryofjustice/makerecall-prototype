@@ -5,7 +5,7 @@
 
 {% set sectionHtml %}
     {{ oasysHeading({ text: "OASys 10.2 What is the nature of the risk?"}) }}
-    {% if compact %}
+    {% if variant == '2' or variant == '3' %}
         {{ govukDetails({
             summaryText: "View more detail",
             html: contentHtml

@@ -5,11 +5,11 @@
 
 {% set sectionHtml %}
     {{ oasysHeading({ text: "OASys 11.9 Contingency plan"}) }}
-    {% if compact %}
+    {% if variant == '2' or variant == '3' %}
     {{ govukDetails({
         summaryText: "View more detail",
         html: contentHtml,
-        open: true
+        open: variant == '3'
     }) }}
     {% else %}
     {{ contentHtml | safe }}

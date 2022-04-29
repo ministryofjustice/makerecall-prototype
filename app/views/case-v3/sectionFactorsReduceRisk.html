@@ -5,7 +5,7 @@
 
 {% set sectionHtml %}
     {{ oasysHeading({ text: "OASys 10.5 What factors are likely to reduce the risk?"}) }}
-    {% if compact %}
+    {% if variant == '2' or variant == '3' %}
         {{ govukDetails({
             summaryText: "View more detail",
             html: contentHtml
