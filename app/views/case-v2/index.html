@@ -11,7 +11,7 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <div class="flex flex--space-between">
+            <div class="flex flex--space-between flex--align-center govuk-!-margin-bottom-4">
                 <div>
                     <div class="govuk-caption-l">CRN: <span
                                 data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span> | Date of
@@ -20,11 +20,10 @@
                         (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
                         | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
                     </div>
-                    <div class="govuk-heading-xl" data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
+                    <div class="govuk-heading-xl govuk-!-margin-bottom-0"
+                         data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
                 </div>
-                <div>
-                    <a href="#" class="govuk-button">Make a recommendation</a>
-                </div>
+                <a href="#" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
             </div>
 
             {{ mojSubNavigation({
