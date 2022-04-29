@@ -11,11 +11,21 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <div class="govuk-caption-l">CRN: <span data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span> | Date of
-                birth: <span data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span> (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
-                | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
+            <div class="flex flex--space-between">
+                <div>
+                    <div class="govuk-caption-l">CRN: <span
+                                data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span> | Date of
+                        birth: <span
+                                data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span>
+                        (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
+                        | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
+                    </div>
+                    <div class="govuk-heading-xl" data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
+                </div>
+                <div>
+                    <a href="#" class="govuk-button">Make a recommendation</a>
+                </div>
             </div>
-            <div class="govuk-heading-xl" data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
 
             {{ mojSubNavigation({
                 label: 'Case summary sections',
