@@ -8,7 +8,8 @@
     {% if compact %}
     {{ govukDetails({
         summaryText: "View more detail",
-        html: contentHtml
+        html: contentHtml,
+        open: true
     }) }}
     {% else %}
     {{ contentHtml | safe }}
