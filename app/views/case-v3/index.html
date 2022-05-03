@@ -13,17 +13,16 @@
         <div class="govuk-grid-column-full">
             <div class="flex flex--space-between flex--align-center govuk-!-margin-bottom-4">
                 <div>
-                    <div class="govuk-caption-l">CRN: <span
-                                data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span> | Date of
-                        birth: <span
-                                data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span>
+                    <div class="govuk-caption-m">CRN: 
+                        <span data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span><span style="margin:0 10px;">|</span> Date of birth: 
+                         <span data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span>
                         (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
-                        | Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
+                        <span style="margin:0 10px;">|</span> Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
                     </div>
                     <div class="govuk-heading-xl govuk-!-margin-bottom-0"
                          data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
                 </div>
-                <a href="#" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
+                <a href="../case/rec-flow/1-risk.html" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
             </div>
 
             {{ mojSubNavigation({
