@@ -7,4 +7,7 @@
         {% include './sectionFactorsReduceRisk.html' %}
         {% include './sectionWhenRiskHighest.html' %}
     </div>
+    <div class="govuk-grid-column-one-third-from-desktop" data-qa='riskFlags'>
+        {{ riskFlagWidget(case.risk.flags) }}
+    </div>
 </div>
