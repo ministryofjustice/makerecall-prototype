@@ -1,13 +1,31 @@
 <h1 class='govuk-heading-m govuk-visually-hidden'>Overview</h1>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <div class="govuk-grid-column-full">
+        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+            {% set html %}
+            <p class="govuk-notification-banner__heading">
+            OAsys was last updated in November 2021
+            <a class="govuk-notification-banner__link" href="#">Update now</a>.
+            </p>
+        {% endset %}
+        
+        {{ govukNotificationBanner({
+            html: html
+        }) }}
+        </div>
+</div>
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+        
+
         {% include './sectionLicence.html' %}
-        <div class="govuk-body">Last OASys update: November 2021</div>
+            <div class="govuk-body">Last OASys update: November 2021</div>
         {% include './sectionContingencyPlan.html' %}
         {% include './sectionFactorsReduceRisk.html' %}
         {% include './sectionWhenRiskHighest.html' %}
-    </div>
-    <div class="govuk-grid-column-one-third-from-desktop" data-qa='riskFlags'>
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop" data-qa='riskFlags'>
         {{ riskFlagWidget(case.risk.flags) }}
-    </div>
+        </div>
 </div>
+

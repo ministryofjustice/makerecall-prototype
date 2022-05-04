@@ -1,5 +1,6 @@
 {% extends "../layout.html" %}
 {% set pathQuerystring = "?v=" + variant %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% block beforeContent %}
     {{ govukBackLink({
@@ -22,7 +23,7 @@
                     <div class="govuk-heading-xl govuk-!-margin-bottom-0"
                          data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
                 </div>
-                <a href="../case/rec-flow/1-risk.html" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
+                <a href="../case/rec-flow/1risk.html" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
             </div>
 
             {{ mojSubNavigation({
@@ -73,6 +74,11 @@
             {% elseif section.id =='contact-log' %}
                 {% include './caseContactLog.html' %}
             {% endif %}
+
+            
+
+          
+
         </div>
     </div>
 {% endblock %}
