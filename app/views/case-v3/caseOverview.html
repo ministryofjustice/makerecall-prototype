@@ -4,7 +4,7 @@
         {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
             {% set html %}
             <p class="govuk-notification-banner__heading">
-            OAsys was last updated in November 2021
+            OAsys was last updated in November 2021<br>
             <a class="govuk-notification-banner__link" href="#">Update now</a>.
             </p>
         {% endset %}
@@ -25,7 +25,7 @@
         {% include './sectionWhenRiskHighest.html' %}
         </div>
         <div class="govuk-grid-column-one-third-from-desktop" data-qa='riskFlags'>
-        {{ riskFlagWidget(case.risk.flags) }}
+        
         </div>
 </div>
 
