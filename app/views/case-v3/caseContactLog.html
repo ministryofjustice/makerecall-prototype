@@ -1,1 +1,273 @@
-<h2 class="govuk-heading-m">Contact log</h2>
+<script>
+    new MOJFrontend.FilterToggleButton({
+  bigModeMediaQuery: "(min-width: 48.063em)",
+  startHidden: true,
+  toggleButton: {
+    container: $(".moj-action-bar__filter"),
+    showText: "Show filter",
+    hideText: "Hide filter",
+    classes: "govuk-button--secondary",
+  },
+  closeButton: {
+    container: $(".moj-filter__header-action"),
+    text: "Close",
+  },
+  filter: {
+    container: $(".moj-filter"),
+  },
+});
+</script>
+
+<h2 class="govuk-heading-m">Search contact list</h2>
+
+
+{%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+{%- from "moj/components/filter/macro.njk" import mojFilter -%}
+{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+
+{% set filterOptionsHtml %}
+
+  {{ govukCheckboxes({
+    idPrefix: 'type',
+    name: 'type',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Contact types',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: '1',
+        text: 'Planned phone contact (29)',
+        checked: true
+      },
+      {
+        value: '2',
+        text: 'NOMIS case notes'
+      },
+      {
+        value: '3',
+        text: 'Email (6)',
+        checked: true
+      },
+      {
+        value: '4',
+        text: 'Planned office visit (3)'
+      },
+      {
+        value: '5',
+        text: 'Internal communications'
+      },
+      {
+        value: '6',
+        text: 'Management oversight (13)'
+      },
+      {
+        value: '7',
+        text: 'Letter or fax (1)'
+      },
+      {
+        value: '8',
+        text: 'Police liaison (1)'
+      },
+      {
+        value: '9',
+        text: 'Home visit to case (12)'
+      },
+      {
+        value: '10',
+        text: 'AP - Hostel curfew'
+      },
+      {
+        value: '11',
+        text: 'Phone contact from other'
+      },
+      {
+        value: '10',
+        text: 'Police intelligence check'
+      }
+    ]
+  }) }}
+
+{% endset %}
+
+
+<div class="moj-filter-layout">
+
+  <div class="moj-filter-layout__filter">
+
+    {{ mojFilter({
+      heading: {
+      text: 'Filter'
+      },
+      selectedFilters: {
+
+      heading: {
+        text: 'Selected filters'
+      },
+
+      clearLink: {
+        text: 'Clear filters'
+      },
+
+      categories: [
+        {
+          heading: {
+            text: 'Contact type'
+          },
+          items: [{
+            href: '#',
+            text: 'Planned phone contact'
+          }, {
+            href: '#',
+            text: 'Email'
+          }]
+        }
+      ]
+    },
+      optionsHtml: filterOptionsHtml
+    }) }}
+
+  </div>
+
+  <div class="moj-filter-layout__content">
+
+  <div class="moj-action-bar">
+
+    <div class="moj-action-bar__filter"></div>
+
+    {{ mojButtonMenu({
+      items: [{
+        text: 'Sort by recent',
+        classes: 'govuk-button--secondary'
+      }, {
+        text: 'Sort by date',
+        classes: 'govuk-button--secondary'
+      }]
+    }) }}
+
+  </div>
+
+  <div class="moj-scrollable-pane">
+
+    <div class="moj-scrollable-pane__wrapper">
+
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {text: 'Contact'},
+          {text: 'Description'},
+          {text: 'Date'}
+        ],
+        rows: [
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'No reply'},
+           
+            {text: '9 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Email</a>'},
+            {html: 'Requested whereabouts'},
+            
+            {text: '8 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Letter</a>'},
+            {html: 'Non-compliance letter'}, 
+            {text: '6 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Missed phone appointment'},
+            {text: '5 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Explained police incident'},  
+            {text: '4 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Email</a>'},
+            {html: 'Responded'},
+            {text: '4 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Police Liaison</a>'},
+            {html: 'Highlighted as suspect'},
+            {text: '3 May 2022'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Home visit</a>'},
+            {html: 'Alan Jones'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Nomis alert</a>'},
+            {html: 'Jennifer Langley'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Susan Francis'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'John Smith'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Margaret Blake'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'John Smith'},
+            {text: '25 Jan 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Warren Sutton'},
+            {text: '25 Jan 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Alan Jones'},
+            {text: '9 May 2018'}
+          ],
+          [
+            {html: '<a href="#" class="govuk-link">Planned phone contact (NS)</a>'},
+            {html: 'Jennifer Langley'},
+            {text: '9 May 2018'}
+          ]
+        ]
+      }) }}
+    </div>
+
+  </div>
+</div>
+<script>
+    new MOJFrontend.FilterToggleButton({
+  bigModeMediaQuery: "(min-width: 48.063em)",
+  startHidden: true,
+  toggleButton: {
+    container: $(".moj-action-bar__filter"),
+    showText: "Show filter",
+    hideText: "Hide filter",
+    classes: "govuk-button--secondary",
+  },
+  closeButton: {
+    container: $(".moj-filter__header-action"),
+    text: "Close",
+  },
+  filter: {
+    container: $(".moj-filter"),
+  },
+});
+</script>
