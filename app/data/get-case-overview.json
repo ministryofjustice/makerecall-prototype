@@ -34,7 +34,7 @@
     "details": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
     "whoIsAtRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
     "circumstancesIncreaseRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
-    "flags": ["Victim contact", "Mental health issues", "Substance abuse"],
+    "flags": ["Victim contact", "Mental health issues"],
     "riskOfSeriousHarm": {
       "overallRisk": "VERY_HIGH",
       "riskToChildren": "LOW",
@@ -129,34 +129,35 @@
   },
   "offences": [
     {
-      "mainOffence": true,
-      "description": "Robbery (other than armed robbery)"
+      "description": "Second offence - 00806"
     },
     {
-      "mainOffence": false,
       "description": "Shoplifting"
     }
   ],
-  "indexOffences": [
+  "indexOffence": 
     {
       "mainOffence": true,
-      "description": "Robbery (other than armed robbery)"
+      "description": "Assaults occasioning actual bodily harm - 00806",
+      "longDescription": "On 1 July 2021 Mr Edwin had been drinking with friends/criminal associates in pubs around and also taking cocaine (as confirmed by drug tests after arrest). The day before he had had an argument with his girlfriend and she kicked him out of their shared house, leaving Mr Edwin to spend the night on the sofa of his friend/associate Herc Carver. \n\n At 5pm Mr Edwin entered the Rawls Arms on James Street along with Mr Carver and their friends/associates Frank Landsman, Michael Wagstaff and Russell Barksdale. Mr Daniels, Mr Moreland and Mr Bell are believed to be associates of Mr Edwin in the Westside Gang based in the Regents Road estate. They proceeded to drink beer and whisky and take cocaine in the toilets.\n\n At 8pm the victim Wallace Stanfield entered the pub with his friend/associate Dennis Cousins. They are believed to be members of the Greenwood Boys gang, rivals to Westside.\n\nAt 9pm Mr Stanfield made a comment to Mr Edwin about his being kicked out of his girlfriend's house the previous night. Mr Edwin smashed his pint glass into Mr Stanfield's face, causing him to bleed badly from severe cuts on his cheek and neck. Mr Cousins pushed Mr Edwin away, and Mr Edwin, Mr Daniels, Mr Moreland and Mr Bell ran out of the pub. The pub staff called 999 and the ambulance and police turned up. Mr Stanfield received emergency treatment in the ambulance which stopped the bleeding but has been left with bad scars.\n\nThe pub staff identified Mr Edwin and the police arrested him on July 3 on the Regents Road estate.",
+      "characteristics": "Violence or threat of violence or coercion\n\nExcessive use of violence or sadistic violence\n\nThe victim or victims were strangers to the offender",
+      "motivations": "Financial\n\nAddiction or perceived needs\n\nEmotional state of the offender"
     }
-  ],
+  ,
   "sentence": {
-    "type": "ORA adult custody",
+    "type": "ORA Adult Custody",
     "length": {
-      "value": 3,
-      "unit": "YEARS"
+      "value": 36,
+      "unit": "MONTHS"
     }
   },
   "licence": {
     "daysRemaining": {
-      "value": 254,
+      "value": 53,
       "unit": "DAYS"
     },
     "daysSpentInCommunity": {
-      "value": 35,
+      "value": 168,
       "unit": "DAYS"
     }
   },

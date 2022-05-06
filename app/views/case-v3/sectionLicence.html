@@ -1,26 +1,17 @@
 {% set offenceInfoHtml %}
     <h4>Description of the index offence</h4>
-    <p>On 20 April 2018 at 10pm Mr Edwin boarded a 73 bus in Stoke Newington. He went to the top of the bus where he saw Mr Smith sitting at the back of the bus. There were 2 other witnesses at the front of the bus.
-        Mr Edwin grabbed Mr Smith by the collar and shouted 'give me your phone and your wallet'. Mr Smith loudly told him to 'f**k off'. Mr Edwin hit Mr Smith in the face, breaking his nose and causing him to bleed, and saying 'Give me your phone and wallet or I will hit you again'. Mr Smith gave him his wallet and phone Mr Edwin pushed him into his seat. Mr Edwin ran off the bus at the next stop and ran off.
-        He was known to police and so the CCTV imagery helped identify him. Police arrested him 2 days later, on the 22 April 2018. On being tested Mr Edwin had crack cocaine in his system.</p>
-
-        <h4>Characteristics of the index offence</h4>
-        <p>Violence or threat of violence or coercion<br>
-        Excessive use of violence or sadistic violence<br>
-        The victim or victims were strangers to the offender
-        </p>
-        <h4>Characteristics of the index offence</h4>
-        <p>Financial<br>
-            Addiction or perceived needs<br>
-            Emotional state of the offender
-        </p>
+    <p>{{ case.indexOffence.longDescription }}</p>
+    <h4>Characteristics</h4>
+    <p>{{ case.indexOffence.characteristics }}</p>
+    <h4>Evidenced motivations</h4>
+    <p>{{ case.indexOffence.motivations }}</p>
+        
 {% endset %}
 {% set indexOffenceHtml %}
-    <ul class='govuk-list'>
-        {% for offence in case.indexOffences %}
-            <li>{{ offence.description }}</li>
-        {% endfor %}
-    </ul>
+    <p>{{
+        case.indexOffence.description
+    }}
+    </p>    
     {{ govukDetails({
         summaryText: "View more detail",
         html: offenceInfoHtml
