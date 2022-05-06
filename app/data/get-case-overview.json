@@ -31,9 +31,10 @@
     }
   },
   "risk": {
-    "details": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
-    "whoIsAtRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
-    "circumstancesIncreaseRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
+    "details": "Mr Edwin has a pattern of resorting to violent behaviour if he feels humiliated/threatened/stressed. He has been known to use weapons or opportunistically looks for a way to cause the victim maximum harm. His risk increases greatly if he has been taking alcohol or drugs, which is likely to do if he feels like he is 'out of control' of his life. ",
+    "contingencyPlan": "If Mr Edwin enters enters pubs in Enfield Town - issue licence compliance letter\nIf Mr Edwin associates with Mr Daniels, Mr Moreland or Mr Barksdale - issue decision not to recall letter or recall. Supervision session to discuss reasons for association.\nIf Mr Edwin loses his accommodation, refer to housing support. \nIf Mr Edwin loses his employment, refer to ETE services to establish alternative employment\nIf Mr Edwin returns to drinking or taking drugs, cosndier increase in MAPPA level, refer to CGL support, increase reporting or recall.",
+    "whoIsAtRisk": "Public:\nMr Edwin poses a very high risk to members of the public, especially if he believes they have mocked him, he has been drinking/taking drugs and is surrounded by his associates in the Westside Gang.\n\nKnown adult:\nMr Edwin poses a medium risk to his victim Wallce Stanfield. He has shown no desire for retribution but is unpredictable and resolves problems through violence if taking drugs and surrounded by peers.\n\nStaff:\nMr Edwin poses a high risk to probation staff as he resorts to violence if he feels undermined or not listed to.",
+    "circumstancesIncreaseRisk": "Factors include:\n- relationship breakdown\n- unstable accommodation situation/lack of stable housing\n- association with criminal peers/associates\n- a lack of steady employment which causes him to return to drug dealing to make money\n- drug and alcohol use",
     "flags": ["Victim contact", "Mental health issues"],
     "riskOfSeriousHarm": {
       "overallRisk": "VERY_HIGH",
@@ -124,8 +125,8 @@
         }
       ]
     },
-    "factorsToReduceRisk": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin.",
-    "whenRiskHighest": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin."
+    "factorsToReduceRisk": "Factors include:\n- engagement in interventions related to mood/behaviour control\n- avoidance of drugs and alcohol\n- steady employment\n- stable accommodation\n- sources of support and value that are separate from being part of a gang/maintaining reputation e.g. family engagement, job, education",
+    "whenRiskHighest": "If Mr Edwin has had recent changes in his life that cause him to take drugs or drink; if he is surrounded by criminal peers/associates; if he is in a public place where he feels like he needs to protect his reputation."
   },
   "offences": [
     {
@@ -135,15 +136,13 @@
       "description": "Shoplifting"
     }
   ],
-  "indexOffence": 
-    {
+  "indexOffence": {
       "mainOffence": true,
       "description": "Assaults occasioning actual bodily harm - 00806",
       "longDescription": "On 1 July 2021 Mr Edwin had been drinking with friends/criminal associates in pubs around and also taking cocaine (as confirmed by drug tests after arrest). The day before he had had an argument with his girlfriend and she kicked him out of their shared house, leaving Mr Edwin to spend the night on the sofa of his friend/associate Herc Carver. \n\n At 5pm Mr Edwin entered the Rawls Arms on James Street along with Mr Carver and their friends/associates Frank Landsman, Michael Wagstaff and Russell Barksdale. Mr Daniels, Mr Moreland and Mr Bell are believed to be associates of Mr Edwin in the Westside Gang based in the Regents Road estate. They proceeded to drink beer and whisky and take cocaine in the toilets.\n\n At 8pm the victim Wallace Stanfield entered the pub with his friend/associate Dennis Cousins. They are believed to be members of the Greenwood Boys gang, rivals to Westside.\n\nAt 9pm Mr Stanfield made a comment to Mr Edwin about his being kicked out of his girlfriend's house the previous night. Mr Edwin smashed his pint glass into Mr Stanfield's face, causing him to bleed badly from severe cuts on his cheek and neck. Mr Cousins pushed Mr Edwin away, and Mr Edwin, Mr Daniels, Mr Moreland and Mr Bell ran out of the pub. The pub staff called 999 and the ambulance and police turned up. Mr Stanfield received emergency treatment in the ambulance which stopped the bleeding but has been left with bad scars.\n\nThe pub staff identified Mr Edwin and the police arrested him on July 3 on the Regents Road estate.",
       "characteristics": "Violence or threat of violence or coercion\n\nExcessive use of violence or sadistic violence\n\nThe victim or victims were strangers to the offender",
       "motivations": "Financial\n\nAddiction or perceived needs\n\nEmotional state of the offender"
-    }
-  ,
+    },
   "sentence": {
     "type": "ORA Adult Custody",
     "length": {
@@ -160,8 +159,5 @@
       "value": 168,
       "unit": "DAYS"
     }
-  },
-  "contingencyPlan": {
-    "description": "If Mr Edwin demonstrates a lack of compliance with his licence conditions, options include sending warning letters, behavioural contracts, and increased reporting. OM might also look into introducing stricer curfew times. A revised RMP may be appropriate to certain behaviours/changes in circumstances. If risk is unmanageable then recall needs to be enforced.\n\nMr Edwin needs ongoing safety planning is to be ongoing. If there are any concerns then MAPPA is the right forum for discussing these.\nIf Mr Edwin connects back with people in his old estate associated with gangs (who have previously been associated with an increase in risk), then OM should consider issuing a warning letter, additional licence conditions, or recall in certain scenarios.\n\nIf Mr Edwin fails to follow licence conditions or neglects to follow intervention requirements, recall to custody should be considered.\nIf Mr Edwin does not make progress on undersatnding his drug misuse and impact on other people, his interventions should be reviewed to find the right approach that works for him, with sentence plan amended. If Mr Edwin still does not respond to sentence plan, suggest a warning and then ultimately recall.\n\nIf Mr Edwin is unable to secure stable employment, recommend reviewing interventions and sentence management plan to identify better pathways to emploiyment.\n\nIf Mr Edwin continues to struggle with his financial situation, I recommend interventions focused on a) budget management and b) finding a job. Citizen Advice Bureau and CGL can help here."
   }
 }

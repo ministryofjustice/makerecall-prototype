@@ -1,24 +1,21 @@
 {% set offenceInfoHtml %}
     <h4>Description of the index offence</h4>
-    <p>{{ case.indexOffence.longDescription }}</p>
+    <pre class='govuk-body'>{{ case.indexOffence.longDescription }}</p>
     <h4>Characteristics</h4>
-    <p>{{ case.indexOffence.characteristics }}</p>
-    <h4>Evidenced motivations</h4>
-    <p>{{ case.indexOffence.motivations }}</p>
-        
+     <pre class='govuk-body'>{{ case.indexOffence.characteristics }}</p>
+     <h4>Evidenced motivations</h4>
+     <pre class='govuk-body'>{{ case.indexOffence.motivations }}</p>
 {% endset %}
-{% set indexOffenceHtml %}
-    <p>{{
-        case.indexOffence.description
-    }}
-    </p>    
-    {{ govukDetails({
-        summaryText: "View more detail",
-        html: offenceInfoHtml
-    }) }}
-{% endset %}
-        {% set sectionHtml %}
-            <div class="govuk-!-padding-bottom-4 govuk-!-margin-bottom-2 govuk-section-break--visible govuk-!-padding-right-8 ">
+         {% set indexOffenceHtml %}
+             <p>{{ case.indexOffence.description }}
+    </p>
+             {{ govukDetails({
+                 summaryText: "View more detail",
+                 html: offenceInfoHtml
+             }) }}
+         {% endset %}
+         {% set sectionHtml %}
+             <div class="govuk-!-padding-bottom-4 govuk-!-margin-bottom-2 govuk-section-break--visible govuk-!-padding-right-8 ">
                 <div class='flex flex--space-between'>
                     <div class="stat-card">
                         <h3 class="stat-card__title">Time left on licence</h3>
@@ -34,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="govuk-!-margin-bottom-4 govuk-section-break--visible">
+             <div class="govuk-!-margin-bottom-4 govuk-section-break--visible">
                 {{ govukSummaryList({
                     rows: [
                         {
@@ -48,13 +45,13 @@
                     ]
                 }) }}
             </div>
-            <div>
+             <div>
                 <a href="#" class="govuk-link">Download the licence letter</a>
             </div>
-        {% endset %}
+         {% endset %}
 
-        {{ appSummaryCard({
-            titleText: 'Licence',
-            classes: 'govuk-!-margin-bottom-4 app-summary-card--large-title',
-            html: sectionHtml
-        }) }}
+{{ appSummaryCard({
+    titleText: 'Licence',
+    classes: 'govuk-!-margin-bottom-4 app-summary-card--large-title',
+    html: sectionHtml
+}) }}
