@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/case-v4/overview?v=3"
+}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Share Duncann Cardours profile</h1>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="email">
+                  Email
+                </label>
+                <div class="govuk-hint">Only HMPPS staff email addresses are allowed, for example joan.smith@justice.gov.uk</div>
+               
+                <input class="govuk-input" id="email" name="email" type="text">
+              </div>
+        
+
+
+
+
+
+<!--safegrading concerns question-->
+{% set yesMessage %}
+{{ govukTextarea({
+  id: "sfguard",
+  name: "sfguard",
+  
+  classes: "govuk-textarea",
+  label: {
+    text: "Write your message"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "sfguard-concerns",
+  name: "sfguard-concerns",
+  fieldset: {
+    legend: {
+      text: "Send a message also?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+ 
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: yesMessage
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+              <!-- <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="your-message">
+                    Your message
+                  </label>
+                </h1>
+                <div id="more-detail-hint" class="govuk-hint">
+                A link to the profile of Duncann Cardours will appear before this message.
+                </div>
+                <textarea class="govuk-textarea" id="your-message" name="your-message" rows="8" aria-describedby="more-detail-hint"></textarea>
+              </div> -->
+
+              <form action="shareConfirm" method="post" novalidate>
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button">
+                      Continue
+                    </button>
+                </div>
+              </form>
+
+        </div>
+    </div>
+{% endblock %}

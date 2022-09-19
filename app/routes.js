@@ -13,4 +13,14 @@ router.get('/case-v3/:sectionId', (req, res, next) => {
   res.render('case-v3/index.html')
 })
 
+router.get('/case-v4/:sectionId', (req, res, next) => {
+  res.locals.case = caseResponse
+  res.locals.pageUrlBase = '/case-v4/'
+  res.locals.section = {
+    id: req.params.sectionId
+  }
+  res.locals.variant = req.query.v
+  res.render('case-v4/index.html')
+})
+
 module.exports = router

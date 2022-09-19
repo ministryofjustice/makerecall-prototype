@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: '/case/share/shareDetails'
+    }) }}
+{% endblock %}
+
+{% block content %}
+    
+          <div class="govuk-width-container">
+            <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-panel govuk-panel--confirmation">
+                    <h1 class="govuk-panel__title">
+                      Profile shared
+                    </h1>
+                    <div class="govuk-panel__body">
+                      Duncann Cardours <br>CRN: X514364
+                    </div>
+                  </div>
+        
+                  <!-- <h2 class="govuk-heading-m">What happens next</h2>
+          
+                  <p class="govuk-body">
+                    An email will be sent immediately but may take a few minutes depending on internet speeds.
+                  </p> -->
+                  
+                  <p class="govuk-body">
+                    <a href="/case-v4/overview?v=3" class="govuk-link">Return to Duncann Cardours profile</a>
+                  </p>
+                </div>
+              </div>
+            </main>
+          </div>
+
+{% endblock %}

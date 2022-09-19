@@ -1,0 +1,39 @@
+
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+            {
+            heading: {
+                text: "Standard licence conditions"
+            },
+            content: {
+                html: "<p class='govuk-body'>Be of good behaviour and not behave in a way which undermines the purpose of the licence period</p><p class='govuk-body'>Not commit any offence</p><p class='govuk-body'>Keep in touch with the supervising officer in accordance with instructions given by the supervising officer</p><p class='govuk-body'>Receive visits from the supervising officer in accordance with instructions given by the supervising officer</p><p class='govuk-body'>Reside permanently at an address approved by the supervising officer and obtain the prior permission of the supervising officer for any stay of one or more nights at a different address</p><p class='govuk-body'>Not undertake work, or a particular type of work, unless it is approved by the supervising officer and notify the supervising officer in advance of any proposal to undertake work or a particular type of work</p><p class='govuk-body'>Not travel outside the United Kingdom, the Channel Islands or the Isle of Man except with the prior permission of your supervising officer or for the purposes of immigration deportation or removal</p>"
+            }
+            },
+            {
+            heading: {
+                text: "Additional licence conditions"
+            },
+            content: {
+                html: "<h2 class='govuk-heading-m'>Freedom of movement</h2>
+                            <p class='govuk-body'>Not to enter [NAMED PLACE] without the prior approval of your supervising officer.</p>
+                    
+                            <h3 class='govuk-heading-s'>Notes</h3>
+                            <p>Area defined by Clerkenwell defined by: South of Pentonville Road; East of Grays Inn Road; North of Clerkenwell Road; West of Goswell Road.</p>
+                    
+                       <h2 class='govuk-heading-m'>Licence - Accredited Programme</h2>
+                            <p class='govuk-body'>COVAID (Control - Angry Impulsive Drinkers)</p>
+                    
+                             <h3 class='govuk-heading-s'>Notes</h3>
+                            <p>COVAID Programme, Sheffield Road N1</p>"
+            }
+            }
+        ]
+        }) }}
+</div>

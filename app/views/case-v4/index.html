@@ -12,20 +12,26 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <div class="flex flex--space-between flex--align-center govuk-!-margin-bottom-4">
+            <div class="flex flex--medium flex--space-between flex--align-center govuk-!-margin-bottom-4">
                 <div>
-                    <div class="govuk-caption-m">CRN: 
-                        <span data-qa='personDetails-crn'>{{ case.personDetails.crn }}</span><span style="margin:0 10px;">|</span> Date of birth: 
-                         <span data-qa='personDetails-dateOfBirth'>{{ case.personDetails.dateOfBirth | formatDateFromIsoString }}</span>
-                        (age <span data-qa='personDetails-age'>{{ case.personDetails.age }}</span>)
-                        <span style="margin:0 10px;">|</span> Gender: <span data-qa='personDetails-gender'>{{ case.personDetails.gender }}</span>
+                    <div class="govuk-caption-m flex--order-2">CRN: 
+                        <span data-qa='personDetails-crn'>X514364</span><span style="margin:0 10px;">|</span> Date of birth: 
+                         <span data-qa='personDetails-dateOfBirth'>21 August 1985 (age 37)</span>
+                        <span style="margin:0 10px;">|</span> Gender: <span data-qa='personDetails-gender'>Male</span>
                     </div>
-                    <div class="govuk-heading-xl govuk-!-margin-bottom-0"
-                         data-qa='sectionHeading'>{{ case.personDetails.name }}</div>
+                    <div class="flex--order-1 govuk-heading-xl govuk-!-margin-bottom-6"
+                         data-qa='sectionHeading'>Duncann Cardours</div>
                 </div>
+               <div>
                 <a href="../case/rec-flow/1-risk.html" class="govuk-button govuk-!-margin-bottom-0">Make a recommendation</a>
+                </div>
+                
             </div>
-
+            <div class="mrd-subhead">
+                <p class="govuk-body">
+                <a class="govuk-link" href="/share/shareDetails">Share this profile</a>
+                </p>
+            </div>
             {{ mojSubNavigation({
                 label: 'Case summary sections',
                 items: [
@@ -64,15 +70,11 @@
             {% elseif section.id =='personal-details' %}
                 {% include './casePersonalDetails.html' %}
             {% elseif section.id =='licence-history' %}
-                {% include './caseContactHistory.html' %}
+                {% include './caseContactLog2.html' %}
             {% elseif section.id =='licence-conditions' %}
                 {% include './caseLicenceConditions.html' %}
            
             {% endif %}
-
-            
-
-          
 
         </div>
     </div>

@@ -1,0 +1,23 @@
+
+{% set contentHtml %}
+    <pre class='govuk-body'>{{ case.risk.contingencyPlan }}</pre>
+{% endset %}
+
+{% set sectionHtml %}
+    {{ oasysHeading({ text: "OASys 11.9 Contingency plan"}) }}
+    {% if variant == '2' or variant == '3' %}
+    {{ govukDetails({
+        summaryText: "View more detail",
+        html: contentHtml,
+        open: variant == '3'
+    }) }}
+    {% else %}
+    {{ contentHtml | safe }}
+    {% endif %}
+{% endset %}
+
+{{ appSummaryCard({
+    titleText: 'Contingency plan',
+    classes: 'govuk-!-margin-bottom-6 app-summary-card--large-title',
+    html: sectionHtml
+}) }}

@@ -14,3 +14,36 @@
 .flex--align-center {
   align-items: center;
 }
+
+/* mobile view for header */
+.mrd-subhead {
+  margin:40px 0 40px 0;
+}
+@media (min-width: 640px) {
+ .mrd-subhead {
+  margin:10px 0;
+ }
+  
+}
+
+/* moving button */
+.flex--medium {
+
+  display: block;
+  @media (min-width: 640px) {
+    display: flex; 
+}
+
+}
+.flex--medium a {
+  margin:20px 0;
+}
+
+/* Profile name reorder */
+
+.flex--order-1 {
+  order:1;
+}
+.flex--order-2 {
+  order:2;
+}

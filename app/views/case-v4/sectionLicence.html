@@ -1,0 +1,45 @@
+
+         {% set indexOffenceHtml %}
+             <p>{{ case.indexOffence.description }}</p>
+    
+            
+         {% endset %}
+         {% set sectionHtml %}
+             <div class="govuk-!-padding-bottom-4 govuk-!-margin-bottom-2 govuk-section-break--visible govuk-!-padding-right-8 ">
+                <div class='flex flex--space-between'>
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Last release date</h3>
+                        <div class='stat-number'>16 May 2022</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Licence expiry date</h3>
+                        <div class='stat-number'>16 May 2026</div>
+                    </div>
+                </div>
+            </div>
+             <div class="govuk-!-margin-bottom-4 govuk-section-break--visible">
+                {{ govukSummaryList({
+                    rows: [
+                        {
+                            key: { html: 'Main offence' },
+                            value: { html: indexOffenceHtml }
+                        },
+                        {
+                            key: { html: 'Sentence type' },
+                            value: { html: case.sentence.type }
+                        },
+                        {
+                            key: { html: 'Sentence expiry date' },
+                            value: { html: 'Not available' }
+                        }
+                    ]
+                }) }}
+            </div>
+           
+         {% endset %}
+
+{{ appSummaryCard({
+    titleText: 'Licence',
+    classes: 'govuk-!-margin-bottom-4 app-summary-card--large-title',
+    html: sectionHtml
+}) }}
