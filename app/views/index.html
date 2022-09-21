@@ -1,7 +1,7 @@
 
 {% extends "layout-govuk.html" %}
 
-{% block pageTitle %}Decide if someone should be recalled or not{% endblock %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
 
@@ -17,16 +17,46 @@
         <a href="/case-v4/overview?v=3">Summary view page</a> with link to share the page. AP staff can share the summary view with Duty SPO.
       </p>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-5">Iteration - Overview & Risk pages</h2>
-   
 
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Further iterations</h2>
+      <p>
+            For a period several features were prototyped on the HMPPS DPS platform to connect to various case management system applications like NDelius, OASys, ARN and CVL. The structure of those data sources formed part of the constraints for design and user experience. Below are those features;
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Generation of the Recall Part A 
+          </li>
+          <li>
+            Generation of the Decision not to Recall
+          </li>
+          <li>
+            Redesign of licence conditions
+          </li>
+          <li>
+            Redesign of licence history into contact history
+          </li>
+          <li>
+            Presentation of risk information from OASys
+          </li>
+          <li>
+            Approach for displaying offence and sentence information
+          </li>
+        </ul>
+        <p>
+        Read the <a href="https://makerecalldecisions-design-history-main.apps.live.cloud-platform.service.justice.gov.uk/">Design History</a> to understand the work behind those features.
+      </p>
+
+
+
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">Iteration - Overview & Risk pages</h2>
       <p>
         <a href="/case-v3/overview?v=3">
           Summary view page
         </a>
       </p>
-     
-     
         <p> Two other versions of the pages looking at information density.<br>
         
           <a href="/case-v3/overview?v=2">
@@ -37,12 +67,12 @@
         </a> in card components
         </p>
      
-     
+        
    
     <h2 class="govuk-heading-m govuk-!-margin-top-5">Iteration - Recommendation flow</h2>
 <p>
-    <a href="/case/rec-flow/1-risk">
-      Recommendation flow
+    First iteration looking into how to build upon the checklist work from alpha - <a href="/case/rec-flow/1-risk">
+      recommendation flow
     </a>
   </p>
     <h1 class="govuk-heading-l govuk-!-margin-top-5">Alpha</h1>
