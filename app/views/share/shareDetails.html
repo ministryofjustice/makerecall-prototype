@@ -16,7 +16,7 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l">Share Duncann Cardours profile</h1>
+            <h1 class="govuk-heading-l">Share profile for Duncann Cardours</h1>
 
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--m" for="email">
@@ -27,69 +27,16 @@
                 <input class="govuk-input" id="email" name="email" type="text">
               </div>
         
-
-
-
-
-
-<!--safegrading concerns question-->
-{% set yesMessage %}
-{{ govukTextarea({
-  id: "sfguard",
-  name: "sfguard",
-  
-  classes: "govuk-textarea",
-  label: {
-    text: "Write your message"
-  }
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  idPrefix: "sfguard-concerns",
-  name: "sfguard-concerns",
-  fieldset: {
-    legend: {
-      text: "Send a message also?",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
- 
-  items: [
-    {
-      value: "Yes",
-      text: "Yes",
-      conditional: {
-        html: yesMessage
-      }
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-    
-  ]
-}) }}
-
-
-
-
-
-
-
-
-
-              <!-- <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                    <label class="govuk-label govuk-label--m" for="your-message">
-                    Your message
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+                  Write a message (optional)
                   </label>
                 </h1>
                 <div id="more-detail-hint" class="govuk-hint">
-                A link to the profile of Duncann Cardours will appear before this message.
+                  The email will start with a link to this profile. Your message will go after the link.
                 </div>
-                <textarea class="govuk-textarea" id="your-message" name="your-message" rows="8" aria-describedby="more-detail-hint"></textarea>
-              </div> -->
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
 
               <form action="shareConfirm" method="post" novalidate>
                 <div class="govuk-button-group">
