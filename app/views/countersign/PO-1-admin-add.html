@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/countersign/tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          
+                <h1 class="govuk-heading-l">
+                  Keep an administrator updated
+                </h1>
+        
+                <p class="govuk-body">
+                  This administrator will be kept up to date with each step as managers countersign. They will recieve an update email after each manager countersigns the Part A.
+                </p>
+        
+                <form action="PO-2-request" method="post" novalidate>
+        
+                  <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="postcode">
+                        Administrators email
+                      </label>
+                    </h1>
+                    <input class="govuk-input govuk-input--width-30" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+                  </div>
+
+
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                  </button>
+                </form>
+          
+        </div>
+      </div>
+    </main>
+  </div>
+     
+{% endblock %}

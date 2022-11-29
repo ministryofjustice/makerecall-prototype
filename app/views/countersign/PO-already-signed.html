@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/countersign/tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          
+                <h1 class="govuk-heading-l">
+                  Countersigned
+                </h1>
+        
+        
+                
+        
+                 
+                  <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+                    <!-- <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Date</th>
+                        <th scope="col" class="govuk-table__header">Amount</th>
+                      </tr>
+                    </thead> -->
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Countersigned by</th>
+                        <td class="govuk-table__cell">Joanna Bloggs</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Time</th>
+                        <td class="govuk-table__cell">16.34</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Date</th>
+                        <td class="govuk-table__cell">30 November 2022</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Comment</th>
+                        <td class="govuk-table__cell">I endorse this recall we have made efforts to guide Mr Cardours with keeping to his licence conditions and gave him already two licence compliance letters. He can no longer be safely managed in the community.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <form action="PO-0-tasklist-lmsigned" method="post" novalidate>
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                  </button>
+                </form>
+          
+        </div>
+      </div>
+    </main>
+  </div>
+     
+{% endblock %}

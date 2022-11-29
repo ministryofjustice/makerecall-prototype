@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/countersign/tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+   
+      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Request sent
+              </h1>
+              <div class="govuk-panel__body">
+                Email sent to jo.bloggs@justice.org.uk</strong>
+              </div>
+            </div>
+           
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body">
+              When countersigning is finished you’ll need to download the Part A.
+            </p>
+          
+            <p class="govuk-body">
+              <a href="PO-0-tasklist-lmsigned" class="govuk-link">Return to Duncann Cardours Part A</a>
+            </p>
+          </div>
+        </div>
+      </main>
+    
+  </div>
+     
+{% endblock %}
