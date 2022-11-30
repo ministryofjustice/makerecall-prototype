@@ -21,37 +21,59 @@
         <div class="govuk-grid-column-three-quarters">
           <form action="SPO-notify" method="post" novalidate>
   
+    
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
                     Do you endorse this recall recommendation for Duncann Cardours?
                   </h1>
                 </legend>
+                <!-- <div id="contact-hint" class="govuk-hint">
+                  Select one option.
+                </div> -->
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                      Yes, I countersign
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
                     </label>
                   </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="yes-detail">
+                        Leave your comment (optional)
+                      </label>
+                      <textarea class="govuk-textarea" id="yes-detail" name="yes-detail" rows="5" aria-describedby="yes-detail-hint"></textarea>
+                    </div>           
+                  </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    <input class="govuk-radios__input" id="no-answer" name="no-asnwer" type="radio" value="not-contersign" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
                       No
                     </label>
                   </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="no-detail">
+                        Write a message
+                      </label>
+                      <textarea class="govuk-textarea" id="no-detail" name="no-detail" rows="5" aria-describedby="no-detail-hint"></textarea>
+                    </div>
+                  </div>
                   
+                 
                 </div>
-  
               </fieldset>
             </div>
   
             <button class="govuk-button" data-module="govuk-button">
               Continue
             </button>
-          </form>
+          </form> 
         </div>
+
+       
       </div>
     </main>
   </div>
