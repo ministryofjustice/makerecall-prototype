@@ -19,10 +19,10 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
-             
+          
                   <table class="govuk-table">
-                    <caption class="govuk-table__caption govuk-table__caption--l">Countersigned</caption>
-                    <!-- <thead class="govuk-table__head">
+                   <caption class="govuk-table__caption govuk-table__caption--l">Countersignature declined</caption>
+                   <!-- <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
                         <th scope="col" class="govuk-table__header">Date</th>
                         <th scope="col" class="govuk-table__header">Amount</th>
@@ -43,16 +43,33 @@
                       </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Comment</th>
-                        <td class="govuk-table__cell">I endorse this recall we have made efforts to guide Mr Cardours with keeping to his licence conditions and gave him already two licence compliance letters. He can no longer be safely managed in the community.</td>
+                        <td class="govuk-table__cell">I cannot endorse this recall we haven't made enough efforts to guide Mr Cardours. Not sufficient alternatives have been sought as this risk is not high enough yet.</td>
                       </tr>
                     </tbody>
                   </table>
-                  <form action="PO-0-tasklist-lmsigned" method="post" novalidate>
+                 
+          
+                <h2 class="govuk-heading-m">Request countersignature from line manager again</h2>
+
+                <form action="PO-3-request-confirm" method="post" novalidate>
+        
+                  <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="postcode">
+                        Line manager's email
+                      </label>
+                    </h1>
+                    <div id="referer-hint" class="govuk-hint">
+                      Only HMPPS staff email addresses are allowed, for example jo.bloggs@justice.gov.uk
+                    </div>
+                    <input class="govuk-input govuk-input--width-30" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+                  </div>
+
+
                   <button class="govuk-button" data-module="govuk-button">
                     Continue
                   </button>
                 </form>
-          
+
         </div>
       </div>
     </main>
