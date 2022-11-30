@@ -47,3 +47,11 @@
 .flex--order-2 {
   order:2;
 }
+
+/* hack for tasklists */
+
+.govuk-tag--lower {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 100;
+}

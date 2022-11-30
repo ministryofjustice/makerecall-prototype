@@ -11,7 +11,7 @@ title }}{% endblock %} {% block beforeContent %} {% endblock %} {% block content
 <main class="govuk-main-wrapper" id="main-content" role="main">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds-from-desktop">
-			<h1 class="govuk-heading-l">Create a Part A form</h1>
+			<!-- <h1 class="govuk-heading-l">Create a Part A form</h1> -->
 
 			<div
 				class="govuk-notification-banner"
@@ -24,7 +24,7 @@ title }}{% endblock %} {% block beforeContent %} {% endblock %} {% block content
 						class="govuk-notification-banner__title"
 						id="govuk-notification-banner-title"
 					>
-						Countersignature requested
+						Part A countersignature requested
 					</h2>
 				</div>
 				<div class="govuk-notification-banner__content">
@@ -38,252 +38,242 @@ title }}{% endblock %} {% block beforeContent %} {% endblock %} {% block content
 				</div>
 			</div>
 
-			<ol class="moj-task-list govuk-!-margin-top-8">
-				<li>
-					<h2 class="moj-task-list__section" id="heading-recommendation">
-						Recommendation
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/recall-type-indeterminate?fromPageId=task-list&amp;fromAnchor=heading-recommendation"
-								>What you recommend</a
-							>
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
 
-				<li>
-					<h2 class="moj-task-list__section" id="heading-alternatives">
-						Alternatives to recall
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/alternatives-tried?fromPageId=task-list&amp;fromAnchor=heading-alternatives"
-								>Alternatives tried already</a
-							>
+<!-- Copied from live dev -->
+<ul style="list-style: none;padding:0;">
+<li>
+<h2 class="moj-task-list__section" id='heading-recommendation'>
+    Make your recommendation
+</h2>
+<ul class="moj-task-list__items">
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="#">What you recommend</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
+    </li>
+</ul>
 
-				<li>
-					<h2 class="moj-task-list__section" id="heading-circumstances">
-						Circumstances
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/is-indeterminate?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Is Duncann Cardours on an indeterminate sentence?</a
-							>
+</li>
+            
+<li>
+<h2 class="moj-task-list__section" id='heading-circumstances'>
+    Provide information about the circumstances
+</h2>
+<ul class="moj-task-list__items">
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="#">How has Duncann Cardours responded to probation so far?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/is-extended?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Is Duncann Cardours on an extended sentence?</a
-							>
+    </li>
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="#">What licence conditions has Duncann Cardours breached?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+    </li>
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/alternatives-tried?fromPageId=task-list&amp;fromAnchor=heading-alternatives">What alternatives to recall have been tried already?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/indeterminate-type?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Type of indeterminate sentence</a
-							>
+    </li>
+    
+        <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="/recommendations/1678437082/what-led">What has led to this recall?</a>
+            
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+        </li>
+    
+    
+        <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="/recommendations/1678437082/emergency-recall?fromPageId=task-list&amp;fromAnchor=heading-circumstances">Is this an emergency recall?</a>
+            
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/indeterminate-details?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Indeterminate and extended sentences - recall criteria</a
-							>
+        </li>
+    
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/is-indeterminate?fromPageId=task-list&amp;fromAnchor=heading-circumstances">Is Duncann Cardours on an indeterminate sentence?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+    </li>
+    
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/is-extended?fromPageId=task-list&amp;fromAnchor=heading-circumstances">Is Duncann Cardours on an extended sentence?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/response-to-probation?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Response to probation so far</a
-							>
+    </li>
+    
+    
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/licence-conditions?fromPageId=task-list&amp;fromAnchor=heading-circumstances"
-								>Breached licence condition(s)</a
-							>
+</ul>
+</li>
+            <li>
+<h2 class="moj-task-list__section" id='heading-person-details'>
+    Confirm details for Duncann Cardours
+</h2>
+<ul class="moj-task-list__items">
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/personal-details?fromPageId=task-list&amp;fromAnchor=heading-person-details">Personal details</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+To review
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+    </li>
+    
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/offence-details?fromPageId=task-list&amp;fromAnchor=heading-person-details">Offence details</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+To review
+</strong>
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/what-led"
-								>What has led to this recall?</a
-							>
+    </li>
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/offence-analysis?fromPageId=task-list&amp;fromAnchor=heading-person-details">Offence analysis</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h2 class="moj-task-list__section" id="heading-vulnerability">
-						Vulnerability and additional needs
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/vulnerabilities"
-								>Would recall affect vulnerability or additional needs?</a
-							>
+    </li>
+    
+    
+</ul>
+</li>
+            <li>
+                <h2 class="moj-task-list__section" id='heading-vulnerability'>
+                    Confirm any vulnerability and additional needs
+                </h2>
+                <ul class="moj-task-list__items">
+                    <li class="moj-task-list__item">
+                        <a class="moj-task-list__task-name" href="/recommendations/1678437082/vulnerabilities">Would recall affect vulnerability or additional
+                            needs?</a>
+                        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h2 class="moj-task-list__section" id="heading-victim-liaison">
-						Victim liaison
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/victim-contact-scheme"
-								>Are there any victims in the victim contact scheme?</a
-							>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="moj-task-list__section" id='heading-victim-liaison'>
+                    Confirm victim liaison information
+                </h2>
+                <ul class="moj-task-list__items">
+                    <li class="moj-task-list__item">
+                        <a class="moj-task-list__task-name" href="/recommendations/1678437082/victim-contact-scheme">Are there any victims in the victim contact scheme?</a>
+                        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<h2 class="moj-task-list__section" id="heading-custody">Custody</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/custody-status?fromPageId=task-list&amp;fromAnchor=heading-custody"
-								>Is Duncann Cardours in custody now?</a
-							>
+                    </li>
+                </ul>
+            </li>
+            
+<li>
+<h2 class="moj-task-list__section" id='heading-custody'>
+    Provide information about custody
+</h2>
+<ul class="moj-task-list__items">
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/custody-status?fromPageId=task-list&amp;fromAnchor=heading-custody">Is Duncann Cardours in custody now?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--blue moj-task-list__task-completed">
+    Completed
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+    </li>
+    
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/iom">Is Duncann Cardours under Integrated Offender Management (IOM)?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/iom"
-								>Is Duncann Cardours under Integrated Offender Management
-								(IOM)?</a
-							>
+    </li>
+    
+    <li class="moj-task-list__item">
+        <a class="moj-task-list__task-name" href="/recommendations/1678437082/contraband">Do you think Duncann Cardours is using recall to bring contraband into prison?</a>
+        
+<strong class="govuk-tag govuk-tag--lower govuk-tag--grey moj-task-list__task-completed">
+    To do
+</strong>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
+    </li>
+</ul>
+</li>
+<!--added countersigning bits-->
+<a id="countersign-point"></a>
+<li>
+    <h2 class="moj-task-list__section" id="heading-custody">
+        Countersigned by management
+    </h2>
+    <ul class="moj-task-list__items">
+        <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="SPO-csign"
+                >Line manager countersign</a
+            >
 
-						<li class="moj-task-list__item">
-							<a
-								class="moj-task-list__task-name"
-								href="/recommendations/633602986/contraband"
-								>Do you think Duncann Cardours is using recall to bring
-								contraband into prison?</a
-							>
+            <strong
+                class="govuk-tag govuk-tag--grey govuk-tag--lower  moj-task-list__task-completed"
+            >
+                To do
+            </strong>
+        </li>
 
-							<strong class="govuk-tag moj-task-list__task-completed">
-								completed
-							</strong>
-						</li>
-					</ul>
-				</li>
+        <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="SPO-csign"
+                >Senior manager countersign</a
+            >
 
-				<!--added countersigning bits-->
-				<a id="countersign-point"></a>
-				<li>
-					<h2 class="moj-task-list__section" id="heading-custody">
-						Countersigned by management
-					</h2>
-					<ul class="moj-task-list__items">
-						<li class="moj-task-list__item">
-							<a class="moj-task-list__task-name" href="SPO-csign"
-								>Line manager countersign</a
-							>
+            <strong
+                class="govuk-tag govuk-tag--grey  govuk-tag--lower moj-task-list__task-completed"
+            >
+                To do
+            </strong>
+        </li>
+    </ul>
+</li>
+        </ol>
+        
+    </div>
+</div>
+</ul>
+<!-- <div>
+    <a
+        href="/recommendations/633602986/confirmation-part-a"
+        class="govuk-button govuk-button--primary"
+        >Create Part A</a
+    >
+</div> -->
 
-							<strong
-								class="govuk-tag govuk-tag--grey moj-task-list__task-completed"
-							>
-								To do
-							</strong>
-						</li>
-
-						<li class="moj-task-list__item">
-							<a class="moj-task-list__task-name" href="SPO-csign"
-								>Senior manager countersign</a
-							>
-
-							<strong
-								class="govuk-tag govuk-tag--grey moj-task-list__task-completed"
-							>
-								To do
-							</strong>
-						</li>
-					</ul>
-				</li>
-			</ol>
-
-			<div>
-				<a
-					href="/recommendations/633602986/confirmation-part-a"
-					class="govuk-button govuk-button--primary"
-					>Create Part A</a
-				>
-			</div>
+			
 		</div>
 	</div>
 </main>
