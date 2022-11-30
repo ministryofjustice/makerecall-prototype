@@ -1,38 +1,44 @@
-{% extends "layout.html" %}
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: '/countersign/Manager-tasklist'
-    }) }}
-{% endblock %}
+{% extends "layout.html" %} {% block beforeContent %} {{ govukBackLink({ text:
+"Back", href: '/countersign/Manager-tasklist' }) }} {% endblock %} {% block
+content %}
 
-{% block content %}
-    
-          <div class="govuk-width-container">
-            <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                  <div class="govuk-panel govuk-panel--confirmation">
-                    <h1 class="govuk-panel__title">
-                      Part A countersigned
-                    </h1>
-                    <div class="govuk-panel__body">
-                      Duncann Cardours <br>CRN: X514364
-                    </div>
-                  </div>
-        
-                  <h2 class="govuk-heading-m">Next steps</h2>
-          
-                  <p class="govuk-body">
-                    An email will be sent immediately to notify the practitioner.
-                  </p>
-                  
-                  <p class="govuk-body">
-                    <a href="/countersign/Manager-tasklist" class="govuk-link">Return to the Part A</a>
-                  </p>
-                </div>
-              </div>
-            </main>
-          </div>
+<div class="govuk-width-container">
+	<main
+		class="govuk-main-wrapper govuk-main-wrapper--l"
+		id="main-content"
+		role="main"
+	>
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+				<div class="govuk-panel govuk-panel--confirmation">
+					<h1
+						class="govuk-panel__title govuk-body govuk-!-font-size-36"
+						style="color: white"
+					>
+						Duncann Cardours <br />CRN: X514364 <br />Part A countersigned
+					</h1>
+					<div
+						class="govuk-panel__body govuk-body govuk-!-font-size-24"
+						style="color: white"
+					>
+						Email sent to jo.bloggs@justice.gov.uk
+					</div>
+				</div>
+
+				<h2 class="govuk-heading-m">Next steps</h2>
+
+				<p class="govuk-body">
+					An email has also been sent to the administrator, Joseph Soap.
+				</p>
+
+				<p class="govuk-body">
+					<a href="/countersign/SPO-0-tasklist" class="govuk-link"
+						>Return to the Part A</a
+					>
+				</p>
+			</div>
+		</div>
+	</main>
+</div>
 
 {% endblock %}
