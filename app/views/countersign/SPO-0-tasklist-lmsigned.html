@@ -1,21 +1,6 @@
-{% extends "layout.html" %} 
-{% block pageTitle %}{{ title }}{% endblock %}
-
-{% block beforeContent %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{{ govukBackLink({
-  text: "Back",
-  href: "/countersign/tasklist"
-}) }}
-{% endblock %}
-
-{% block content %}
-
-
-
+{% extends "layout.html" %} {% set title = 'Tasklist' %} {% block pageTitle %}{{
+title }}{% endblock %} {% block beforeContent %} {% endblock %} {% block content
+%}
 
 <style>
 	/* Hack to make the tasklist items algin */
@@ -26,33 +11,7 @@
 <main class="govuk-main-wrapper" id="main-content" role="main">
 	<div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds-from-desktop">
-			<!-- <h1 class="govuk-heading-l">Create a Part A form</h1> -->
-
-			<div
-				class="govuk-notification-banner"
-				role="region"
-				aria-labelledby="govuk-notification-banner-title"
-				data-module="govuk-notification-banner"
-			>
-				<div class="govuk-notification-banner__header">
-					<h2
-						class="govuk-notification-banner__title"
-						id="govuk-notification-banner-title"
-					>
-						Part A countersignature requested
-					</h2>
-				</div>
-				<div class="govuk-notification-banner__content">
-					<p class="govuk-notification-banner__heading">
-						Jump to the section to
-						<a class="govuk-notification-banner__link" href="#countersign-point"
-							>countersign</a
-						>
-						this Part A.
-					</p>
-				</div>
-			</div>
-
+			 <h1 class="govuk-heading-l">Create a Part A form</h1> 
 
 <!-- Copied from live dev -->
 <ul style="list-style: none;padding:0;">
@@ -472,9 +431,9 @@ Reviewed
             >
 
             <strong
-                class="govuk-tag govuk-tag--grey govuk-tag--lower  moj-task-list__task-completed"
+                class="govuk-tag govuk-tag--blue govuk-tag--lower  moj-task-list__task-completed"
             >
-                To do
+                Completed
             </strong>
         </li>
 
@@ -486,7 +445,7 @@ Reviewed
             <strong
                 class="govuk-tag govuk-tag--grey  govuk-tag--lower moj-task-list__task-completed"
             >
-                To do
+                In progress
             </strong>
         </li>
     </ul>
