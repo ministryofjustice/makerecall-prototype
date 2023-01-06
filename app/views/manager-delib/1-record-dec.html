@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/error"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h1 class="govuk-heading-l">Record your decision </h1>
+          <p class="govuk-body">
+            Tell the probation practitioner your decision. They can then complete the Part A or decision not to recall letter.
+
+            Check you have considered: </p>
+            <p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the immediate risk</li>
+              <li>who is vulnerable
+              </li>
+              <li>alternatives to recall
+              </li>
+              <li>the person on probation’s current circumstances
+              </li>
+              <li>protective factors
+              </li>
+            </ul>
+          </p>
+         
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+              Explain your decision
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <!-- <legend class="govuk-fieldset__legend">
+                Where do you live?
+              </legend> -->
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                    Do not recall
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    Recall - standard or fixed term 
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <a
+          href="/manager-delib/2-send-delius"
+          class="govuk-button govuk-!-margin-bottom-0"
+          >Continue</a
+        >
+        </div>
+
+       
+      </div>
+    </main>
+  </div>
+     
+{% endblock %}

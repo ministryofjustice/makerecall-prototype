@@ -5,6 +5,55 @@ govukNotificationBanner %} {% block beforeContent %} {{ govukBackLink({ text:
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
 		<div
+			class="govuk-notification-banner"
+			role="region"
+			aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner"
+		>
+			<div class="govuk-notification-banner__header">
+				<h2
+					class="govuk-notification-banner__title"
+					id="govuk-notification-banner-title"
+				>
+					Important
+				</h2>
+			</div>
+			<div
+				class="govuk-notification-banner__content"
+				style="position: relative"
+			>
+				<h3 class="govuk-notification-banner__heading">Consider a recall</h3>
+				<p>
+					At around 07:30am on 5/1/2022, Mr Cardours came to the reception area
+					and informed AP staff that he was going out for a walk. Mr Cardours
+					then became agitated and was shouting saying; nobody can tell him what
+					he can and can’t do. Another staff member told Duncann to calm down.
+					Mr Cardours then said he is a grown man and that can do what he wants,
+					he further mentioned that if anyone tells him that he can’t go onto
+					town, he will kill them. Both Staff members told Mr Cardours that this
+					was not acceptable, and he should calm down.
+				</p>
+
+				<p>
+					Mr Cardours then said he was getting his stuff and leaving, he went to
+					his room and collected his bags and then left the Approved Premises. A
+					staff member tried to talk to him whilst he was walking off trying to
+					get him to calm down and come back, however, she was unsuccessful in
+					her attempts
+				</p>
+
+				<p class="govuk-caption-m">Joan Smyth, 6 January 2023 at 12.31</p>
+
+				<div style="position: absolute; right: 15px; bottom: 15px">
+					<a
+						href="/manager-delib/1-record-dec"
+						class="govuk-button govuk-!-margin-bottom-0"
+						>Record decision</a
+					>
+				</div>
+			</div>
+		</div>
+		<div
 			class="flex flex--medium flex--space-between flex--align-center govuk-!-margin-bottom-4"
 		>
 			<div>
@@ -23,13 +72,6 @@ govukNotificationBanner %} {% block beforeContent %} {{ govukBackLink({ text:
 				>
 					Duncann Cardours
 				</div>
-			</div>
-			<div>
-				<a
-					href="../case/rec-flow/1-risk.html"
-					class="govuk-button govuk-!-margin-bottom-0"
-					>Make a recommendation</a
-				>
 			</div>
 		</div>
 		<div class="mrd-subhead">

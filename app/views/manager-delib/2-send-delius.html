@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/error"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h1 class="govuk-heading-l">Record your decision in NDelius</h1>
+          <p class="govuk-body">
+            Your decision will be recorded as a contact in NDelius called ‘Management oversight - recall’. You cannot undo this.</p>
+            <p>
+           
+          <a
+          href="/manager-delib/3-confirmation"
+          class="govuk-button govuk-!-margin-bottom-0"
+          >Record your decision</a
+        >
+        </div>
+
+       
+      </div>
+    </main>
+  </div>
+     
+{% endblock %}
