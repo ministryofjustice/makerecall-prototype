@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
               - name: nginx
-                image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/${ECR_NAME}:${IMAGE_TAG}
+                image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
                 env:
                   - name: USERNAME
                     valueFrom:
@@ -72,4 +72,3 @@ spec:
                             number: 3000
 
 ---
-
